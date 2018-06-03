@@ -14,9 +14,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    @IBAction func click(_ sender: Any) {
-    }
-    @IBAction func main(_ sender: Any) {
+    @IBAction func roll(for segue: UIStoryboardSegue) {
     }
     @IBAction func unwindToselect(for segue: UIStoryboardSegue) {
     }

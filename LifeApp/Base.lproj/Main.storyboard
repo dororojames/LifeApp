@@ -12,7 +12,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4lM-mZ-kxO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E77-O1-NYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="XV6-jY-qbl" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LgU-0t-451">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -22,8 +21,10 @@
                     <connections>
                         <segue destination="sC5-UT-27m" kind="relationship" relationship="viewControllers" id="D2W-kB-A8r"/>
                         <segue destination="ik8-Uo-P0Z" kind="relationship" relationship="viewControllers" id="i4N-9R-X4v"/>
+                        <segue destination="xej-wk-c3I" kind="relationship" relationship="viewControllers" id="5mK-ME-cbs"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E77-O1-NYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-767" y="-129"/>
         </scene>
@@ -35,7 +36,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBg-ua-4ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168" y="159"/>
+            <point key="canvasLocation" x="148" y="149"/>
         </scene>
         <!--Health-->
         <scene sceneID="Aou-Vg-gOk">
@@ -46,6 +47,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m32-gc-qEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="158" y="-461"/>
+        </scene>
+        <!--Joke-->
+        <scene sceneID="oYo-iv-Fek">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Joke" id="xej-wk-c3I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="fau-jM-8D2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ich-zY-QE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149" y="-130"/>
         </scene>
     </scenes>
 </document>
