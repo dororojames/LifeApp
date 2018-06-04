@@ -1,19 +1,17 @@
 //
-//  JokeType.swift
+//  myFavorite.swift
 //  LifeApp
 //
-//  Created by Student on 2018/6/3.
+//  Created by Student on 2018/6/4.
 //  Copyright © 2018年 Student. All rights reserved.
 //
 
 import UIKit
 
-class JokeType: UIViewController {
+class myFavorite: UIViewController {
 
     @IBAction func back(_ sender: Any) {
     }
-    @IBOutlet weak var 黃色笑話: UIButton!
-    @IBOutlet weak var 問答笑話: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,18 +10,28 @@ import UIKit
 
 class JokeViewController: UIViewController {
     
-    @IBOutlet weak var Joketype: UIButton!
     
-    @IBOutlet weak var favorite: UIButton!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
+    
+    
+    
+    
     @IBAction func toJokeType(_ sender: Any) {
     }
     @IBAction func toMyFavorite(_ sender: Any) {
     }
     
+    
+    
+    @IBAction func unwindSegueBack_Favorite(for segue: UIStoryboardSegue) {
+        }
+    @IBAction func unwindSegueBack_JokeType(for segue: UIStoryboardSegue) {
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
