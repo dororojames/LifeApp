@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,10 +20,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4RT-lC-oCE" kind="relationship" relationship="viewControllers" id="Uh0-BY-0PW"/>
-                        <segue destination="sC5-UT-27m" kind="relationship" relationship="viewControllers" id="D2W-kB-A8r"/>
-                        <segue destination="xej-wk-c3I" kind="relationship" relationship="viewControllers" id="5mK-ME-cbs"/>
                         <segue destination="ik8-Uo-P0Z" kind="relationship" relationship="viewControllers" id="i4N-9R-X4v"/>
+                        <segue destination="xej-wk-c3I" kind="relationship" relationship="viewControllers" id="5mK-ME-cbs"/>
+                        <segue destination="sC5-UT-27m" kind="relationship" relationship="viewControllers" id="D2W-kB-A8r"/>
+                        <segue destination="4RT-lC-oCE" kind="relationship" relationship="viewControllers" id="Uh0-BY-0PW"/>
+                        <segue destination="gh1-By-Vme" kind="relationship" relationship="viewControllers" id="IXj-t7-8Wx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E77-O1-NYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -33,41 +35,57 @@
         <scene sceneID="KZD-cc-w7S">
             <objects>
                 <viewControllerPlaceholder storyboardName="Map" id="ik8-Uo-P0Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="美食地圖" id="zN0-8O-XFb"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="zN0-8O-XFb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBg-ua-4ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="142"/>
+            <point key="canvasLocation" x="148" y="149"/>
         </scene>
         <!--Health-->
         <scene sceneID="Aou-Vg-gOk">
             <objects>
                 <viewControllerPlaceholder storyboardName="Health" id="sC5-UT-27m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="健康" id="1ZD-tP-0Vq"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="1ZD-tP-0Vq"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m32-gc-qEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-130"/>
+            <point key="canvasLocation" x="141" y="-350"/>
         </scene>
         <!--Joke-->
         <scene sceneID="oYo-iv-Fek">
             <objects>
                 <viewControllerPlaceholder storyboardName="Joke" id="xej-wk-c3I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="笑話" id="fau-jM-8D2"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="fau-jM-8D2"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ich-zY-QE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="31"/>
+            <point key="canvasLocation" x="149" y="-130"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="m9E-lb-Auk">
+            <objects>
+                <viewController id="gh1-By-Vme" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QvL-Ko-t5b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="EXw-of-Wnu"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="HNz-zq-2pf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MDc-Nu-krT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59" y="-682"/>
         </scene>
         <!--Game-->
         <scene sceneID="kUR-s2-57Y">
             <objects>
                 <viewControllerPlaceholder storyboardName="Game" id="4RT-lC-oCE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="遊戲" id="AdS-nE-0NU"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="AdS-nE-0NU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuS-3g-7rG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="-267"/>
+            <point key="canvasLocation" x="161" y="-623"/>
         </scene>
     </scenes>
 </document>

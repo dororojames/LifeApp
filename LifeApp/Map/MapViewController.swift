@@ -10,8 +10,25 @@ import Foundation
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath)
+        cell.textLabel?.text = list[indexPath.row]
+        return cell
+    }
+    
+    
+    
+    
+    var list = [String]()
     @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func roll(for segue: UIStoryboardSegue) {
@@ -26,6 +43,9 @@ class MapViewController: UIViewController {
         mapView.setRegion(MKCoordinateRegionMakeWithDistance(ntnuLocation, dis, dis), animated: true)
         let ntnuPin = restaurantAnnotation(title: "NTNU", subtitle: "school", coordinate: ntnuLocation)
         mapView.addAnnotation(ntnuPin)
+        list.append("枋敘")
+        list.append("老袁")
+        list.append("薩莉雅")
     }
     
     override func didReceiveMemoryWarning() {
