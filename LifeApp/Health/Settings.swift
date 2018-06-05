@@ -16,8 +16,15 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate {
         super.viewDidLoad()
         
         list.append("身高")
+        list.append("體重")
+        list.append("性別")
+        list.append("血型")
+        list.append("年齡")
+        list.append("BMI")
         // Do any additional setup after loading the view.
     }
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -206,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3n-bb-iQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="1202"/>
+            <point key="canvasLocation" x="1074" y="1123"/>
         </scene>
         <!--selectView-->
         <scene sceneID="rXd-A4-cge">

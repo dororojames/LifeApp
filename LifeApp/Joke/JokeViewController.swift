@@ -14,19 +14,12 @@ class JokeViewController: UIViewController {
     
     
     
-    
-    @IBAction func toJokeType(_ sender: Any) {
-    }
-    @IBAction func toMyFavorite(_ sender: Any) {
-    }
-    
-    
-    
-    @IBAction func unwindSegueBack_Favorite(for segue: UIStoryboardSegue) {
-        }
     @IBAction func unwindSegueBack_JokeType(for segue: UIStoryboardSegue) {
     }
-    
+    @IBAction func unwindSegueBack_Favorite(for segue: UIStoryboardSegue) {
+    }
+    @IBAction func unwindSegueBack_History(for segue: UIStoryboardSegue) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

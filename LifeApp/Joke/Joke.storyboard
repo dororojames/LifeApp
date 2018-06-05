@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,9 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fke-di-jKp">
-                                <rect key="frame" x="43" y="191" width="160" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fke-di-jKp">
+                                <rect key="frame" x="43" y="191" width="160" height="126"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="問答笑話"/>
                                 <userDefinedRuntimeAttributes>
@@ -35,10 +34,13 @@
                                         <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="unwindSegueBack_QAFor:" destination="nvF-qf-TIN" eventType="touchUpInside" id="UvS-c6-hnf"/>
+                                    <segue destination="HfE-Dd-IXf" kind="show" id="cqG-JC-3d5"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hi-Zq-j6B">
-                                <rect key="frame" x="211" y="191" width="160" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hi-Zq-j6B">
+                                <rect key="frame" x="211" y="191" width="160" height="126"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="黃色笑話"/>
                                 <userDefinedRuntimeAttributes>
@@ -52,10 +54,12 @@
                                         <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="HfE-Dd-IXf" kind="show" id="3Vu-Ar-oYc"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-B5-EDp">
-                                <rect key="frame" x="43" y="372" width="160" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-B5-EDp">
+                                <rect key="frame" x="43" y="372" width="160" height="126"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="雙關笑話"/>
                                 <userDefinedRuntimeAttributes>
@@ -69,10 +73,26 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="HfE-Dd-IXf" kind="show" id="xRu-Dj-alU"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2b-5I-5Iy">
-                                <rect key="frame" x="211" y="372" width="160" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ff-Pf-blK">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="笑話分類" id="RA3-Jd-OUQ">
+                                        <barButtonItem key="leftBarButtonItem" title="返回" id="6WF-co-cxY">
+                                            <connections>
+                                                <action selector="back:" destination="nvF-qf-TIN" id="Hx2-of-YOq"/>
+                                                <segue destination="GXD-SR-Gsc" kind="unwind" unwindAction="unwindSegueBack_JokeTypeFor:" id="7kh-YY-ExC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2b-5I-5Iy">
+                                <rect key="frame" x="211" y="372" width="160" height="126"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="內涵笑話"/>
                                 <userDefinedRuntimeAttributes>
@@ -86,34 +106,380 @@
                                         <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="HfE-Dd-IXf" kind="show" id="qa4-Wi-WqR"/>
+                                </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ff-Pf-blK">
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="akG-B5-EDp" firstAttribute="height" secondItem="Fke-di-jKp" secondAttribute="height" id="3sa-Ea-IdL"/>
+                            <constraint firstItem="N2b-5I-5Iy" firstAttribute="firstBaseline" secondItem="akG-B5-EDp" secondAttribute="firstBaseline" id="DyS-YW-ZGc"/>
+                            <constraint firstItem="Fke-di-jKp" firstAttribute="leading" secondItem="ZDr-7F-sN1" secondAttribute="leading" constant="43" id="GOe-yY-PTF"/>
+                            <constraint firstItem="Fke-di-jKp" firstAttribute="top" secondItem="ZDr-7F-sN1" secondAttribute="top" constant="171" id="HEP-iP-uIp"/>
+                            <constraint firstItem="2Hi-Zq-j6B" firstAttribute="baseline" secondItem="Fke-di-jKp" secondAttribute="firstBaseline" id="Jch-NO-e3O"/>
+                            <constraint firstItem="akG-B5-EDp" firstAttribute="width" secondItem="Fke-di-jKp" secondAttribute="width" id="NPA-fL-g63"/>
+                            <constraint firstItem="N2b-5I-5Iy" firstAttribute="leading" secondItem="2Hi-Zq-j6B" secondAttribute="leading" id="NqU-Bq-WJa"/>
+                            <constraint firstItem="N2b-5I-5Iy" firstAttribute="baseline" secondItem="akG-B5-EDp" secondAttribute="baseline" id="P5e-Fj-20i"/>
+                            <constraint firstItem="2Hi-Zq-j6B" firstAttribute="height" secondItem="Fke-di-jKp" secondAttribute="height" id="Qbx-2S-whM"/>
+                            <constraint firstItem="akG-B5-EDp" firstAttribute="top" secondItem="Fke-di-jKp" secondAttribute="top" constant="181" id="Rqv-Gb-Mzs"/>
+                            <constraint firstItem="N2b-5I-5Iy" firstAttribute="leading" secondItem="akG-B5-EDp" secondAttribute="trailing" constant="8" symbolic="YES" id="TQL-Dh-miA"/>
+                            <constraint firstItem="N2b-5I-5Iy" firstAttribute="height" secondItem="Fke-di-jKp" secondAttribute="height" id="Wem-4o-AbI"/>
+                            <constraint firstItem="N2b-5I-5Iy" firstAttribute="top" secondItem="2Hi-Zq-j6B" secondAttribute="bottom" constant="55" id="e2n-zI-LG3"/>
+                            <constraint firstItem="2Hi-Zq-j6B" firstAttribute="top" secondItem="Fke-di-jKp" secondAttribute="top" id="e6y-98-8Hk"/>
+                            <constraint firstItem="ZDr-7F-sN1" firstAttribute="trailing" secondItem="N2b-5I-5Iy" secondAttribute="trailing" constant="43" id="nmA-7h-eNZ"/>
+                            <constraint firstItem="N2b-5I-5Iy" firstAttribute="width" secondItem="Fke-di-jKp" secondAttribute="width" id="sCw-rP-lJD"/>
+                            <constraint firstItem="N2b-5I-5Iy" firstAttribute="top" secondItem="akG-B5-EDp" secondAttribute="top" id="sEN-Ou-itf"/>
+                            <constraint firstItem="N2b-5I-5Iy" firstAttribute="trailing" secondItem="2Hi-Zq-j6B" secondAttribute="trailing" id="u96-3b-FR5"/>
+                            <constraint firstItem="akG-B5-EDp" firstAttribute="leading" secondItem="Fke-di-jKp" secondAttribute="leading" id="xEs-8H-7Xu"/>
+                            <constraint firstItem="2Hi-Zq-j6B" firstAttribute="width" secondItem="Fke-di-jKp" secondAttribute="width" id="zKk-hJ-ry0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZDr-7F-sN1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9x7-pu-aHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GXD-SR-Gsc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-3133.3333333333335" y="575.54347826086962"/>
+        </scene>
+        <!--QA-->
+        <scene sceneID="RGf-Y8-unW">
+            <objects>
+                <viewController id="HfE-Dd-IXf" customClass="QA" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SkQ-OX-TZQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHP-LT-9vc">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="RA3-Jd-OUQ">
-                                        <barButtonItem key="leftBarButtonItem" title="返回" id="6WF-co-cxY">
+                                    <navigationItem title="xx笑話" id="c4Q-0o-IGH">
+                                        <barButtonItem key="leftBarButtonItem" title="返回" id="ZWN-T9-OsJ">
                                             <connections>
-                                                <action selector="back:" destination="nvF-qf-TIN" id="Hx2-of-YOq"/>
-                                                <segue destination="GXD-SR-Gsc" kind="unwind" unwindAction="unwindSegueBack_JokeTypeFor:" id="Vza-0N-bad"/>
+                                                <action selector="back:" destination="HfE-Dd-IXf" id="8rd-an-387"/>
+                                                <segue destination="VSw-ro-teC" kind="unwind" unwindAction="unwindSegueBack_QAFor:" id="lih-t0-cmu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="新增" id="Ozj-Pt-dXv">
+                                            <connections>
+                                                <segue destination="oog-pi-nzm" kind="show" id="hsa-aE-RHG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jkq-lA-adm">
+                                <rect key="frame" x="0.0" y="124" width="414" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PuN-2O-yx0">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PuN-2O-yx0" id="m8d-lf-NCp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7X-bB-Il8">
+                                                    <rect key="frame" x="20" y="6" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="笑話１"/>
+                                                    <connections>
+                                                        <action selector="showJoke:" destination="HfE-Dd-IXf" eventType="touchUpInside" id="NDX-hL-488"/>
+                                                        <action selector="unwindSegueBack_JokeTextFor:" destination="HfE-Dd-IXf" eventType="touchUpInside" id="dgn-da-4xF"/>
+                                                        <segue destination="qur-dJ-EPj" kind="show" id="E8b-Fd-1QE"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ZH-gs-87e">
+                                <rect key="frame" x="0.0" y="414" width="414" height="322"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bLY-2z-7NX">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bLY-2z-7NX" id="zR9-Zi-VD0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="本地笑話" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDv-99-4uu">
+                                <rect key="frame" x="20" y="374" width="70" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="近期新增" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjE-VT-2wq">
+                                <rect key="frame" x="20" y="83" width="70" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ZDr-7F-sN1"/>
+                        <viewLayoutGuide key="safeArea" id="zle-p2-WjT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1A-S3-U5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VSw-ro-teC" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-2283" y="576"/>
+        </scene>
+        <!--Add New-->
+        <scene sceneID="JGP-e6-Bqz">
+            <objects>
+                <viewController id="oog-pi-nzm" customClass="addNew" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t53-Bv-9FI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-IJ-rG0">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="新增笑話" id="X7Z-3K-Pw9">
+                                        <barButtonItem key="leftBarButtonItem" title="取消" id="Jrs-dI-QRI">
+                                            <connections>
+                                                <action selector="back:" destination="oog-pi-nzm" id="16F-ye-zHU"/>
+                                                <segue destination="Jkn-rK-jQx" kind="unwind" unwindAction="unwindSegueBack_addNewFor:" id="l6A-Hj-Igp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="完成" id="ypK-j9-zYK">
+                                            <connections>
+                                                <action selector="finish:" destination="oog-pi-nzm" id="DJ8-l1-vT3"/>
+                                                <segue destination="Jkn-rK-jQx" kind="unwind" unwindAction="unwindSegueBack_addNewFor:" id="671-ep-SkH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMC-qk-7gD">
+                                <rect key="frame" x="41" y="98" width="53" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9g0-rO-bo6">
+                                <rect key="frame" x="41" y="138" width="326" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="內容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhw-j8-ZUN">
+                                <rect key="frame" x="41" y="176" width="53" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkg-fS-BxY">
+                                <rect key="frame" x="41" y="216" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xcb-xN-vFD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KKq-gU-aBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Jkn-rK-jQx" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1246" y="576"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="dQS-yo-Gcp">
+            <objects>
+                <viewController title="History" id="3R3-kb-1Yq" customClass="History" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hye-Zt-ckV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-Te-Dcu">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="歷史紀錄" id="OMJ-sf-hSP">
+                                        <barButtonItem key="leftBarButtonItem" title="返回" id="nRd-Jy-wSk">
+                                            <connections>
+                                                <action selector="back:" destination="3R3-kb-1Yq" id="PSa-zx-nRP"/>
+                                                <segue destination="r28-TY-lW6" kind="unwind" unwindAction="unwindSegueBack_HistoryFor:" id="EVl-It-PiY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="編輯" id="MYC-cy-EK7">
+                                            <connections>
+                                                <action selector="unwindSegueBack_JokeTypeFor:" destination="3R3-kb-1Yq" id="oRk-Rr-G0V"/>
+                                                <segue destination="TtB-t6-09x" kind="show" id="0Jb-FD-Y5i"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YfC-QI-aCw">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="x8n-0K-drT">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x8n-0K-drT" id="4Qm-hz-gjm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEN-Nw-le9">
+                                                    <rect key="frame" x="20" y="6" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="笑話１"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="＊＊＊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAX-GH-WW8">
+                                                    <rect key="frame" x="328" y="12" width="52" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CkF-GI-Pjz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nBD-l2-3MV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="r28-TY-lW6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-3133" y="1304"/>
+        </scene>
+        <!--Edit-->
+        <scene sceneID="jkq-OT-kuE">
+            <objects>
+                <viewController id="TtB-t6-09x" customClass="Edit" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7mE-G1-O6Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8q-0S-xik">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="Qpl-Hs-fHv">
+                                        <barButtonItem key="leftBarButtonItem" title="刪除" id="jaE-92-Sks"/>
+                                        <barButtonItem key="rightBarButtonItem" title="取消" id="CnI-lc-4bd">
+                                            <connections>
+                                                <action selector="back:" destination="TtB-t6-09x" id="kgG-Pf-r64"/>
+                                                <segue destination="2KD-qb-aQm" kind="unwind" unwindAction="unwindSegueBack_EditFor:" id="y4x-ev-3Ra"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P5w-aD-0MK">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="X7h-jv-fhS">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X7h-jv-fhS" id="uqR-du-EOw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waz-ao-Nxe">
+                                                    <rect key="frame" x="20" y="6" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="＊＊＊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQX-ei-ggm">
+                                                    <rect key="frame" x="326" y="11" width="52" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SSH-rz-BLb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kU9-7n-Qrb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2KD-qb-aQm" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-3554" y="2103"/>
+        </scene>
+        <!--Joke Test-->
+        <scene sceneID="nuq-dt-e4J">
+            <objects>
+                <viewController id="qur-dJ-EPj" customClass="JokeTest" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WP1-Br-icT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSa-5F-HkR">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="笑話１" id="5wp-a9-nTY">
+                                        <barButtonItem key="leftBarButtonItem" title="返回" id="KWN-kw-7zd">
+                                            <connections>
+                                                <segue destination="y30-J2-hJI" kind="unwind" unwindAction="unwindSegueBack_JokeTextFor:" id="HAf-lQ-kpD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="評分" id="3lh-pE-v0T"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="＊＊＊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCw-gf-Lmd">
+                                <rect key="frame" x="318" y="64" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42U-xn-JmI">
+                                <rect key="frame" x="265" y="668" width="135" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="加入我的最愛&gt;"/>
+                                <connections>
+                                    <action selector="加入我的最愛:" destination="qur-dJ-EPj" eventType="touchUpInside" id="hNS-Cl-MQf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NAA-hq-WEJ"/>
                     </view>
                     <connections>
-                        <outlet property="問答笑話" destination="Fke-di-jKp" id="V84-03-LrB"/>
-                        <outlet property="黃色笑話" destination="2Hi-Zq-j6B" id="Vsr-ka-0lf"/>
+                        <outlet property="喜好程度" destination="vCw-gf-Lmd" id="eev-QL-vHv"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9x7-pu-aHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="GXD-SR-Gsc" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Db-RT-bLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="y30-J2-hJI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2723" y="201"/>
+            <point key="canvasLocation" x="-2284" y="1304"/>
         </scene>
         <!--My Favorite-->
         <scene sceneID="Vai-MP-vp2">
@@ -131,10 +497,15 @@
                                         <barButtonItem key="leftBarButtonItem" title="返回" id="9hP-nd-k13">
                                             <connections>
                                                 <action selector="back:" destination="Vtg-Ck-1ez" id="xCo-l7-8TE"/>
-                                                <segue destination="sIC-iC-Bwf" kind="unwind" unwindAction="unwindSegueBack_FavoriteFor:" id="nVH-Dc-1Kg"/>
+                                                <segue destination="sIC-iC-Bwf" kind="unwind" unwindAction="unwindSegueBack_FavoriteFor:" id="u18-Fv-Uby"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="編輯" id="xek-8g-dUe"/>
+                                        <barButtonItem key="rightBarButtonItem" title="編輯" id="xek-8g-dUe">
+                                            <connections>
+                                                <action selector="unwindSegueBack_EditFor:" destination="Vtg-Ck-1ez" id="vNq-fw-9pI"/>
+                                                <segue destination="TtB-t6-09x" kind="show" id="Q5T-iG-Ak1"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -150,23 +521,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="笑話１" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjq-64-Hh7">
-                                                    <rect key="frame" x="20" y="12" width="52" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="***" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-LD-xFU">
-                                                    <rect key="frame" x="359" y="12" width="23" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-eE-kgZ">
+                                                    <rect key="frame" x="20" y="7" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="笑話１"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="＊＊＊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-LD-xFU">
+                                                    <rect key="frame" x="342" y="12" width="52" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Kjq-64-Hh7" firstAttribute="leading" secondItem="SNf-dm-D4D" secondAttribute="leadingMargin" id="tXy-rp-wlN"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -179,7 +546,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJa-iv-GYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="sIC-iC-Bwf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2722" y="903"/>
+            <point key="canvasLocation" x="-3952" y="1304"/>
         </scene>
         <!--Joke-->
         <scene sceneID="7Nu-ci-2mP">
@@ -208,16 +575,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="toJokeType:" destination="DYG-yY-lrT" eventType="touchUpInside" id="dug-Nc-Dgg"/>
-                                    <action selector="unwindSegueBack_JokeTypeFor:" destination="DYG-yY-lrT" eventType="touchUpInside" id="b2l-0T-vqJ"/>
-                                    <segue destination="nvF-qf-TIN" kind="show" id="Wfe-0Y-7Qr"/>
+                                    <action selector="unwindSegueBack_JokeTypeFor:" destination="DYG-yY-lrT" eventType="touchUpInside" id="rEY-Ye-2hz"/>
+                                    <segue destination="nvF-qf-TIN" kind="show" id="iFp-sH-c0l"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ho-8D-BXm">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="gTZ-Ea-HH5">
-                                        <barButtonItem key="rightBarButtonItem" title="歷程紀錄" id="fT7-r5-GvO"/>
+                                    <navigationItem title="笑話" id="gTZ-Ea-HH5">
+                                        <barButtonItem key="rightBarButtonItem" title="歷史紀錄" id="fT7-r5-GvO">
+                                            <connections>
+                                                <action selector="unwindSegueBack_HistoryFor:" destination="DYG-yY-lrT" id="otv-Dn-bgx"/>
+                                                <segue destination="3R3-kb-1Yq" kind="show" id="BVr-uB-nPE"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -234,9 +605,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="toMyFavorite:" destination="DYG-yY-lrT" eventType="touchUpInside" id="XEc-ci-6rk"/>
-                                    <action selector="unwindSegueBack_FavoriteFor:" destination="DYG-yY-lrT" eventType="touchUpInside" id="nDy-Cd-Uvp"/>
-                                    <segue destination="Vtg-Ck-1ez" kind="show" id="fn4-F4-6kJ"/>
+                                    <action selector="unwindSegueBack_FavoriteFor:" destination="DYG-yY-lrT" eventType="touchUpInside" id="aIh-OR-NFW"/>
+                                    <segue destination="Vtg-Ck-1ez" kind="show" id="Kno-cU-Bo4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -256,15 +626,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rFd-af-mB3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="笑話" image="Joke" id="AxN-gP-R4s"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiY-XY-6pq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3952.1739130434785" y="576.35869565217399"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Joke" width="13" height="14"/>
-    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Jb-FD-Y5i"/>
+        <segue reference="xRu-Dj-alU"/>
+    </inferredMetricsTieBreakers>
 </document>

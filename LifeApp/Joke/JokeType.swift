@@ -12,8 +12,8 @@ class JokeType: UIViewController {
 
     @IBAction func back(_ sender: Any) {
     }
-    @IBOutlet weak var 黃色笑話: UIButton!
-    @IBOutlet weak var 問答笑話: UIButton!
+    @IBAction func unwindSegueBack_QA(for segue: UIStoryboardSegue) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

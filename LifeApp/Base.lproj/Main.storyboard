@@ -19,6 +19,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="XNV-U2-j3S" kind="relationship" relationship="viewControllers" id="YTB-ek-Kd9"/>
                         <segue destination="4RT-lC-oCE" kind="relationship" relationship="viewControllers" id="3bg-iw-1Sb"/>
                         <segue destination="sC5-UT-27m" kind="relationship" relationship="viewControllers" id="aTL-aV-oSQ"/>
                         <segue destination="xej-wk-c3I" kind="relationship" relationship="viewControllers" id="UcU-Nz-9e6"/>
@@ -47,7 +48,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m32-gc-qEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-130"/>
+            <point key="canvasLocation" x="136" y="-51"/>
         </scene>
         <!--Joke-->
         <scene sceneID="oYo-iv-Fek">
@@ -67,7 +68,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuS-3g-7rG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="-267"/>
+            <point key="canvasLocation" x="147" y="-170"/>
+        </scene>
+        <!--Music-->
+        <scene sceneID="fQJ-FK-zSl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Music" id="XNV-U2-j3S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="音樂" id="af3-GV-oj1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F34-6a-vh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="-286"/>
         </scene>
     </scenes>
     <resources>
