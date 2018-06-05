@@ -16,8 +16,6 @@
 		8C0C5DEB20C17469004CBB13 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C5DEA20C17469004CBB13 /* MapViewController.swift */; };
 		8C0C5DED20C17499004CBB13 /* restaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C5DEC20C17499004CBB13 /* restaurantAnnotation.swift */; };
 		8C0C5DF320C188E8004CBB13 /* selectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C5DF220C188E8004CBB13 /* selectView.swift */; };
-		8C4EDA9320C3F31600682345 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4EDA8F20C3F31600682345 /* Map.storyboard */; };
-		8C4EDA9420C3F31600682345 /* Health.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4EDA9120C3F31600682345 /* Health.storyboard */; };
 		8C68660220C3EF28001B9DA7 /* HealthTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6865FD20C3EF28001B9DA7 /* HealthTest.swift */; };
 		8C68660320C3EF28001B9DA7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6865FE20C3EF28001B9DA7 /* Settings.swift */; };
 		8C68660420C3EF28001B9DA7 /* HealthChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6865FF20C3EF28001B9DA7 /* HealthChoose.swift */; };
@@ -30,6 +28,8 @@
 		8CAC508720C6C2DA00DE17E5 /* TepoGameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC508320C6C2D900DE17E5 /* TepoGameMenu.swift */; };
 		8CAC508820C6C2DA00DE17E5 /* GuessGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC508420C6C2D900DE17E5 /* GuessGameController.swift */; };
 		8CAC508920C6C2DA00DE17E5 /* GameMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC508520C6C2DA00DE17E5 /* GameMenuController.swift */; };
+		8CAC508B20C6CDF900DE17E5 /* Health.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAC508A20C6CDF900DE17E5 /* Health.storyboard */; };
+		8CAC508D20C6CE0100DE17E5 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAC508C20C6CE0100DE17E5 /* Map.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +44,6 @@
 		8C0C5DEA20C17469004CBB13 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8C0C5DEC20C17499004CBB13 /* restaurantAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = restaurantAnnotation.swift; sourceTree = "<group>"; };
 		8C0C5DF220C188E8004CBB13 /* selectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectView.swift; sourceTree = "<group>"; };
-		8C4EDA9020C3F31600682345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
-		8C4EDA9220C3F31600682345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Health.storyboard; sourceTree = "<group>"; };
 		8C6865FD20C3EF28001B9DA7 /* HealthTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTest.swift; sourceTree = "<group>"; };
 		8C6865FE20C3EF28001B9DA7 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8C6865FF20C3EF28001B9DA7 /* HealthChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthChoose.swift; sourceTree = "<group>"; };
@@ -58,6 +56,8 @@
 		8CAC508320C6C2D900DE17E5 /* TepoGameMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TepoGameMenu.swift; sourceTree = "<group>"; };
 		8CAC508420C6C2D900DE17E5 /* GuessGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessGameController.swift; sourceTree = "<group>"; };
 		8CAC508520C6C2DA00DE17E5 /* GameMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuController.swift; sourceTree = "<group>"; };
+		8CAC508A20C6CDF900DE17E5 /* Health.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Health.storyboard; sourceTree = "<group>"; };
+		8CAC508C20C6CE0100DE17E5 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 		8C03894720C402C6004D2D11 /* Health */ = {
 			isa = PBXGroup;
 			children = (
-				8C4EDA9120C3F31600682345 /* Health.storyboard */,
+				8CAC508A20C6CDF900DE17E5 /* Health.storyboard */,
 				8C6865FF20C3EF28001B9DA7 /* HealthChoose.swift */,
 				8C68660020C3EF28001B9DA7 /* HealthHome.swift */,
 				8C6865FD20C3EF28001B9DA7 /* HealthTest.swift */,
@@ -121,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				8C0C5DEC20C17499004CBB13 /* restaurantAnnotation.swift */,
-				8C4EDA8F20C3F31600682345 /* Map.storyboard */,
+				8CAC508C20C6CE0100DE17E5 /* Map.storyboard */,
 				8C0C5DEA20C17469004CBB13 /* MapViewController.swift */,
 				8C0C5DF220C188E8004CBB13 /* selectView.swift */,
 			);
@@ -208,13 +208,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAC508B20C6CDF900DE17E5 /* Health.storyboard in Resources */,
+				8CAC508D20C6CE0100DE17E5 /* Map.storyboard in Resources */,
 				8CAC508620C6C2DA00DE17E5 /* Game.storyboard in Resources */,
 				3FAA8AA020BC0FD2006443FA /* LaunchScreen.storyboard in Resources */,
-				8C4EDA9420C3F31600682345 /* Health.storyboard in Resources */,
 				3FAA8A9D20BC0FD2006443FA /* Assets.xcassets in Resources */,
 				8C6D8F1520C5870F00DF1C2A /* Joke.storyboard in Resources */,
 				3FAA8A9B20BC0FD1006443FA /* Main.storyboard in Resources */,
-				8C4EDA9320C3F31600682345 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,22 +261,6 @@
 				3FAA8A9F20BC0FD2006443FA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		8C4EDA8F20C3F31600682345 /* Map.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C4EDA9020C3F31600682345 /* Base */,
-			);
-			name = Map.storyboard;
-			sourceTree = "<group>";
-		};
-		8C4EDA9120C3F31600682345 /* Health.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C4EDA9220C3F31600682345 /* Base */,
-			);
-			name = Health.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
