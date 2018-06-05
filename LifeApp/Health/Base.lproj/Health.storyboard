@@ -55,7 +55,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qh7-yr-wxb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="zCl-wt-Qci"/>
+                    <tabBarItem key="tabBarItem" title="健康" image="Health" id="zCl-wt-Qci"/>
                     <navigationItem key="navigationItem" title="健康" id="R0q-Gm-qLC">
                         <barButtonItem key="rightBarButtonItem" title="設定" id="Khe-JO-dbb"/>
                     </navigationItem>
@@ -436,6 +436,9 @@
             <point key="canvasLocation" x="3729" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Health" width="10" height="10"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="C4E-Tb-OwR"/>
         <segue reference="MKj-Y0-aFM"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XV6-jY-qbl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SZN-zJ-McT">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,30 +10,30 @@
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
-        <scene sceneID="4lM-mZ-kxO">
+        <scene sceneID="NN9-0Y-bXH">
             <objects>
-                <tabBarController id="XV6-jY-qbl" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LgU-0t-451">
+                <tabBarController id="SZN-zJ-McT" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DDR-GB-ZEB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4RT-lC-oCE" kind="relationship" relationship="viewControllers" id="Uh0-BY-0PW"/>
-                        <segue destination="sC5-UT-27m" kind="relationship" relationship="viewControllers" id="D2W-kB-A8r"/>
-                        <segue destination="xej-wk-c3I" kind="relationship" relationship="viewControllers" id="5mK-ME-cbs"/>
-                        <segue destination="ik8-Uo-P0Z" kind="relationship" relationship="viewControllers" id="i4N-9R-X4v"/>
+                        <segue destination="4RT-lC-oCE" kind="relationship" relationship="viewControllers" id="3bg-iw-1Sb"/>
+                        <segue destination="sC5-UT-27m" kind="relationship" relationship="viewControllers" id="aTL-aV-oSQ"/>
+                        <segue destination="xej-wk-c3I" kind="relationship" relationship="viewControllers" id="UcU-Nz-9e6"/>
+                        <segue destination="ik8-Uo-P0Z" kind="relationship" relationship="viewControllers" id="u2f-0J-wZo"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E77-O1-NYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckb-8J-Wkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-767" y="-129"/>
+            <point key="canvasLocation" x="-707" y="-51"/>
         </scene>
         <!--Map-->
         <scene sceneID="KZD-cc-w7S">
             <objects>
                 <viewControllerPlaceholder storyboardName="Map" id="ik8-Uo-P0Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="美食地圖" id="zN0-8O-XFb"/>
+                    <tabBarItem key="tabBarItem" title="美食地圖" image="Map" id="zN0-8O-XFb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBg-ua-4ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,7 +43,7 @@
         <scene sceneID="Aou-Vg-gOk">
             <objects>
                 <viewControllerPlaceholder storyboardName="Health" id="sC5-UT-27m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="健康" id="1ZD-tP-0Vq"/>
+                    <tabBarItem key="tabBarItem" title="健康" image="Health" id="1ZD-tP-0Vq"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m32-gc-qEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,7 +53,7 @@
         <scene sceneID="oYo-iv-Fek">
             <objects>
                 <viewControllerPlaceholder storyboardName="Joke" id="xej-wk-c3I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="笑話" id="fau-jM-8D2"/>
+                    <tabBarItem key="tabBarItem" title="笑話" image="Joke" id="fau-jM-8D2"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ich-zY-QE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,4 +70,9 @@
             <point key="canvasLocation" x="141" y="-267"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Health" width="10" height="10"/>
+        <image name="Joke" width="13" height="14"/>
+        <image name="Map" width="13" height="13"/>
+    </resources>
 </document>

@@ -26,10 +26,10 @@
 		8C6D8F1320C5870F00DF1C2A /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D8F0F20C5870F00DF1C2A /* JokeViewController.swift */; };
 		8C6D8F1420C5870F00DF1C2A /* myFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D8F1020C5870F00DF1C2A /* myFavorite.swift */; };
 		8C6D8F1520C5870F00DF1C2A /* Joke.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D8F1120C5870F00DF1C2A /* Joke.storyboard */; };
-		8CC1BB0720C56E9B000E1C71 /* GuessGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1BB0420C56E9B000E1C71 /* GuessGameController.swift */; };
-		8CC1BB0820C56E9B000E1C71 /* TepoGameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1BB0520C56E9B000E1C71 /* TepoGameMenu.swift */; };
-		8CC1BB0920C56E9B000E1C71 /* GameMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1BB0620C56E9B000E1C71 /* GameMenuController.swift */; };
-		8CC1BB0B20C56EAA000E1C71 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC1BB0A20C56EAA000E1C71 /* Game.storyboard */; };
+		8CAC508620C6C2DA00DE17E5 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAC508220C6C2D900DE17E5 /* Game.storyboard */; };
+		8CAC508720C6C2DA00DE17E5 /* TepoGameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC508320C6C2D900DE17E5 /* TepoGameMenu.swift */; };
+		8CAC508820C6C2DA00DE17E5 /* GuessGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC508420C6C2D900DE17E5 /* GuessGameController.swift */; };
+		8CAC508920C6C2DA00DE17E5 /* GameMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC508520C6C2DA00DE17E5 /* GameMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +54,10 @@
 		8C6D8F0F20C5870F00DF1C2A /* JokeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
 		8C6D8F1020C5870F00DF1C2A /* myFavorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myFavorite.swift; sourceTree = "<group>"; };
 		8C6D8F1120C5870F00DF1C2A /* Joke.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Joke.storyboard; sourceTree = "<group>"; };
-		8CC1BB0420C56E9B000E1C71 /* GuessGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessGameController.swift; sourceTree = "<group>"; };
-		8CC1BB0520C56E9B000E1C71 /* TepoGameMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TepoGameMenu.swift; sourceTree = "<group>"; };
-		8CC1BB0620C56E9B000E1C71 /* GameMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuController.swift; sourceTree = "<group>"; };
-		8CC1BB0A20C56EAA000E1C71 /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		8CAC508220C6C2D900DE17E5 /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		8CAC508320C6C2D900DE17E5 /* TepoGameMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TepoGameMenu.swift; sourceTree = "<group>"; };
+		8CAC508420C6C2D900DE17E5 /* GuessGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessGameController.swift; sourceTree = "<group>"; };
+		8CAC508520C6C2DA00DE17E5 /* GameMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +142,10 @@
 		8CC1BB0C20C56F31000E1C71 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				8CC1BB0620C56E9B000E1C71 /* GameMenuController.swift */,
-				8CC1BB0420C56E9B000E1C71 /* GuessGameController.swift */,
-				8CC1BB0A20C56EAA000E1C71 /* Game.storyboard */,
-				8CC1BB0520C56E9B000E1C71 /* TepoGameMenu.swift */,
+				8CAC508220C6C2D900DE17E5 /* Game.storyboard */,
+				8CAC508520C6C2DA00DE17E5 /* GameMenuController.swift */,
+				8CAC508420C6C2D900DE17E5 /* GuessGameController.swift */,
+				8CAC508320C6C2D900DE17E5 /* TepoGameMenu.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CC1BB0B20C56EAA000E1C71 /* Game.storyboard in Resources */,
+				8CAC508620C6C2DA00DE17E5 /* Game.storyboard in Resources */,
 				3FAA8AA020BC0FD2006443FA /* LaunchScreen.storyboard in Resources */,
 				8C4EDA9420C3F31600682345 /* Health.storyboard in Resources */,
 				3FAA8A9D20BC0FD2006443FA /* Assets.xcassets in Resources */,
@@ -225,19 +225,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CC1BB0920C56E9B000E1C71 /* GameMenuController.swift in Sources */,
 				8C6D8F1420C5870F00DF1C2A /* myFavorite.swift in Sources */,
 				3FAA8A9820BC0FD1006443FA /* SecondViewController.swift in Sources */,
 				8C68660520C3EF28001B9DA7 /* HealthHome.swift in Sources */,
 				3FAA8A9420BC0FD1006443FA /* AppDelegate.swift in Sources */,
 				8C6D8F1220C5870F00DF1C2A /* JokeType.swift in Sources */,
 				8C6D8F1320C5870F00DF1C2A /* JokeViewController.swift in Sources */,
+				8CAC508820C6C2DA00DE17E5 /* GuessGameController.swift in Sources */,
 				8C0C5DED20C17499004CBB13 /* restaurantAnnotation.swift in Sources */,
-				8CC1BB0720C56E9B000E1C71 /* GuessGameController.swift in Sources */,
+				8CAC508720C6C2DA00DE17E5 /* TepoGameMenu.swift in Sources */,
+				8CAC508920C6C2DA00DE17E5 /* GameMenuController.swift in Sources */,
 				8C68660320C3EF28001B9DA7 /* Settings.swift in Sources */,
 				3FAA8A9620BC0FD1006443FA /* FirstViewController.swift in Sources */,
 				8C0C5DF320C188E8004CBB13 /* selectView.swift in Sources */,
-				8CC1BB0820C56E9B000E1C71 /* TepoGameMenu.swift in Sources */,
 				8C68660220C3EF28001B9DA7 /* HealthTest.swift in Sources */,
 				8C68660420C3EF28001B9DA7 /* HealthChoose.swift in Sources */,
 				8C0C5DEB20C17469004CBB13 /* MapViewController.swift in Sources */,
