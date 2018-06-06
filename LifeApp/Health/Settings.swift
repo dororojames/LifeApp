@@ -23,11 +23,19 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate {
         list.append("BMI")
         // Do any additional setup after loading the view.
     }
-    
-    
-    
+  
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle,forRowAt indexPath: IndexPath){
+        list.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath:IndexPath)->String?
+    {
+        return "刪除"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

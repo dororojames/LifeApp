@@ -206,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3n-bb-iQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074" y="1123"/>
+            <point key="canvasLocation" x="1074" y="1012"/>
         </scene>
         <!--selectView-->
         <scene sceneID="rXd-A4-cge">
@@ -250,19 +250,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="價位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HQ-Mo-8hA">
-                                <rect key="frame" x="13" y="253.00000000000003" width="97" height="20.333333333333343"/>
+                                <rect key="frame" x="13" y="252.99999999999997" width="97" height="20.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距離" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeZ-Jf-pZL">
-                                <rect key="frame" x="13" y="368.33333333333331" width="97" height="20"/>
+                                <rect key="frame" x="13" y="368.66666666666669" width="97" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgh-cq-FHi">
-                                <rect key="frame" x="41" y="292.33333333333331" width="116" height="30"/>
+                                <rect key="frame" x="41" y="292.66666666666669" width="116" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1SB-eS-Obd"/>
                                 </constraints>
@@ -271,25 +271,25 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOl-8h-gN3">
-                                <rect key="frame" x="257" y="292.33333333333331" width="116" height="30"/>
+                                <rect key="frame" x="257" y="292.66666666666669" width="116" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmR-FJ-CwS">
-                                <rect key="frame" x="202" y="297.33333333333331" width="11" height="21"/>
+                                <rect key="frame" x="202" y="297.66666666666669" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-lm-hg6">
-                                <rect key="frame" x="41" y="407.33333333333331" width="116" height="30"/>
+                                <rect key="frame" x="41" y="407.66666666666669" width="116" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lcg-QD-TnJ">
-                                <rect key="frame" x="257" y="407.33333333333331" width="116" height="30"/>
+                                <rect key="frame" x="257" y="407.66666666666669" width="116" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -355,7 +355,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21Y-BC-KNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Kto-eh-na7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1992.753623188406" y="304.89130434782612"/>
+            <point key="canvasLocation" x="1884" y="305"/>
         </scene>
     </scenes>
     <resources>

@@ -1,21 +1,22 @@
 //
-//  myFavorite.swift
+//  HealthRecord.swift
 //  LifeApp
 //
-//  Created by Student on 2018/6/4.
+//  Created by Student on 2018/6/6.
 //  Copyright © 2018年 Student. All rights reserved.
 //
 
 import UIKit
 
+class HealthRecord: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
-class JokeTableViewCell: UITableViewCell {
-    @IBOutlet weak var JokeName: UILabel!
-    @IBOutlet weak var StarNum: UILabel!
-}
-
-class myFavorite: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var list = [Joke]()
+    var list = [String]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        list.append("2018_6_6")
+        // Do any additional setup after loading the view.
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -23,23 +24,23 @@ class myFavorite: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle,forRowAt indexPath: IndexPath){
+        list.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! JokeTableViewCell
-        cell.JokeName?.text=list[indexPath.row].Name
-        cell.StarNum?.text=String(list[indexPath.row].Score!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = list[indexPath.row]
         return cell
     }
-    @IBAction func back(_ sender: Any) {
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.ㄦ
-        list.append(Joke(Name: "笑話1",jokeType: "黃色笑話",Score: 3))
-        list.append(Joke(Name: "笑話2",jokeType: "問答笑話",Score: 1))
-        list.append(Joke(Name: "笑話3",jokeType: "內涵笑話",Score: 2))
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath:IndexPath)->String?
+    {
+        return "刪除"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

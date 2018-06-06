@@ -12,8 +12,7 @@ class History: UIViewController {
 
     @IBAction func back(_ sender: Any) {
     }
-    @IBAction func unwindSegueBack_Edit(for segue: UIStoryboardSegue) {
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
