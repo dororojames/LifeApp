@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,6 +29,10 @@
                                 <rect key="frame" x="78" y="231" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select(2)"/>
+                                <connections>
+                                    <action selector="unwindtempoFor:" destination="9pv-A4-QxB" eventType="touchUpInside" id="sjL-0R-Qpd"/>
+                                    <segue destination="123-mo-evY" kind="show" id="iZL-De-PxH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Game!!" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
                                 <rect key="frame" x="136" y="96" width="130" height="43"/>
@@ -147,14 +151,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="猜測次數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmi-8J-pve">
+                                <rect key="frame" x="280" y="117" width="74" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWd-dh-K6b" userLabel="times">
+                                <rect key="frame" x="312" y="158" width="11" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.99366370106394686" green="0.37633418713518241" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9uC-NM-zRT"/>
                     </view>
                     <connections>
                         <outlet property="TimeLabel" destination="NuI-Sq-JZS" id="sqT-3W-kUQ"/>
+                        <outlet property="btn" destination="Up5-zh-4Qr" id="TFb-Nl-o91"/>
+                        <outlet property="counter" destination="WWd-dh-K6b" id="7V7-Rh-1xE"/>
                         <outlet property="input" destination="v7L-bQ-dHc" id="1lo-Oi-tsq"/>
                         <outlet property="one" destination="KPq-QY-Cmu" id="a2e-rT-R2y"/>
+                        <outlet property="resultRecord" destination="8na-aH-WsY" id="UpM-Vk-rS9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GST-yD-ETY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,7 +243,7 @@
             </objects>
             <point key="canvasLocation" x="2295" y="-322"/>
         </scene>
-        <!--Tempo Game Menu-->
+        <!--Title-->
         <scene sceneID="BZ6-aE-WxU">
             <objects>
                 <viewController id="123-mo-evY" customClass="TempoGameMenu" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,8 +251,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR7-Re-7by">
+                                <rect key="frame" x="159" y="207" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk5-lk-4sp">
+                                <rect key="frame" x="8" y="19" width="30" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="&lt;&lt;">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0OL-VC-4id" kind="unwind" unwindAction="unwindtempoFor:" id="ld1-ka-nef"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TempoGame" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqg-Yl-USC">
-                                <rect key="frame" x="128" y="99" width="137" height="21"/>
+                                <rect key="frame" x="128" y="96" width="137" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.064337067306041718" green="0.44205304980278015" blue="0.88437354564666748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -241,8 +280,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="srv-jB-8Nm"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="cZX-PI-kHl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGT-ak-mzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0OL-VC-4id" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="725.60000000000002" y="409.7451274362819"/>
         </scene>

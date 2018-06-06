@@ -12,6 +12,8 @@ class GameMenuController: UIViewController {
 
     @IBAction func unwindgame(for unwindSegue: UIStoryboardSegue) {
     }
+    @IBAction func unwindtempo(for unwindSegue: UIStoryboardSegue) {
+    }
     
     
     override func viewDidLoad() {

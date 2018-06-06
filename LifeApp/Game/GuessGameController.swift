@@ -18,6 +18,11 @@ class GuessGameController: UIViewController {
     var GuessNum = ""
     var compareNum=[0,0,0,0]
     var answer = [0,0,0,0]
+    var times=0
+    
+    @IBOutlet weak var btn: UIButton!
+    @IBOutlet weak var counter: UILabel!
+    @IBOutlet weak var resultRecord: UITextView!
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var TimeLabel: UILabel!
     func timerStart(){
@@ -30,7 +35,7 @@ class GuessGameController: UIViewController {
     @IBAction func SendGuessNum(_ sender: Any) {
         GuessNum=input.text!
         if GuessNum.count<4 || GuessNum.count>4{
-            print("長度不合")
+            resultRecord.text! += "請輸入4個不同的數字\n"
         }
         else{
             
@@ -39,7 +44,7 @@ class GuessGameController: UIViewController {
         let sub3=GuessNum.index(GuessNum.startIndex, offsetBy: 2)
         let sub4=GuessNum.index(GuessNum.startIndex, offsetBy: 3)
             if GuessNum[sub1]==GuessNum[sub2]||GuessNum[sub1]==GuessNum[sub3]||GuessNum[sub1]==GuessNum[sub4]||GuessNum[sub3]==GuessNum[sub2]||GuessNum[sub4]==GuessNum[sub2]||GuessNum[sub3]==GuessNum[sub4]{
-                print("error")
+                resultRecord.text! += "請輸入4個不同的數字\n"
                 }
                 else
                 {
@@ -49,12 +54,38 @@ class GuessGameController: UIViewController {
                         num=num/10
                         
                     }
-                    print(compareNum)
+                    var acount = 0
+                    var bcount = 0
+                    for i in 0...3 {
+                        for j in 0...3 {
+                            if answer[i] == compareNum[j] {
+                                if i == j {
+                                    acount += 1
+                                }
+                                else {
+                                    bcount += 1
+                                }
+                                break
+                            }
+                        }
+                    }
+                    resultRecord.text! += "\(compareNum[0])\(compareNum[1])\(compareNum[2])\(compareNum[3])\t\t\(acount)A\(bcount)B\n"
+                    resultRecord.scrollRangeToVisible(NSMakeRange(resultRecord.text.characters.count-1, 0))
+                    if acount != 4 {
+                        times=times+1
+                        counter.text="\(times)"
+                    }
+                    else{
+                        timer.invalidate()
+                        resultRecord.text! += "Game over &Go back to Menu"
+                        btn.isUserInteractionEnabled = false
+                       /* addRecord(numOfGuess: times, time: totalTime)*/
+                    }
                 }
             
             
             }
-        
+        input.text!=""
     }
     
     
@@ -72,9 +103,12 @@ class GuessGameController: UIViewController {
             let index = Int(arc4random_uniform(UInt32(nums.count)))
             answer[i] = nums[index]
             nums.remove(at: index)
+            print(answer)
         }
+        resultRecord.text = ""
         TimeLabel.text = "0:00"
         totalTime = 0
+        times=0
     }
     
     @objc func updateTime(){
