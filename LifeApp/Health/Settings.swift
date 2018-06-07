@@ -8,9 +8,15 @@
 
 import UIKit
 
-class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate {
+//表格數據實體類
+
+class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
+    
+    //表格
+    var tableView:UITableView?
     
     var list = [String]()
+    var allCellsText = [String?](repeating: nil, count:5)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +27,14 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate {
         list.append("血型")
         list.append("年齡")
         list.append("BMI")
-        // Do any additional setup after loading the view.
     }
-  
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section :Int) ->String?{
+        return "健康資料"
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle,forRowAt indexPath: IndexPath){
@@ -43,9 +52,37 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HealthSettingsTableViewCell
+        cell.textLav?.delegate = self
+        cell.textLav?.text = "尚未設定"
+        cell.textLav?.placeholder = list[indexPath.row]
+        cell.textLav?.autocorrectionType = UITextAutocorrectionType.no
+        cell.textLav?.autocapitalizationType = UITextAutocapitalizationType.none
+        cell.textLav?.adjustsFontSizeToFitWidth = true;
+        
         cell.textLabel?.text = list[indexPath.row]
         return cell
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let indexOf = list.index(of:textField.placeholder!)
+        if(textField.placeholder! == list[indexOf!]){
+            
+            if( indexOf! <= (allCellsText.count-1)){
+                
+                allCellsText.remove(at: indexOf!)
+                
+            }
+            allCellsText.insert(textField.text!, at: indexOf!)
+            print(allCellsText)
+        }
+    }
+    
+    //delegate method
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {           textField.resignFirstResponder()
+        
+        return true
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

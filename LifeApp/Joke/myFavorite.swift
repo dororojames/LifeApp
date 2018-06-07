@@ -17,6 +17,8 @@ class JokeTableViewCell: UITableViewCell {
 class myFavorite: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var list = [Joke]()
     
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -29,6 +31,36 @@ class myFavorite: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.StarNum?.text=String(list[indexPath.row].Score!)
         return cell
     }
+    
+
+    
+    //尾部滑动事件按钮（左滑按钮）
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt
+        indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //创建“旗标”事件按钮
+        let edit = UIContextualAction(style: .normal, title: "編輯") {
+            (action, view, completionHandler) in
+         
+            completionHandler(true)
+        }
+        edit.backgroundColor = .orange
+        
+        //创建“删除”事件按钮
+        let delete = UIContextualAction(style: .destructive, title: "删除") {
+            (action, view, completionHandler) in
+            //将对应条目的数据删除
+            self.list.remove(at: indexPath.row)
+            completionHandler(true)
+        }
+        
+        //返回所有的事件按钮
+        let configuration = UISwipeActionsConfiguration(actions: [delete,edit])
+        configuration.performsFirstActionWithFullSwipe = false
+        return configuration
+    }
+    
     @IBAction func back(_ sender: Any) {
     }
     override func viewDidLoad() {

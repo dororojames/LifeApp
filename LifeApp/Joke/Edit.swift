@@ -1,18 +1,15 @@
 //
-//  History.swift
+//  Edit.swift
 //  LifeApp
 //
-//  Created by Student on 2018/6/5.
+//  Created by Student on 2018/6/7.
 //  Copyright © 2018年 Student. All rights reserved.
 //
 
 import UIKit
 
-class History: UIViewController {
+class Edit: UIViewController {
 
-    @IBAction func back(_ sender: Any) {
-    }
-  
     override func viewDidLoad() {
         super.viewDidLoad()
 

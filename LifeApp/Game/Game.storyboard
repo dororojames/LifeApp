@@ -13,7 +13,7 @@
         <!--遊戲-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="GameMenuController" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameMenuController" id="9pv-A4-QxB" customClass="GameMenuController" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
         <!--Guess Game Controller-->
         <scene sceneID="T33-iH-zNx">
             <objects>
-                <viewController id="KsM-Fn-RgB" customClass="GuessGameController" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuessGameController" id="KsM-Fn-RgB" customClass="GuessGameController" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2NY-Sn-y6e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,7 +186,7 @@
         <!--View Controller-->
         <scene sceneID="Y6O-SQ-nun">
             <objects>
-                <viewController id="3Cq-j1-Kgf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuessRuleController" id="3Cq-j1-Kgf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Un-1l-HMP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +246,7 @@
         <!--Title-->
         <scene sceneID="BZ6-aE-WxU">
             <objects>
-                <viewController id="123-mo-evY" customClass="TempoGameMenu" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TempoGameMenuController" id="123-mo-evY" customClass="TempoGameMenu" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mYU-0U-6X6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,6 +257,9 @@
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="5gU-9b-V7Q" kind="show" id="xcc-HS-Ji8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk5-lk-4sp">
                                 <rect key="frame" x="8" y="19" width="30" height="34"/>
@@ -287,11 +290,39 @@
             </objects>
             <point key="canvasLocation" x="725.60000000000002" y="409.7451274362819"/>
         </scene>
+        <!--Music-->
+        <scene sceneID="EAg-it-XZN">
+            <objects>
+                <tableViewController id="5gU-9b-V7Q" customClass="Music" customModule="LifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JzZ-yH-Ryp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" id="zqV-cB-pnK">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zqV-cB-pnK" id="phw-fy-0tN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5gU-9b-V7Q" id="1iJ-eY-Yyg"/>
+                            <outlet property="delegate" destination="5gU-9b-V7Q" id="Kwa-1p-qdM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKV-fj-OiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="430"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rGy-Gn-Km5"/>
+        <segue reference="Avb-CO-OXI"/>
     </inferredMetricsTieBreakers>
 </document>
