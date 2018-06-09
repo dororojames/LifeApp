@@ -38,7 +38,7 @@ class GuessGameController: UIViewController {
             resultRecord.text! += "請輸入4個不同的數字\n"
         }
         else{
-            
+    //input設置
         let sub1=GuessNum.index(GuessNum.startIndex, offsetBy: 0)
         let sub2=GuessNum.index(GuessNum.startIndex, offsetBy: 1)
         let sub3=GuessNum.index(GuessNum.startIndex, offsetBy: 2)
@@ -98,6 +98,7 @@ class GuessGameController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     func initial(){
+        //answer設置
         var nums = Array(0...9)
         for i in 0...3 {
             let index = Int(arc4random_uniform(UInt32(nums.count)))

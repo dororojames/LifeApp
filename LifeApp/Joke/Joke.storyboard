@@ -362,7 +362,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="編輯笑話" id="2uA-af-EXI">
-                                        <barButtonItem key="leftBarButtonItem" title="取消" id="INF-51-fcv"/>
+                                        <barButtonItem key="leftBarButtonItem" title="取消" id="INF-51-fcv">
+                                            <connections>
+                                                <action selector="cancel:" destination="WqG-29-nKH" id="Hro-CV-y4b"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="完成" id="yI0-AR-s4F"/>
                                     </navigationItem>
                                 </items>
@@ -388,21 +392,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y9f-ef-WRh">
-                                <rect key="frame" x="14" y="206" width="97" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yFZ-nY-flb">
+                                <rect key="frame" x="20" y="206" width="282" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ekr-Ol-QGd"/>
                     </view>
+                    <connections>
+                        <outlet property="jokeContent" destination="yFZ-nY-flb" id="Eg8-d1-Kez"/>
+                        <outlet property="jokeTitle" destination="CWA-bh-Yeg" id="qDd-jw-ESe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rDK-mM-rm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3492" y="2099"/>
+            <point key="canvasLocation" x="-3492.753623188406" y="2098.3695652173915"/>
         </scene>
         <!--Joke Test-->
         <scene sceneID="nuq-dt-e4J">
@@ -521,11 +529,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SSx-Q7-3xE"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="k1m-SY-7Co" id="9tX-gb-1vD"/>
+                        <segue destination="WqG-29-nKH" kind="showDetail" identifier="ShowEdit" id="6Fq-He-Y4G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJa-iv-GYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="sIC-iC-Bwf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3910" y="1386"/>
+            <point key="canvasLocation" x="-3910.144927536232" y="1385.8695652173915"/>
         </scene>
         <!--Joke-->
         <scene sceneID="7Nu-ci-2mP">

@@ -11,9 +11,11 @@ class Joke{
     var Name: String?
     var jokeType: String?
     var Score: Int?
-    init(Name: String,jokeType: String,Score: Int){
+    var Content: String?
+    init(Name: String,jokeType: String,Score: Int,Content: String){
         self.Name=Name
         self.jokeType=jokeType
         self.Score=Score
+        self.Content=Content
     }
 }

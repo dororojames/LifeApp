@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MapKit
+import CoreData
 
 class tableCell: UITableViewCell
 {
@@ -22,17 +23,16 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restlist.count
+        return restaurantlist.restaurants.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as! tableCell
-        cell.Name?.text = restlist[indexPath.row].title
-        cell.Address?.text = restlist[indexPath.row].subtitle
+        cell.Name?.text = restaurantlist.restaurants[indexPath.row].name
         return cell
     }
     
-    var restlist = [restaurantAnnotation]()
+    var restaurantlist = RestaurantList()
     @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func roll(for segue: UIStoryboardSegue) {
@@ -40,18 +40,21 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     @IBAction func unwindToselect(for segue: UIStoryboardSegue) {
     }
-    
+    var app = UIApplication.shared.delegate as! AppDelegate
+    var viewContext: NSManagedObjectContext!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let dis:CLLocationDegrees = 3000
         let ntnuLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(25.006803548528282 , 121.53556901440642)
         mapView.setRegion(MKCoordinateRegionMakeWithDistance(ntnuLocation, dis, dis), animated: true)
-        restlist.append(restaurantAnnotation(title: "NTNU", subtitle: "school", coordinate: CLLocationCoordinate2DMake(25.006803548528282 , 121.53556901440642)))
-        restlist.append(restaurantAnnotation(title: "枋敘", subtitle: "小吃", coordinate: CLLocationCoordinate2DMake(25.004280, 121.536681)))
-        restlist.append(restaurantAnnotation(title: "三角冰冰品", subtitle: "冰店", coordinate: CLLocationCoordinate2DMake(25.004701, 121.538025)))
-        restlist.append(restaurantAnnotation(title: "自由51", subtitle: "炒飯", coordinate: CLLocationCoordinate2DMake(25.007496, 121.537789)))
-        mapView.addAnnotations(restlist)
+        let TABLE = table(app: app)
+        TABLE.getlist(restlist: &restaurantlist.restaurants)
+        restaurantlist.listRestaurants()
+        for rann in restaurantlist.annotationlist{
+            mapView.addAnnotation(rann)
+        }
+        print("OK!")
     }
     
     override func didReceiveMemoryWarning() {
