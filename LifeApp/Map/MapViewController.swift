@@ -29,6 +29,7 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as! tableCell
         cell.Name?.text = restaurantlist.restaurants[indexPath.row].name
+        cell.Address?.text = restaurantlist.restaurants[indexPath.row].address
         return cell
     }
     
@@ -40,6 +41,8 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     @IBAction func unwindToselect(for segue: UIStoryboardSegue) {
     }
+    
+    @IBOutlet weak var tableView: UITableView!
     var app = UIApplication.shared.delegate as! AppDelegate
     var viewContext: NSManagedObjectContext!
     override func viewDidLoad() {
@@ -51,10 +54,22 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let TABLE = table(app: app)
         TABLE.getlist(restlist: &restaurantlist.restaurants)
         restaurantlist.listRestaurants()
-        for rann in restaurantlist.annotationlist{
-            mapView.addAnnotation(rann)
-        }
+        mapView.addAnnotations(restaurantlist.annotationlist)
         print("OK!")
+    }
+    
+    //在这个方法中给新页面传递参数
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurant"{
+            let controller = segue.destination as! RestaurantViewController
+            controller.restaurant = restaurantlist.restaurants[(tableView.indexPathForSelectedRow?.row)!]
+            controller.annotation = restaurantlist.annotationlist[(tableView.indexPathForSelectedRow?.row)!]
+        }
+        else if segue.identifier == "restaurantFilter" || segue.identifier == "randomSelect" {
+            let controller = segue.destination as! selectView
+            controller.restaurantlist = restaurantlist
+            controller.comefrom = segue.identifier
+        }
     }
     
     override func didReceiveMemoryWarning() {

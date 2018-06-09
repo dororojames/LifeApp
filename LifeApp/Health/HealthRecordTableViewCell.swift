@@ -1,21 +1,21 @@
 //
-//  HealthSettingsTableViewCell.swift
+//  HealthRecordTableViewCell.swift
 //  LifeApp
 //
-//  Created by Student on 2018/6/7.
+//  Created by Student on 2018/6/9.
 //  Copyright © 2018年 Student. All rights reserved.
 //
 
 import UIKit
 
-class HealthSettingsTableViewCell: UITableViewCell {
+class HealthRecordTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    @IBOutlet weak var textLav: UITextField!
+    @IBOutlet weak var date: UIButton!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

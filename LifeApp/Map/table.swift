@@ -44,6 +44,7 @@ class table{
                 Rest.price_range = RestInfoArray[2]
                 Rest.latitude = RestInfoArray[3]
                 Rest.longitude = RestInfoArray[4]
+                Rest.address = RestInfoArray[5]
             }
         }
         App.saveContext()

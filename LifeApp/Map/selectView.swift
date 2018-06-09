@@ -22,6 +22,10 @@ class selectView: UIViewController, UITextFieldDelegate {
         print(price_low.text!,price_high.text!,distance_low.text!,distance_high.text!)
     }
     
+    var restaurantlist: RestaurantList!
+    var comefrom: String!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -30,6 +34,8 @@ class selectView: UIViewController, UITextFieldDelegate {
         price_high.delegate = self
         distance_low.delegate = self
         distance_high.delegate = self
+        restaurantlist.listRestaurants()
+        print(comefrom)
         // Do any additional setup after loading the view, typically from a nib.
     }
     

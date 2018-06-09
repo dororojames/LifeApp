@@ -38,7 +38,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBg-ua-4ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="142"/>
+            <point key="canvasLocation" x="145" y="237"/>
         </scene>
         <!--Health-->
         <scene sceneID="Aou-Vg-gOk">
@@ -58,7 +58,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ich-zY-QE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="31"/>
+            <point key="canvasLocation" x="133" y="92"/>
         </scene>
         <!--Game-->
         <scene sceneID="kUR-s2-57Y">
@@ -68,7 +68,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuS-3g-7rG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="147" y="-170"/>
+            <point key="canvasLocation" x="136" y="-201"/>
         </scene>
         <!--Music-->
         <scene sceneID="fQJ-FK-zSl">
@@ -78,7 +78,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F34-6a-vh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="-286"/>
+            <point key="canvasLocation" x="138" y="-340"/>
         </scene>
     </scenes>
     <resources>

@@ -5,12 +5,13 @@
 //  Created by Student on 2018/6/5.
 //  Copyright © 2018年 Student. All rights reserved.
 //
-
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 class musicPlayerController: UIViewController {
 
+    var music=MPMusicPlayerController.applicationMusicPlayer
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var singerName: UILabel!
     @IBOutlet weak var musicProgress: UISlider!

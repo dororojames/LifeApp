@@ -14,9 +14,12 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
     
     //表格
     var tableView:UITableView?
-    
+
     var list = [String]()
-    var allCellsText = [String?](repeating: nil, count:5)
+    var allCellsText = [String?](repeating: nil, count:6)
+
+    //開檔案
+    var fileName = "information"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +40,6 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
         return "健康資料"
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle,forRowAt indexPath: IndexPath){
-        list.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-    }
-    
-    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath:IndexPath)->String?
-    {
-        return "刪除"
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -54,7 +47,31 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HealthSettingsTableViewCell
         cell.textLav?.delegate = self
-        cell.textLav?.text = "尚未設定"
+        let url = Bundle.main.url(forResource: fileName, withExtension: "txt")
+    
+        //reading
+        // Then reading it back from the file
+        
+            do {
+                let content = try NSString(contentsOf: url!, encoding: String.Encoding.utf8.rawValue)
+                var count = 0;
+                content.enumerateLines({ (line, stop) -> () in
+                    if(count==indexPath.row)
+                    {
+                        if(line != "nil")
+                        {
+                            cell.textLav.text = line as String?
+                            self.allCellsText.remove(at: indexPath.row)
+                            self.allCellsText.insert(line, at: indexPath.row)
+                            print(self.allCellsText)
+                        }
+                    }
+                    count+=1
+                })
+            } catch {
+                print("Error:", error.localizedDescription)
+            }
+        
         cell.textLav?.placeholder = list[indexPath.row]
         cell.textLav?.autocorrectionType = UITextAutocorrectionType.no
         cell.textLav?.autocapitalizationType = UITextAutocapitalizationType.none
@@ -63,27 +80,46 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
         cell.textLabel?.text = list[indexPath.row]
         return cell
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         let indexOf = list.index(of:textField.placeholder!)
         if(textField.placeholder! == list[indexOf!]){
-            
             if( indexOf! <= (allCellsText.count-1)){
-                
                 allCellsText.remove(at: indexOf!)
-                
             }
             allCellsText.insert(textField.text!, at: indexOf!)
             print(allCellsText)
+        }
+        //writing
+        // If the directory was found, we write a file to it and read it back
+                
+        // Write to the file named Test
+        do {
+            let url = Bundle.main.url(forResource: fileName, withExtension: "txt")
+            for i in 0 ... list.count-1
+            {
+                if(allCellsText[i] == nil)
+                {
+                    try "nil\n".write(to: url!, atomically: true, encoding: String.Encoding.utf8)
+                }
+                else
+                {
+                    let content = allCellsText[i]
+                    try content!.write(to: url!, atomically: true, encoding: String.Encoding.utf8)
+                }
+            }
+        } catch {
+            print("Error:", error.localizedDescription)
         }
     }
     
     //delegate method
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {           textField.resignFirstResponder()
-        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
-        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
