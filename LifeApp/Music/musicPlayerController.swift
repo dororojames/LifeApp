@@ -6,109 +6,120 @@
 //  Copyright © 2018年 Student. All rights reserved.
 //
 import UIKit
-import AVFoundation
 import MediaPlayer
 
 class musicPlayerController: UIViewController {
-
+    
     var music=MPMusicPlayerController.applicationMusicPlayer
+    var songCnt:Int?
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var singerName: UILabel!
     @IBOutlet weak var musicProgress: UISlider!
     @IBOutlet weak var playBtn: UIButton!
-    @IBOutlet weak var pauseBtn: UIButton!
-    @IBOutlet weak var stopBtn: UIButton!
-    @IBOutlet weak var musicVolume: UISlider!
-    var audioPlayer: AVAudioPlayer!
+    @IBOutlet weak var previousBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var repeatBtn: UIButton!
+    @IBOutlet weak var randomBtn: UIButton!
+    @IBOutlet weak var image: UIImageView!
     var progressTimer: Timer?
-    var defaultVol: Float = 0.5
+    var currentSecond = 0.0
+    override func viewWillAppear(_ animated: Bool) {refreshInfo()}
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareAudioFile()
-        musicProgress.minimumValue = 0
-        musicProgress.maximumValue = Float(audioPlayer.duration)
-        musicProgress.isContinuous = true
-        musicProgress.addTarget(self,
-                                action: #selector(self.progressChangeAct),
-                                for: .touchUpInside)
-        musicVolume.minimumTrackTintColor = UIColor.red
-        musicVolume.maximumTrackTintColor = UIColor.gray
-        musicVolume.minimumValue = 0
-        musicVolume.maximumValue = 1
-        musicVolume.value = defaultVol
-        musicVolume.isContinuous = true
-        
-
+        NotificationCenter.default.addObserver(self, selector: #selector(musicPlayerController.refreshInfo), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func progressChangeAct(_ sender: UISlider) {
-        audioPlayer.currentTime = TimeInterval(sender.value)
+        music.currentPlaybackTime = Double(sender.value)
+        currentSecond = Double(sender.value)
+    }
+    
+    @IBAction func random(_ sender: UIButton) {
+        if sender.title(for: .normal) == "順序"{
+            music.shuffleMode = .off
+            sender.setTitle("隨機", for: .normal)
+        }
+        else{
+            music.shuffleMode = .songs
+            sender.setTitle("順序", for: .normal)
+        }
+    }
+    
+    @IBAction func repeatAct(_ sender: UIButton) {
+        if sender.title(for: .normal) == "循環播放"{
+            music.repeatMode = .all
+            sender.setTitle("單曲循環", for: .normal)
+        }
+        else if sender.title(for: .normal) == "單曲循環"{
+            music.repeatMode = .one
+            sender.setTitle("不循環", for: .normal)
+        }
+        else{
+            music.repeatMode = .none
+            sender.setTitle("循環播放", for: .normal)
+        }
     }
     
     @IBAction func playBtnAction(_ sender: AnyObject) {
-        audioPlayer.play()
-        
-        if progressTimer == nil {
-            progressTimer = Timer.scheduledTimer(timeInterval: 1,
-                                                 target: self,
-                                                 selector: #selector(musicPlayerController.updateProgressSlider),
-                                                 userInfo: nil,
-                                                 repeats: true)
+        if sender.title(for: .normal)=="播放"{
+            music.play()
+            sender.setTitle("暫停",for: .normal)
+            progressTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(musicPlayerController.updateTime), userInfo: nil, repeats: true)
         }
-    }
-    @IBAction func updateProgressSlider(_ sender: AnyObject) {
-        musicProgress.value = Float(audioPlayer.currentTime)
-    }
-    @IBAction func pauseBtnAction() {
-        stopTimeInterval()
-        audioPlayer.pause()
-    }
-
-    @IBAction func stopBtnAction(_ sender: Any) {
-        stopTimeInterval()
-        audioPlayer.stop()
-        audioPlayer.currentTime = 0
-        musicProgress.value = 0
-    }
-    
-
-    @IBAction func volumeChangeAct(_ sender: UISlider) {
-        audioPlayer.volume = sender.value
-    }
-    func stopTimeInterval() {
-        if progressTimer != nil {
+        else{
+            music.pause()
+            sender.setTitle("播放", for: .normal)
             progressTimer?.invalidate()
-            progressTimer = nil
         }
     }
     
-    func prepareAudioFile() {
-        let url = Bundle.main.url(forResource: "ISeeFire", withExtension: "mp3")
-        
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url!)
-            audioPlayer.prepareToPlay()
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
+    @IBAction func next(_ sender: Any) {
+        music.skipToNextItem()
+        currentSecond=0.0
+        refreshInfo()
     }
-
+    @IBAction func previous(_ sender: Any) {
+        music.skipToPreviousItem()
+        currentSecond=0.0
+        refreshInfo()
+    }
+    @objc func updateTime(){
+        currentSecond += 1
+        musicProgress.setValue(Float(currentSecond), animated: true)
+    }
     
+    @objc func refreshInfo(){
+        if songCnt != 0{
+            //slider 最大值
+            musicProgress.maximumValue = Float((music.nowPlayingItem?.playbackDuration)!)
+            let songName = music.nowPlayingItem?.title
+            let artist = music.nowPlayingItem?.artist
+            
+            //        畫面上的資訊
+            self.songName.text = songName
+            self.singerName.text = artist
+            self.image.image=music.nowPlayingItem?.artwork?.image(at: CGSize.init(width: 150, height: 150))
+            if playBtn.title(for: .normal)=="暫停"{
+                progressTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(musicPlayerController.updateTime), userInfo: nil, repeats: true)
+            }
+        }
+        else{musicProgress.maximumValue = 0.0}
+        musicProgress.setValue(Float(currentSecond), animated: true)
+    }
     
-
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

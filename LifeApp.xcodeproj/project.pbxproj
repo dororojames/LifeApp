@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3FAA8A9420BC0FD1006443FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAA8A9320BC0FD1006443FA /* AppDelegate.swift */; };
 		3FAA8A9B20BC0FD1006443FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FAA8A9920BC0FD1006443FA /* Main.storyboard */; };
-		3FAA8A9D20BC0FD2006443FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FAA8A9C20BC0FD2006443FA /* Assets.xcassets */; };
 		3FAA8AA020BC0FD2006443FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FAA8A9E20BC0FD2006443FA /* LaunchScreen.storyboard */; };
 		8C0C5DEB20C17469004CBB13 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C5DEA20C17469004CBB13 /* MapViewController.swift */; };
 		8C0C5DED20C17499004CBB13 /* restaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C5DEC20C17499004CBB13 /* restaurantAnnotation.swift */; };
@@ -29,21 +28,7 @@
 		8C2F4E0020CAC378007A752A /* Contacts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4DF820CAC378007A752A /* Contacts+CoreDataProperties.swift */; };
 		8C2F4E0120CAC378007A752A /* Tags+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4DF920CAC378007A752A /* Tags+CoreDataProperties.swift */; };
 		8C2F4E0220CAC378007A752A /* Opentime+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4DFA20CAC378007A752A /* Opentime+CoreDataProperties.swift */; };
-		8C2F4E0C20CBDC7A007A752A /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2F4E0320CBDC79007A752A /* Game.storyboard */; };
-		8C2F4E0D20CBDC7A007A752A /* TepoGameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E0420CBDC7A007A752A /* TepoGameMenu.swift */; };
-		8C2F4E0E20CBDC7A007A752A /* MusicChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E0520CBDC7A007A752A /* MusicChoice.swift */; };
-		8C2F4E0F20CBDC7A007A752A /* MusicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E0620CBDC7A007A752A /* MusicGame.swift */; };
-		8C2F4E1020CBDC7A007A752A /* MusicChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E0720CBDC7A007A752A /* MusicChoiceController.swift */; };
-		8C2F4E1120CBDC7A007A752A /* MusicChoiceViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E0820CBDC7A007A752A /* MusicChoiceViewCell.swift */; };
-		8C2F4E1220CBDC7A007A752A /* GameMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E0920CBDC7A007A752A /* GameMenuController.swift */; };
-		8C2F4E1320CBDC7A007A752A /* 000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C2F4E0A20CBDC7A007A752A /* 000.mp3 */; };
-		8C2F4E1420CBDC7A007A752A /* GuessGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E0B20CBDC7A007A752A /* GuessGameController.swift */; };
 		8C2F4E2C20CC10BC007A752A /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E2B20CC10BC007A752A /* RestaurantViewController.swift */; };
-		8C2F4E3220CC36BA007A752A /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E2D20CC36B9007A752A /* MusicViewController.swift */; };
-		8C2F4E3320CC36BA007A752A /* ISeeFire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C2F4E2E20CC36BA007A752A /* ISeeFire.mp3 */; };
-		8C2F4E3420CC36BA007A752A /* Music.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2F4E2F20CC36BA007A752A /* Music.storyboard */; };
-		8C2F4E3520CC36BA007A752A /* musicAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E3020CC36BA007A752A /* musicAnnotation.swift */; };
-		8C2F4E3620CC36BA007A752A /* musicPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E3120CC36BA007A752A /* musicPlayerController.swift */; };
 		8C2F4E5A20CC3941007A752A /* HealthChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E4C20CC3940007A752A /* HealthChoose.swift */; };
 		8C2F4E5B20CC3941007A752A /* HealthAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E4D20CC3940007A752A /* HealthAnalysis.swift */; };
 		8C2F4E5C20CC3941007A752A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E4E20CC3940007A752A /* ViewController.swift */; };
@@ -68,6 +53,23 @@
 		8C2F4E7A20CC39FA007A752A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E7020CC39F9007A752A /* History.swift */; };
 		8C2F4E7B20CC39FA007A752A /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E7120CC39FA007A752A /* JokeViewController.swift */; };
 		8C2F4E7C20CC39FA007A752A /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E7220CC39FA007A752A /* Joke.swift */; };
+		8CA5CB8D20CD5BED0009E74D /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB8920CD5BED0009E74D /* MusicViewController.swift */; };
+		8CA5CB8E20CD5BED0009E74D /* Music.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CB8A20CD5BED0009E74D /* Music.storyboard */; };
+		8CA5CB8F20CD5BED0009E74D /* musicAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB8B20CD5BED0009E74D /* musicAnnotation.swift */; };
+		8CA5CB9020CD5BED0009E74D /* musicPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB8C20CD5BED0009E74D /* musicPlayerController.swift */; };
+		8CA5CB9320CD5FB30009E74D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9220CD5FB30009E74D /* Assets.xcassets */; };
+		8CA5CB9520CD695C0009E74D /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9420CD695C0009E74D /* RestaurantDetailViewController.swift */; };
+		8CA5CBA120CD7CB10009E74D /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9620CD7CAF0009E74D /* Game.storyboard */; };
+		8CA5CBA220CD7CB10009E74D /* TepoGameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9720CD7CAF0009E74D /* TepoGameMenu.swift */; };
+		8CA5CBA320CD7CB10009E74D /* MusicChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9820CD7CAF0009E74D /* MusicChoice.swift */; };
+		8CA5CBA420CD7CB10009E74D /* 001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9920CD7CB00009E74D /* 001.mp3 */; };
+		8CA5CBA520CD7CB10009E74D /* GuessRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9A20CD7CB00009E74D /* GuessRecord.swift */; };
+		8CA5CBA620CD7CB10009E74D /* MusicChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9B20CD7CB00009E74D /* MusicChoiceController.swift */; };
+		8CA5CBA720CD7CB10009E74D /* MusicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9C20CD7CB00009E74D /* MusicGame.swift */; };
+		8CA5CBA820CD7CB10009E74D /* MusicChoiceViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9D20CD7CB00009E74D /* MusicChoiceViewCell.swift */; };
+		8CA5CBA920CD7CB10009E74D /* 000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9E20CD7CB00009E74D /* 000.mp3 */; };
+		8CA5CBAA20CD7CB10009E74D /* GameMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9F20CD7CB10009E74D /* GameMenuController.swift */; };
+		8CA5CBAB20CD7CB10009E74D /* GuessGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBA020CD7CB10009E74D /* GuessGameController.swift */; };
 		8CAC508D20C6CE0100DE17E5 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAC508C20C6CE0100DE17E5 /* Map.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +77,6 @@
 		3FAA8A9020BC0FD1006443FA /* LifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAA8A9320BC0FD1006443FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FAA8A9A20BC0FD1006443FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3FAA8A9C20BC0FD2006443FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FAA8A9F20BC0FD2006443FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FAA8AA120BC0FD2006443FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C0C5DEA20C17469004CBB13 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -96,21 +97,7 @@
 		8C2F4DF820CAC378007A752A /* Contacts+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contacts+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8C2F4DF920CAC378007A752A /* Tags+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tags+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8C2F4DFA20CAC378007A752A /* Opentime+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Opentime+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8C2F4E0320CBDC79007A752A /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
-		8C2F4E0420CBDC7A007A752A /* TepoGameMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TepoGameMenu.swift; sourceTree = "<group>"; };
-		8C2F4E0520CBDC7A007A752A /* MusicChoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoice.swift; sourceTree = "<group>"; };
-		8C2F4E0620CBDC7A007A752A /* MusicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicGame.swift; sourceTree = "<group>"; };
-		8C2F4E0720CBDC7A007A752A /* MusicChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoiceController.swift; sourceTree = "<group>"; };
-		8C2F4E0820CBDC7A007A752A /* MusicChoiceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoiceViewCell.swift; sourceTree = "<group>"; };
-		8C2F4E0920CBDC7A007A752A /* GameMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuController.swift; sourceTree = "<group>"; };
-		8C2F4E0A20CBDC7A007A752A /* 000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 000.mp3; sourceTree = "<group>"; };
-		8C2F4E0B20CBDC7A007A752A /* GuessGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessGameController.swift; sourceTree = "<group>"; };
 		8C2F4E2B20CC10BC007A752A /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
-		8C2F4E2D20CC36B9007A752A /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
-		8C2F4E2E20CC36BA007A752A /* ISeeFire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ISeeFire.mp3; sourceTree = "<group>"; };
-		8C2F4E2F20CC36BA007A752A /* Music.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Music.storyboard; sourceTree = "<group>"; };
-		8C2F4E3020CC36BA007A752A /* musicAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musicAnnotation.swift; sourceTree = "<group>"; };
-		8C2F4E3120CC36BA007A752A /* musicPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musicPlayerController.swift; sourceTree = "<group>"; };
 		8C2F4E4C20CC3940007A752A /* HealthChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthChoose.swift; sourceTree = "<group>"; };
 		8C2F4E4D20CC3940007A752A /* HealthAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAnalysis.swift; sourceTree = "<group>"; };
 		8C2F4E4E20CC3940007A752A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +122,23 @@
 		8C2F4E7020CC39F9007A752A /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		8C2F4E7120CC39FA007A752A /* JokeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
 		8C2F4E7220CC39FA007A752A /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		8CA5CB8920CD5BED0009E74D /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		8CA5CB8A20CD5BED0009E74D /* Music.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Music.storyboard; sourceTree = "<group>"; };
+		8CA5CB8B20CD5BED0009E74D /* musicAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musicAnnotation.swift; sourceTree = "<group>"; };
+		8CA5CB8C20CD5BED0009E74D /* musicPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musicPlayerController.swift; sourceTree = "<group>"; };
+		8CA5CB9220CD5FB30009E74D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CA5CB9420CD695C0009E74D /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		8CA5CB9620CD7CAF0009E74D /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		8CA5CB9720CD7CAF0009E74D /* TepoGameMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TepoGameMenu.swift; sourceTree = "<group>"; };
+		8CA5CB9820CD7CAF0009E74D /* MusicChoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoice.swift; sourceTree = "<group>"; };
+		8CA5CB9920CD7CB00009E74D /* 001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 001.mp3; sourceTree = "<group>"; };
+		8CA5CB9A20CD7CB00009E74D /* GuessRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessRecord.swift; sourceTree = "<group>"; };
+		8CA5CB9B20CD7CB00009E74D /* MusicChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoiceController.swift; sourceTree = "<group>"; };
+		8CA5CB9C20CD7CB00009E74D /* MusicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicGame.swift; sourceTree = "<group>"; };
+		8CA5CB9D20CD7CB00009E74D /* MusicChoiceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoiceViewCell.swift; sourceTree = "<group>"; };
+		8CA5CB9E20CD7CB00009E74D /* 000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 000.mp3; sourceTree = "<group>"; };
+		8CA5CB9F20CD7CB10009E74D /* GameMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuController.swift; sourceTree = "<group>"; };
+		8CA5CBA020CD7CB10009E74D /* GuessGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessGameController.swift; sourceTree = "<group>"; };
 		8CAC508C20C6CE0100DE17E5 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,15 +173,15 @@
 			isa = PBXGroup;
 			children = (
 				3FAA8A9320BC0FD1006443FA /* AppDelegate.swift */,
+				8CA5CBAC20CD7CBB0009E74D /* Game */,
+				8CA5CB9120CD5BF50009E74D /* Music */,
 				8C2F4E7D20CC3A16007A752A /* Joke */,
 				8C2F4E6820CC3961007A752A /* Health */,
-				8C2F4E3720CC36C1007A752A /* Music */,
-				8C2F4E1520CBDC86007A752A /* Game */,
 				8C03894820C402DF004D2D11 /* Map */,
 				3FAA8A9920BC0FD1006443FA /* Main.storyboard */,
-				3FAA8A9C20BC0FD2006443FA /* Assets.xcassets */,
 				3FAA8A9E20BC0FD2006443FA /* LaunchScreen.storyboard */,
 				3FAA8AA120BC0FD2006443FA /* Info.plist */,
+				8CA5CB9220CD5FB30009E74D /* Assets.xcassets */,
 				3FAA8A9120BC0FD1006443FA /* Products */,
 			);
 			path = LifeApp;
@@ -203,39 +207,12 @@
 				8C2F4DE920CAC36A007A752A /* table.swift */,
 				8C2F4DEA20CAC36A007A752A /* Tags.txt */,
 				8CAC508C20C6CE0100DE17E5 /* Map.storyboard */,
+				8CA5CB9420CD695C0009E74D /* RestaurantDetailViewController.swift */,
 				8C0C5DEA20C17469004CBB13 /* MapViewController.swift */,
 				8C0C5DF220C188E8004CBB13 /* selectView.swift */,
 				8C2F4E2B20CC10BC007A752A /* RestaurantViewController.swift */,
 			);
 			path = Map;
-			sourceTree = "<group>";
-		};
-		8C2F4E1520CBDC86007A752A /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				8C2F4E0A20CBDC7A007A752A /* 000.mp3 */,
-				8C2F4E0320CBDC79007A752A /* Game.storyboard */,
-				8C2F4E0920CBDC7A007A752A /* GameMenuController.swift */,
-				8C2F4E0B20CBDC7A007A752A /* GuessGameController.swift */,
-				8C2F4E0520CBDC7A007A752A /* MusicChoice.swift */,
-				8C2F4E0720CBDC7A007A752A /* MusicChoiceController.swift */,
-				8C2F4E0820CBDC7A007A752A /* MusicChoiceViewCell.swift */,
-				8C2F4E0620CBDC7A007A752A /* MusicGame.swift */,
-				8C2F4E0420CBDC7A007A752A /* TepoGameMenu.swift */,
-			);
-			path = Game;
-			sourceTree = "<group>";
-		};
-		8C2F4E3720CC36C1007A752A /* Music */ = {
-			isa = PBXGroup;
-			children = (
-				8C2F4E2E20CC36BA007A752A /* ISeeFire.mp3 */,
-				8C2F4E2F20CC36BA007A752A /* Music.storyboard */,
-				8C2F4E3020CC36BA007A752A /* musicAnnotation.swift */,
-				8C2F4E3120CC36BA007A752A /* musicPlayerController.swift */,
-				8C2F4E2D20CC36B9007A752A /* MusicViewController.swift */,
-			);
-			path = Music;
 			sourceTree = "<group>";
 		};
 		8C2F4E6820CC3961007A752A /* Health */ = {
@@ -274,6 +251,35 @@
 				8C2F4E6B20CC39F9007A752A /* QA.swift */,
 			);
 			path = Joke;
+			sourceTree = "<group>";
+		};
+		8CA5CB9120CD5BF50009E74D /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				8CA5CB8A20CD5BED0009E74D /* Music.storyboard */,
+				8CA5CB8B20CD5BED0009E74D /* musicAnnotation.swift */,
+				8CA5CB8C20CD5BED0009E74D /* musicPlayerController.swift */,
+				8CA5CB8920CD5BED0009E74D /* MusicViewController.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		8CA5CBAC20CD7CBB0009E74D /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				8CA5CB9E20CD7CB00009E74D /* 000.mp3 */,
+				8CA5CB9920CD7CB00009E74D /* 001.mp3 */,
+				8CA5CB9620CD7CAF0009E74D /* Game.storyboard */,
+				8CA5CB9F20CD7CB10009E74D /* GameMenuController.swift */,
+				8CA5CBA020CD7CB10009E74D /* GuessGameController.swift */,
+				8CA5CB9A20CD7CB00009E74D /* GuessRecord.swift */,
+				8CA5CB9820CD7CAF0009E74D /* MusicChoice.swift */,
+				8CA5CB9B20CD7CB00009E74D /* MusicChoiceController.swift */,
+				8CA5CB9D20CD7CB00009E74D /* MusicChoiceViewCell.swift */,
+				8CA5CB9C20CD7CB00009E74D /* MusicGame.swift */,
+				8CA5CB9720CD7CAF0009E74D /* TepoGameMenu.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,18 +340,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA5CBA920CD7CB10009E74D /* 000.mp3 in Resources */,
 				8C2F4E7720CC39FA007A752A /* Joke.storyboard in Resources */,
 				8CAC508D20C6CE0100DE17E5 /* Map.storyboard in Resources */,
+				8CA5CBA420CD7CB10009E74D /* 001.mp3 in Resources */,
+				8CA5CB8E20CD5BED0009E74D /* Music.storyboard in Resources */,
 				8C2F4DF120CAC36B007A752A /* Tags.txt in Resources */,
-				8C2F4E3420CC36BA007A752A /* Music.storyboard in Resources */,
-				8C2F4E1320CBDC7A007A752A /* 000.mp3 in Resources */,
+				8CA5CBA120CD7CB10009E74D /* Game.storyboard in Resources */,
+				8CA5CB9320CD5FB30009E74D /* Assets.xcassets in Resources */,
 				3FAA8AA020BC0FD2006443FA /* LaunchScreen.storyboard in Resources */,
-				8C2F4E0C20CBDC7A007A752A /* Game.storyboard in Resources */,
 				8C2F4E6520CC3941007A752A /* Health.storyboard in Resources */,
 				8C2F4DEE20CAC36B007A752A /* Contacts.txt in Resources */,
 				8C2F4E6320CC3941007A752A /* information.txt in Resources */,
-				3FAA8A9D20BC0FD2006443FA /* Assets.xcassets in Resources */,
-				8C2F4E3320CC36BA007A752A /* ISeeFire.mp3 in Resources */,
 				3FAA8A9B20BC0FD1006443FA /* Main.storyboard in Resources */,
 				8C2F4DF220CAC36B007A752A /* Opentime.txt in Resources */,
 				8C2F4DED20CAC36B007A752A /* Restaurants.txt in Resources */,
@@ -360,52 +366,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C2F4E6420CC3941007A752A /* TestResult.swift in Sources */,
+				8CA5CB9020CD5BED0009E74D /* musicPlayerController.swift in Sources */,
 				8C2F4E5D20CC3941007A752A /* HealthSettingsTableViewCell.swift in Sources */,
 				8C2F4E6120CC3941007A752A /* HealthTest.swift in Sources */,
 				8C2F4DEC20CAC36B007A752A /* Restaurant.swift in Sources */,
 				8C2F4DF020CAC36B007A752A /* table.swift in Sources */,
+				8CA5CBAA20CD7CB10009E74D /* GameMenuController.swift in Sources */,
 				3FAA8A9420BC0FD1006443FA /* AppDelegate.swift in Sources */,
+				8CA5CB8D20CD5BED0009E74D /* MusicViewController.swift in Sources */,
 				8C2F4E6720CC3941007A752A /* Settings.swift in Sources */,
+				8CA5CBA820CD7CB10009E74D /* MusicChoiceViewCell.swift in Sources */,
+				8CA5CBA620CD7CB10009E74D /* MusicChoiceController.swift in Sources */,
 				8C2F4DFF20CAC378007A752A /* Tags+CoreDataClass.swift in Sources */,
+				8CA5CB9520CD695C0009E74D /* RestaurantDetailViewController.swift in Sources */,
 				8C2F4E5B20CC3941007A752A /* HealthAnalysis.swift in Sources */,
 				8C2F4E7A20CC39FA007A752A /* History.swift in Sources */,
-				8C2F4E0D20CBDC7A007A752A /* TepoGameMenu.swift in Sources */,
 				8C0C5DED20C17499004CBB13 /* restaurantAnnotation.swift in Sources */,
 				8C2F4E7620CC39FA007A752A /* Edit.swift in Sources */,
-				8C2F4E3620CC36BA007A752A /* musicPlayerController.swift in Sources */,
 				8C0C5DF320C188E8004CBB13 /* selectView.swift in Sources */,
-				8C2F4E1420CBDC7A007A752A /* GuessGameController.swift in Sources */,
 				8C2F4E7820CC39FA007A752A /* addNew.swift in Sources */,
+				8CA5CBAB20CD7CB10009E74D /* GuessGameController.swift in Sources */,
 				8C2F4DEF20CAC36B007A752A /* database.xcdatamodeld in Sources */,
 				8C2F4DFC20CAC378007A752A /* Contacts+CoreDataClass.swift in Sources */,
 				8C2F4E6220CC3941007A752A /* HealthHome.swift in Sources */,
 				8C2F4E0120CAC378007A752A /* Tags+CoreDataProperties.swift in Sources */,
 				8C2F4E7420CC39FA007A752A /* JokeTest.swift in Sources */,
+				8CA5CBA220CD7CB10009E74D /* TepoGameMenu.swift in Sources */,
 				8C2F4E7520CC39FA007A752A /* QA.swift in Sources */,
-				8C2F4E0E20CBDC7A007A752A /* MusicChoice.swift in Sources */,
+				8CA5CB8F20CD5BED0009E74D /* musicAnnotation.swift in Sources */,
 				8C2F4E5C20CC3941007A752A /* ViewController.swift in Sources */,
+				8CA5CBA720CD7CB10009E74D /* MusicGame.swift in Sources */,
 				8C2F4E6620CC3941007A752A /* TestResultTableCell.swift in Sources */,
 				8C2F4E7920CC39FA007A752A /* myFavorite.swift in Sources */,
-				8C2F4E1220CBDC7A007A752A /* GameMenuController.swift in Sources */,
-				8C2F4E3520CC36BA007A752A /* musicAnnotation.swift in Sources */,
 				8C2F4E6020CC3941007A752A /* HealthRecordTableViewCell.swift in Sources */,
 				8C2F4DFE20CAC378007A752A /* Restaurants+CoreDataProperties.swift in Sources */,
+				8CA5CBA320CD7CB10009E74D /* MusicChoice.swift in Sources */,
 				8C2F4DFB20CAC378007A752A /* Restaurants+CoreDataClass.swift in Sources */,
-				8C2F4E1020CBDC7A007A752A /* MusicChoiceController.swift in Sources */,
 				8C2F4DFD20CAC378007A752A /* Opentime+CoreDataClass.swift in Sources */,
 				8C2F4E7C20CC39FA007A752A /* Joke.swift in Sources */,
 				8C2F4E5A20CC3941007A752A /* HealthChoose.swift in Sources */,
 				8C2F4E7B20CC39FA007A752A /* JokeViewController.swift in Sources */,
-				8C2F4E0F20CBDC7A007A752A /* MusicGame.swift in Sources */,
 				8C0C5DEB20C17469004CBB13 /* MapViewController.swift in Sources */,
 				8C2F4E5F20CC3941007A752A /* HealthRecord.swift in Sources */,
 				8C2F4E7320CC39FA007A752A /* JokeType.swift in Sources */,
 				8C2F4E2C20CC10BC007A752A /* RestaurantViewController.swift in Sources */,
 				8C2F4E5E20CC3941007A752A /* HealthRecordTableCell.swift in Sources */,
-				8C2F4E3220CC36BA007A752A /* MusicViewController.swift in Sources */,
 				8C2F4E0220CAC378007A752A /* Opentime+CoreDataProperties.swift in Sources */,
+				8CA5CBA520CD7CB10009E74D /* GuessRecord.swift in Sources */,
 				8C2F4E0020CAC378007A752A /* Contacts+CoreDataProperties.swift in Sources */,
-				8C2F4E1120CBDC7A007A752A /* MusicChoiceViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

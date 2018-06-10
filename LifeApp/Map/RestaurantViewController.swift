@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class RestaurantViewController: UIViewController {
+class RestaurantViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var Tag: UILabel!
     @IBOutlet weak var isOpen: UILabel!
@@ -21,37 +22,47 @@ class RestaurantViewController: UIViewController {
     var restaurant:Restaurants!
     var annotation: restaurantAnnotation!
     
-    
+    @IBOutlet weak var navbar: UINavigationBar!
     @IBOutlet weak var mapView: MKMapView!
-    
+    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        if restaurant != nil
-        {
-            print(restaurant.name!)
-        }
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         mapView.setRegion(MKCoordinateRegionMakeWithDistance(annotation.coordinate, 3000, 3000), animated: true)
         mapView.addAnnotation(annotation)
+        navbar.topItem?.title = restaurant.name
         Name.text = restaurant.name
         Tag.text = restaurant.firstTag
         Address.text = restaurant.address
-        // Do any additional setup after loading the view.
     }
-
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        mapView.showsUserLocation = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail"{
+            let controller = segue.destination as! RestaurantDetailViewController
+            controller.restaurant = self.restaurant
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

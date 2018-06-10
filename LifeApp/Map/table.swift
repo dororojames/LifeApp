@@ -21,8 +21,23 @@ class table{
         print(NSPersistentContainer.defaultDirectoryURL())
         insertRestaurants()
         do{
-            let allRestaurants = try ViewContext.fetch(Restaurants.fetchRequest())
-            for Rest in allRestaurants as! [Restaurants]{
+            let allRestaurants = try ViewContext.fetch(Restaurants.fetchRequest()) as! [Restaurants]
+            
+            for Rest in allRestaurants.sorted(by: sorterForRID){
+                var priceRange = ["",""]
+                var rangeid = 0
+                for c in Rest.price_range! {
+                    if c >= "0" && c<="9"{
+                        priceRange[rangeid].append(c)
+                    }
+                    else if c == "~"{
+                        rangeid=1
+                    }
+                }
+//                print(priceRange)
+                Rest.price_low = Int(priceRange[0])
+                Rest.price_high = Int(priceRange[1])
+//                print((Rest.price_low)!, (Rest.price_high)!)
                 restlist.append(Rest)
             }
         }catch{
@@ -158,4 +173,7 @@ class table{
         }
         App.saveContext()
     }
+}
+func sorterForRID(this:Restaurants, that:Restaurants) -> Bool {
+    return this.r_ID!.intValue < that.r_ID!.intValue
 }

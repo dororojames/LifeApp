@@ -607,7 +607,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJa-iv-GYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="sIC-iC-Bwf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3910.144927536232" y="1385.8695652173915"/>
+            <point key="canvasLocation" x="-3953" y="1631"/>
         </scene>
         <!--Joke-->
         <scene sceneID="7Nu-ci-2mP">
@@ -687,12 +687,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rFd-af-mB3"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="笑話" image="Joke" id="jO4-fG-79I"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiY-XY-6pq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3952.1739130434785" y="576.35869565217399"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Joke" width="13" height="14"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xRu-Dj-alU"/>
     </inferredMetricsTieBreakers>

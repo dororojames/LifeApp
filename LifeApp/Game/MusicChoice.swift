@@ -24,9 +24,9 @@ class Music: UIViewController,UITableViewDataSource,UITableViewDelegate{
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
         list.append("000")
-        list.append("test")
-        list.append("XXX")
-        list.append("list.4")
+        list.append("001")
+        list.append("002")
+        list.append("003")
         
     }
     
@@ -62,8 +62,7 @@ class Music: UIViewController,UITableViewDataSource,UITableViewDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    }
+}
    
     
 

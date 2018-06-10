@@ -20,6 +20,7 @@ class GuessGameController: UIViewController {
     var answer = [0,0,0,0]
     var times=0
     
+    
     @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var counter: UILabel!
     @IBOutlet weak var resultRecord: UITextView!
@@ -77,8 +78,27 @@ class GuessGameController: UIViewController {
                     }
                     else{
                         timer.invalidate()
-                        resultRecord.text! += "Game over &Go back to Menu"
-                        btn.isUserInteractionEnabled = false
+                        /*resultRecord.text! += "Game over &Go back to Menu"*/
+                        //紀錄暫存
+                        let userDefaults = UserDefaults.standard
+                        var bestTime = userDefaults.integer(forKey: "BestTime")
+                        var bestCounter=userDefaults.integer(forKey: "BestCounter")
+                        if bestTime==0||totalTime<bestTime{
+                            bestTime=totalTime
+                        }
+                        
+                        if times<bestCounter||bestCounter==0{
+                            bestCounter=times
+                        }
+                        
+                        userDefaults.set(totalTime,forKey: "Totaltime")
+                        userDefaults.set(times+1,forKey: "Counter")
+                        userDefaults.set(bestTime,forKey:"BestTime")
+                        userDefaults.set(bestCounter+1,forKey:"BestCounter")
+                        userDefaults.synchronize()
+                        
+                        let controller = self.storyboard?.instantiateViewController(withIdentifier: "RecordBoardView") as! RecordBoardView
+                        self.present(controller, animated: false, completion: nil)
                        /* addRecord(numOfGuess: times, time: totalTime)*/
                     }
                 }

@@ -74,7 +74,7 @@
         <scene sceneID="fQJ-FK-zSl">
             <objects>
                 <viewControllerPlaceholder storyboardName="Music" id="XNV-U2-j3S" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="音樂" id="af3-GV-oj1"/>
+                    <tabBarItem key="tabBarItem" title="音樂" image="Music" id="af3-GV-oj1"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F34-6a-vh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,5 +85,6 @@
         <image name="Health" width="10" height="10"/>
         <image name="Joke" width="13" height="14"/>
         <image name="Map" width="13" height="13"/>
+        <image name="Music" width="20" height="20"/>
     </resources>
 </document>

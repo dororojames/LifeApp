@@ -8,7 +8,7 @@
 
 import UIKit
 import MediaPlayer
-
+var songCnt=0
 class MusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MPMediaPickerControllerDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -19,8 +19,6 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     var selectSong: MPMediaItemCollection?
     @IBAction func unwindToPlayer(for segue: UIStoryboardSegue) {
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,14 +30,11 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     var musicList=[musicAnnotation]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var songCnt = 0
-
+        songCnt = 0
         if let cnt = selectSong?.count{
             songCnt = cnt
         }
-
         return songCnt
-//        return selectSong!.count
     }
     
     
@@ -54,7 +49,6 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         songName.text = selectSong?.items[indexPath.row].title
         singer.text = selectSong?.items[indexPath.row].artist
         picture.image = selectSong?.items[indexPath.row].artwork?.image(at: CGSize.init(width: 60, height: 60))
-        
         return cell
     }
     @IBAction func addSong(_ sender: Any) {
@@ -66,21 +60,12 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         mediaPicker.allowsPickingMultipleItems = true
         
         self.present(mediaPicker, animated: true, completion: nil)
-        //show(mediaPicker, sender: self)
-//        let picker = MPMediaPickerController(mediaTypes: .music)
-//
-//        // 可以多選
-//        picker.allowsPickingMultipleItems = true
-//        picker.delegate = self
-//
-//        show(picker, sender: self)
     }
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
         //取得選取的歌曲
         selectSong = mediaItemCollection
         for s in (selectSong?.items)!{
             print(s.title!)
-//            musicList.append(musicAnnotation(songName: s.title! ,singer: s.artist!,picture: s.artwork?.image(at: CGSize.init(width: 60, height: 60))))
         }
         //放入播放清單
         musicPlayer.setQueue(with: selectSong!)
@@ -90,6 +75,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.dismiss(animated: true, completion: nil)
         musicData.reloadData()
         musicPlayer.play()
+        musicPlayer.beginGeneratingPlaybackNotifications()
 
         
     }
@@ -102,12 +88,11 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         musicPlayer.nowPlayingItem = (selectSong?.items[indexPath.row])! as MPMediaItem
     }
-    @objc func refreshInfo(){
-
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! musicPlayerController
         controller.music = musicPlayer
+        controller.songCnt=songCnt
+
     }
     
 }
