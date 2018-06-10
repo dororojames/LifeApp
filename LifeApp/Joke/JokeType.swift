@@ -8,12 +8,41 @@
 
 import UIKit
 
-class JokeType: UIViewController {
+class JokeType: UIViewController{
 
     @IBAction func back(_ sender: Any) {
     }
     @IBAction func unwindSegueBack_QA(for segue: UIStoryboardSegue) {
     }
+    @IBAction func 問答笑話(_ sender: Any) {
+    }
+    @IBAction func 黃色笑話(_ sender: Any) {
+    }
+    @IBAction func 雙關笑話(_ sender: Any) {
+    }
+    @IBAction func 內涵笑話(_ sender: Any) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowTypeList1"{
+            let controller = segue.destination as! QA
+            controller.JokeTypeText="問答笑話"
+        }
+        else if segue.identifier == "ShowTypeList2"{
+            let controller = segue.destination as! QA
+            controller.JokeTypeText="黃色笑話"
+        }
+        else if segue.identifier == "ShowTypeList3"{
+            let controller = segue.destination as! QA
+            controller.JokeTypeText="雙關笑話"
+        }
+        else if segue.identifier == "ShowTypeList4"{
+            let controller = segue.destination as! QA
+            controller.JokeTypeText="內涵笑話"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,16 +53,4 @@ class JokeType: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

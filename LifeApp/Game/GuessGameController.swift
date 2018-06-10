@@ -10,16 +10,12 @@ import UIKit
 
 class GuessGameController: UIViewController {
 
-    
-    
-    
     var totalTime = 0
     var timer = Timer()
     var GuessNum = ""
     var compareNum=[0,0,0,0]
     var answer = [0,0,0,0]
     var times=0
-    
     
     @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var counter: UILabel!
@@ -102,12 +98,9 @@ class GuessGameController: UIViewController {
                        /* addRecord(numOfGuess: times, time: totalTime)*/
                     }
                 }
-            
-            
             }
         input.text!=""
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,6 +110,7 @@ class GuessGameController: UIViewController {
        
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
     func initial(){
         //answer設置
         var nums = Array(0...9)
@@ -141,7 +135,5 @@ class GuessGameController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

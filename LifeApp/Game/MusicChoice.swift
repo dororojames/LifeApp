@@ -14,7 +14,6 @@ class SongCell:UITableViewCell{
     @IBOutlet weak var NameLab: UILabel!
 }
 
-
 class Music: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
@@ -31,7 +30,7 @@ class Music: UIViewController,UITableViewDataSource,UITableViewDelegate{
     }
     
     func numberOfSections(in tableView: UITableView)->Int{
-    return 1    //1表示表格上只有１個區段
+        return 1    //1表示表格上只有１個區段
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count //每區段有多少筆資料
@@ -39,9 +38,6 @@ class Music: UIViewController,UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier:"Cell",for:indexPath) as!SongCell
         cell.NameLab?.text=list[indexPath.row]
-       /* cell.textLabel?.text=list[indexPath.row]*/
-        
-      
         return cell
     }
     
@@ -51,13 +47,15 @@ class Music: UIViewController,UITableViewDataSource,UITableViewDelegate{
         let itemString = list[indexPath.row]
         
         self.performSegue(withIdentifier: "MusicGameView", sender: itemString)
-        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MusicGameView"{
             let controller = segue.destination as! MusicGameController
             controller.itemString = sender as? String
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

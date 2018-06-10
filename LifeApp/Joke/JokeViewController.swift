@@ -9,11 +9,7 @@
 import UIKit
 
 class JokeViewController: UIViewController {
-    
-    
-    
-    
-    
+
     @IBAction func unwindSegueBack_JokeType(for segue: UIStoryboardSegue) {
     }
     @IBAction func unwindSegueBack_Favorite(for segue: UIStoryboardSegue) {

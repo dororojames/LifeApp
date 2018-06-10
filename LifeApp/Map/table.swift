@@ -34,10 +34,8 @@ class table{
                         rangeid=1
                     }
                 }
-//                print(priceRange)
                 Rest.price_low = Int(priceRange[0])
                 Rest.price_high = Int(priceRange[1])
-//                print((Rest.price_low)!, (Rest.price_high)!)
                 restlist.append(Rest)
             }
         }catch{

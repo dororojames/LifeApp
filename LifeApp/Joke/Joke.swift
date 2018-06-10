@@ -8,11 +8,13 @@
 
 import Foundation
 class Joke{
+    var Order: Int?
     var Name: String?
     var jokeType: String?
     var Score: Int?
     var Content: String?
-    init(Name: String,jokeType: String,Score: Int,Content: String){
+    init(Order: Int,Name: String,jokeType: String,Score: Int,Content: String){
+        self.Order=Order
         self.Name=Name
         self.jokeType=jokeType
         self.Score=Score

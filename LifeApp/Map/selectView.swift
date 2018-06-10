@@ -139,6 +139,4 @@ class selectView: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }

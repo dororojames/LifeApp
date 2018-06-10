@@ -15,13 +15,12 @@ class RecordBoardView: UIViewController {
     @IBOutlet weak var thisTime: UILabel!
     @IBOutlet weak var thisCounter: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         getRecord()
         // Do any additional setup after loading the view, typically from a nib.
     }
-        override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -42,6 +41,7 @@ class RecordBoardView: UIViewController {
     @IBAction func clear(_ sender: Any) {
         clearUserdefault()
     }
+    
     func clearUserdefault(){
         let userDefaults = UserDefaults.standard
         userDefaults.set(0,forKey:"Totaltime")
@@ -50,8 +50,5 @@ class RecordBoardView: UIViewController {
         userDefaults.set(0,forKey:"BestCounter")
         getRecord()
     }
-    
-    //unwindgame
-    
 }
 

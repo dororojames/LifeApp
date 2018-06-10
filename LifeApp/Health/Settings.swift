@@ -18,12 +18,10 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
     var list = [String]()
     var allCellsText = [String?](repeating: nil, count:6)
 
-    //開檔案
-    var fileName = "information"
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         list.append("身高")
         list.append("體重")
         list.append("性別")
@@ -47,30 +45,26 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HealthSettingsTableViewCell
         cell.textLav?.delegate = self
-        let url = Bundle.main.url(forResource: fileName, withExtension: "txt")
-    
-        //reading
-        // Then reading it back from the file
+        let path = NSHomeDirectory() + "/Documents/userinfo.txt"
         
-            do {
-                let content = try NSString(contentsOf: url!, encoding: String.Encoding.utf8.rawValue)
-                var count = 0;
-                content.enumerateLines({ (line, stop) -> () in
-                    if(count==indexPath.row)
-                    {
-                        if(line != "nil")
-                        {
-                            cell.textLav.text = line as String?
-                            self.allCellsText.remove(at: indexPath.row)
-                            self.allCellsText.insert(line, at: indexPath.row)
-                            print(self.allCellsText)
-                        }
-                    }
-                    count+=1
-                })
-            } catch {
-                print("Error:", error.localizedDescription)
+        do {
+            let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
+            var count = 0;
+            content.enumerateLines({ (line, stop) -> () in
+            if(count==indexPath.row)
+            {
+                if(line != "nil")
+                {
+                    cell.textLav.text = line as String?
+                    self.allCellsText.remove(at: indexPath.row)
+                    self.allCellsText.insert(line, at: indexPath.row)
+                }
             }
+                count+=1
+            })
+        } catch {
+            print("Error:", error.localizedDescription)
+        }
         
         cell.textLav?.placeholder = list[indexPath.row]
         cell.textLav?.autocorrectionType = UITextAutocorrectionType.no
@@ -88,32 +82,36 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
                 allCellsText.remove(at: indexOf!)
             }
             allCellsText.insert(textField.text!, at: indexOf!)
-            print(allCellsText)
         }
         //writing
         // If the directory was found, we write a file to it and read it back
                 
         // Write to the file named Test
         do {
-            let url = Bundle.main.url(forResource: fileName, withExtension: "txt")
+            let path = NSHomeDirectory() + "/Documents/userinfo.txt"
+            var outString = ""
             for i in 0 ... list.count-1
             {
                 if(allCellsText[i] == nil)
                 {
-                    try "nil\n".write(to: url!, atomically: true, encoding: String.Encoding.utf8)
+                    outString += "nil\n"
                 }
                 else
                 {
-                    let content = allCellsText[i]
-                    try content!.write(to: url!, atomically: true, encoding: String.Encoding.utf8)
+                    outString += allCellsText[i]!
+                    outString += "\n"
                 }
             }
+            try outString.write(toFile: path, atomically: false, encoding: String.Encoding.utf8)
         } catch {
             print("Error:", error.localizedDescription)
         }
     }
     
     //delegate method
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -125,6 +123,21 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        loadtextfile(filename: "userinfo")
+        loadtextfile(filename: "Record")
+        loadquestion()
+        loadmedicine()
         return true
     }
 
@@ -82,6 +86,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    func loadtextfile(filename : String)
+    {
+        let fm = FileManager.default
+        
+        let src = Bundle.main.path(forResource: filename, ofType: "txt")
+        
+        let dst = NSHomeDirectory() + "/Documents/" + filename + ".txt"
+        
+        if !fm.fileExists(atPath: dst)
+        {
+            try! fm.copyItem(atPath: src!, toPath: dst)
+        }
+    }
+    func loadquestion() {
+        let maxNum = 3
+        for i in 1 ... maxNum
+        {
+            var name = "Question"
+            name += String(i)
+            loadtextfile(filename: name)
+        }
+    }
+    func loadmedicine() {
+        let maxNum = 3
+        for i in 1 ... maxNum
+        {
+            var name = "Medicine"
+            name += String(i)
+            loadtextfile(filename: name)
         }
     }
 

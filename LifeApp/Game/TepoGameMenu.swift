@@ -8,11 +8,9 @@
 
 import UIKit
 class TempoGameMenu: UIViewController {
-    
 
     @IBAction func unwindTempoMenu(for unwindSegue: UIStoryboardSegue) {
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +21,4 @@ class TempoGameMenu: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }

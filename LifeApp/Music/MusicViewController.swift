@@ -8,7 +8,6 @@
 
 import UIKit
 import MediaPlayer
-var songCnt=0
 class MusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MPMediaPickerControllerDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -17,6 +16,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var musicData: UITableView!
     var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     var selectSong: MPMediaItemCollection?
+    var songCnt = 0
     @IBAction func unwindToPlayer(for segue: UIStoryboardSegue) {
     }
     override func viewDidLoad() {
@@ -28,15 +28,10 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    var musicList=[musicAnnotation]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        songCnt = 0
-        if let cnt = selectSong?.count{
-            songCnt = cnt
-        }
+        if let cnt = selectSong?.count{songCnt = cnt}
         return songCnt
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =
@@ -51,6 +46,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         picture.image = selectSong?.items[indexPath.row].artwork?.image(at: CGSize.init(width: 60, height: 60))
         return cell
     }
+    
     @IBAction func addSong(_ sender: Any) {
         let mediaPicker = MPMediaPickerController(mediaTypes: MPMediaType.anyAudio)
         
@@ -61,6 +57,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.present(mediaPicker, animated: true, completion: nil)
     }
+    
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
         //取得選取的歌曲
         selectSong = mediaItemCollection
@@ -76,9 +73,8 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         musicData.reloadData()
         musicPlayer.play()
         musicPlayer.beginGeneratingPlaybackNotifications()
-
-        
     }
+    
     func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
         //離開選歌畫面
         self.dismiss(animated: true, completion: nil)
@@ -88,6 +84,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         musicPlayer.nowPlayingItem = (selectSong?.items[indexPath.row])! as MPMediaItem
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! musicPlayerController
         controller.music = musicPlayer

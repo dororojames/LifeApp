@@ -25,16 +25,15 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantDetailCell", for: indexPath) as! RestaurantDetailCell
-        cell.DetailName?.text = detaillist[indexPath.row].0
+//        cell.DetailName?.text = detaillist[indexPath.row].0
+        cell.DetailName?.text = ""
         cell.DetailContent?.text = detaillist[indexPath.row].1
         return cell
     }
     
-    
     @IBAction func Back(_ sender: Any) {
         self.presentingViewController!.dismiss(animated: true, completion: nil)
     }
-    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navbar: UINavigationBar!
@@ -62,15 +61,4 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

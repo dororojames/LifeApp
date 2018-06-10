@@ -14,6 +14,7 @@ class RestaurantList {
     var alltags = [String]()
     var filterlist = [Restaurants]()
     var annotationlist = [restaurantAnnotation]()
+    var mapview:MapViewController!
     func listRestaurants() -> Void {
         annotationlist.removeAll()
         for r in filterlist{

@@ -1,22 +1,31 @@
 //
-//  addNew.swift
+//  HealthTest2.swift
 //  LifeApp
 //
-//  Created by Student on 2018/6/5.
+//  Created by Student on 2018/6/10.
 //  Copyright © 2018年 Student. All rights reserved.
 //
 
 import UIKit
 
-class addNew: UIViewController {
-    @IBAction func back(_ sender: Any) {
-    }
-    @IBAction func finish(_ sender: Any) {
-    }
+class HealthTest2: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func alert(_ sender: Any) {
+        let alert = UIAlertController(title: "放棄測驗", message: "是否放棄本次測驗？", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        let okAction = UIAlertAction(title: "確定", style: .destructive, handler: { action in
+            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            //點了確定後要做的事
+        })
+        
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

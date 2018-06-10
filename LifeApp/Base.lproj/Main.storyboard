@@ -13,10 +13,11 @@
         <scene sceneID="NN9-0Y-bXH">
             <objects>
                 <tabBarController id="SZN-zJ-McT" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DDR-GB-ZEB">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="DDR-GB-ZEB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.642038" green="0.80266899999999997" blue="0.99919500000000006" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="XNV-U2-j3S" kind="relationship" relationship="viewControllers" id="YTB-ek-Kd9"/>
@@ -64,7 +65,7 @@
         <scene sceneID="kUR-s2-57Y">
             <objects>
                 <viewControllerPlaceholder storyboardName="Game" id="4RT-lC-oCE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="遊戲" id="AdS-nE-0NU"/>
+                    <tabBarItem key="tabBarItem" title="遊戲" image="Game" id="AdS-nE-0NU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuS-3g-7rG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,7 +83,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Health" width="10" height="10"/>
+        <image name="Game" width="13" height="10"/>
+        <image name="Health" width="13" height="13"/>
         <image name="Joke" width="13" height="14"/>
         <image name="Map" width="13" height="13"/>
         <image name="Music" width="20" height="20"/>

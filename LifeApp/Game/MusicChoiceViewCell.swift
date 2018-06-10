@@ -10,8 +10,6 @@ import UIKit
 
 class MusicChoiceViewCell:UIViewController{
    
-    
-
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var songImg: UIImageView!
@@ -20,6 +18,4 @@ class MusicChoiceViewCell:UIViewController{
         super.awakeFromNib()
         //Initialization code
     }
-
-    
 }
