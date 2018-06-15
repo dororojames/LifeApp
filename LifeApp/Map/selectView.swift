@@ -23,20 +23,18 @@ class selectView: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
-        // 設置為陣列 meals 的第 row 項資料
         return restaurantlist.alltags[row]
     }
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int, inComponent component: Int) {
-        // 依據元件的 tag 取得 UITextField
         picktag = restaurantlist.alltags[row]
     }
-    
     
     @IBAction func Back(_ sender: Any) {
         self.restaurantlist.filterlist = self.restaurantlist.restaurants
         self.restaurantlist.listRestaurants()
     }
+    
     @IBOutlet weak var price_low: UITextField!
     @IBOutlet weak var price_high: UITextField!
     @IBOutlet weak var distance_low: UITextField!
@@ -123,7 +121,6 @@ class selectView: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
             let controller = segue.destination as! MapViewController
             controller.restaurantlist.filterlist = self.restaurantlist.filterlist
             controller.restaurantlist.listRestaurants()
-            print("return OK")
         }
         else if segue.identifier == "showRandom" {
             let controller = segue.destination as! RestaurantViewController

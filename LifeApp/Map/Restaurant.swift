@@ -55,6 +55,7 @@ class RestaurantList {
             }
             if filter{
                 let d = distance(x1: locaton.coordinate.latitude, y1: locaton.coordinate.longitude, x2: Double(r.latitude!)!, y2: Double(r.longitude!)!)
+                print("d=",d)
                 if d < distance_low || d > distance_high{
                     filter = false
                 }
@@ -73,5 +74,7 @@ class RestaurantList {
 }
 func distance(x1:Double,y1:Double,x2:Double,y2:Double)->Double
 {
-    return sqrt(pow(x1-x2, 2)+pow(y1-y2, 2))
+    let p = 0.017453292519943295
+    let a = 0.5 - cos((x2-x1)*p)/2 + cos(x1*p)*cos(x2*p)*(1-cos((y2-y1)*p)/2)
+    return 12742*asin(sqrt(a))
 }
