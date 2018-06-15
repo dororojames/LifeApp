@@ -67,7 +67,7 @@ class GuessGameController: UIViewController {
                         }
                     }
                     resultRecord.text! += "\(compareNum[0])\(compareNum[1])\(compareNum[2])\(compareNum[3])\t\t\(acount)A\(bcount)B\n"
-                    resultRecord.scrollRangeToVisible(NSMakeRange(resultRecord.text.characters.count-1, 0))
+                    resultRecord.scrollRangeToVisible(NSMakeRange(resultRecord.text.count-1, 0))
                     if acount != 4 {
                         times=times+1
                         counter.text="\(times)"

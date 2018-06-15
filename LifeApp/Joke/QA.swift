@@ -66,7 +66,7 @@ class QA: UIViewController, UITableViewDataSource, UITableViewDelegate {
         if segue.identifier == "ShowJokeText"{
             let controller = segue.destination as! JokeTest
             print(Jokelist[0].Name!)
-            print(Jokelist[(TableView.indexPathForSelectedRow?.row)!].Name)
+            print(Jokelist[(TableView.indexPathForSelectedRow?.row)!].Name!)
             controller.jokeDetail = Jokelist[(TableView.indexPathForSelectedRow?.row)!]
         }
     }
