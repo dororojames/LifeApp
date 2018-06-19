@@ -45,12 +45,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         navbar.topItem?.title = restaurant.name
         detaillist.append(("地址", restaurant.address!))
         detaillist.append(("價位",restaurant.price_range!))
-        for c in restaurant.contact as! Set<Contacts>
-        {
+        for c in restaurant.contact as! Set<Contacts>{
             detaillist.append(("聯絡方式",c.contact!))
         }
-        for o in restaurant.opentime as! Set<Opentime>
-        {
+        for o in restaurant.opentime as! Set<Opentime>{
             detaillist.append(("營業時間",o.day!))
         }
         print(detaillist)

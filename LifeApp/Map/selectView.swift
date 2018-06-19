@@ -42,8 +42,7 @@ class selectView: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     var picktag: String! = ""
     @IBAction func search(_ sender: Any) {
         print(picktag,price_low.text!,price_high.text!,distance_low.text!,distance_high.text!)
-        if price_low.text! == "" || price_high.text!  == "" || distance_low.text! == "" || distance_high.text! == "" || restaurantlist.filter(selecttag: picktag, price_low: Int(price_low.text!)!, price_high: Int(price_high.text!)!, distance_low: Double(distance_low.text!)!, distance_high: Double(distance_high.text!)!, locaton: locationManager.location!) == false
-        {
+        if price_low.text! == "" || price_high.text!  == "" || distance_low.text! == "" || distance_high.text! == "" || restaurantlist.filter(selecttag: picktag, price_low: Int(price_low.text!)!, price_high: Int(price_high.text!)!, distance_low: Double(distance_low.text!)!, distance_high: Double(distance_high.text!)!, locaton: locationManager.location!) == false{
             let alert = UIAlertController(title: "錯誤的篩選", message: "找不找符合的餐廳\n請重新輸入", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "好", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -57,7 +56,6 @@ class selectView: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
                 performSegue(withIdentifier: "showRandom", sender: self)
             }
         }
-        
     }
     
     var restaurantlist: RestaurantList!
