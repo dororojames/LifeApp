@@ -11,25 +11,26 @@ import UIKit
 //表格數據實體類
 
 class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
-    
     //表格
     var tableView:UITableView?
 
-    var list = [String]()
-    var allCellsText = [String?](repeating: nil, count:6)
-
+    var user = User()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        list.append("身高")
-        list.append("體重")
-        list.append("性別")
-        list.append("血型")
-        list.append("年齡")
-        list.append("BMI")
     }
-    
+    func setCell(cell: HealthSettingsTableViewCell,indexPathrow :Int) {
+        
+        cell.textLav.text = user.getData(row: indexPathrow)
+        cell.textLav?.placeholder = user.getInformation(row: indexPathrow)
+        cell.textLav?.autocorrectionType = UITextAutocorrectionType.no
+        cell.textLav?.autocapitalizationType = UITextAutocapitalizationType.none
+        cell.textLav?.adjustsFontSizeToFitWidth = true;
+        
+        cell.textLabel?.text = user.getInformation(row: indexPathrow)
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -39,73 +40,33 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return user.getInformation().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HealthSettingsTableViewCell
         cell.textLav?.delegate = self
-        let path = NSHomeDirectory() + "/Documents/userinfo.txt"
         
-        do {
-            let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
-            var count = 0;
-            content.enumerateLines({ (line, stop) -> () in
-            if(count==indexPath.row)
-            {
-                if(line != "nil")
-                {
-                    cell.textLav.text = line as String?
-                    self.allCellsText.remove(at: indexPath.row)
-                    self.allCellsText.insert(line, at: indexPath.row)
-                }
-            }
-                count+=1
-            })
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
+        user.loadData(filename: "userinfo", indexPathrow: indexPath.row)
         
-        cell.textLav?.placeholder = list[indexPath.row]
-        cell.textLav?.autocorrectionType = UITextAutocorrectionType.no
-        cell.textLav?.autocapitalizationType = UITextAutocapitalizationType.none
-        cell.textLav?.adjustsFontSizeToFitWidth = true;
+        setCell(cell: cell, indexPathrow: indexPath.row)
         
-        cell.textLabel?.text = list[indexPath.row]
         return cell
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let indexOf = list.index(of:textField.placeholder!)
-        if(textField.placeholder! == list[indexOf!]){
-            if( indexOf! <= (allCellsText.count-1)){
-                allCellsText.remove(at: indexOf!)
+        let indexOf = user.getInformation().index(of: textField.placeholder)
+        if(textField.placeholder! == user.getInformation(row: indexOf!)){
+            if( indexOf! <= (user.getData().count-1)){
+                user.deleteData(row: indexOf!)
             }
-            allCellsText.insert(textField.text!, at: indexOf!)
+            user.insertData(row: indexOf!, string: textField.text!)
         }
         //writing
         // If the directory was found, we write a file to it and read it back
                 
         // Write to the file named Test
-        do {
-            let path = NSHomeDirectory() + "/Documents/userinfo.txt"
-            var outString = ""
-            for i in 0 ... list.count-1
-            {
-                if(allCellsText[i] == nil)
-                {
-                    outString += "nil\n"
-                }
-                else
-                {
-                    outString += allCellsText[i]!
-                    outString += "\n"
-                }
-            }
-            try outString.write(toFile: path, atomically: false, encoding: String.Encoding.utf8)
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
+        user.writeData(filename: "userinfo", indexPathrow: indexOf!)
     }
     
     //delegate method

@@ -14,7 +14,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     @IBOutlet weak var addMusic: UIButton!
     @IBOutlet weak var musicData: UITableView!
-    var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
+    var music = MusicPlayer()
     var selectSong: MPMediaItemCollection?
     var songCnt = 0
     @IBAction func unwindToPlayer(for segue: UIStoryboardSegue) {
@@ -65,14 +65,14 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
             print(s.title!)
         }
         //放入播放清單
-        musicPlayer.setQueue(with: selectSong!)
-        musicPlayer.shuffleMode = .off
+        music.player.setQueue(with: selectSong!)
+        music.player.shuffleMode = .off
         
         //離開選歌畫面
         self.dismiss(animated: true, completion: nil)
         musicData.reloadData()
-        musicPlayer.play()
-        musicPlayer.beginGeneratingPlaybackNotifications()
+        music.player.play()
+        music.player.beginGeneratingPlaybackNotifications()
     }
     
     func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
@@ -82,12 +82,12 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        musicPlayer.nowPlayingItem = (selectSong?.items[indexPath.row])! as MPMediaItem
+        music.player.nowPlayingItem = (selectSong?.items[indexPath.row])! as MPMediaItem
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! musicPlayerController
-        controller.music = musicPlayer
+        controller.music = music
         controller.songCnt=songCnt
 
     }

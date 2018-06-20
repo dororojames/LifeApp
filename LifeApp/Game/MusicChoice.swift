@@ -25,7 +25,6 @@ class Music: UIViewController,UITableViewDataSource,UITableViewDelegate{
         list.append("000")
         list.append("001")
         list.append("002")
-        list.append("003")
         
     }
     

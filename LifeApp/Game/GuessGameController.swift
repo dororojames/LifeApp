@@ -52,50 +52,19 @@ class GuessGameController: UIViewController {
                         
                     }
                     var acount = 0
-                    var bcount = 0
-                    for i in 0...3 {
-                        for j in 0...3 {
-                            if answer[i] == compareNum[j] {
-                                if i == j {
-                                    acount += 1
-                                }
-                                else {
-                                    bcount += 1
-                                }
-                                break
-                            }
-                        }
-                    }
-                    resultRecord.text! += "\(compareNum[0])\(compareNum[1])\(compareNum[2])\(compareNum[3])\t\t\(acount)A\(bcount)B\n"
-                    resultRecord.scrollRangeToVisible(NSMakeRange(resultRecord.text.count-1, 0))
+                    let bcount = 0
+                    acount=GameResult(a: acount,_b: bcount)
+
                     if acount != 4 {
                         times=times+1
                         counter.text="\(times)"
                     }
                     else{
+                        times+=1
                         timer.invalidate()
                         /*resultRecord.text! += "Game over &Go back to Menu"*/
                         //紀錄暫存
-                        let userDefaults = UserDefaults.standard
-                        var bestTime = userDefaults.integer(forKey: "BestTime")
-                        var bestCounter=userDefaults.integer(forKey: "BestCounter")
-                        if bestTime==0||totalTime<bestTime{
-                            bestTime=totalTime
-                        }
-                        
-                        if times<bestCounter||bestCounter==0{
-                            bestCounter=times
-                        }
-                        
-                        userDefaults.set(totalTime,forKey: "Totaltime")
-                        userDefaults.set(times+1,forKey: "Counter")
-                        userDefaults.set(bestTime,forKey:"BestTime")
-                        userDefaults.set(bestCounter+1,forKey:"BestCounter")
-                        userDefaults.synchronize()
-                        
-                        let controller = self.storyboard?.instantiateViewController(withIdentifier: "RecordBoardView") as! RecordBoardView
-                        self.present(controller, animated: false, completion: nil)
-                       /* addRecord(numOfGuess: times, time: totalTime)*/
+                        GameReccordSave()
                     }
                 }
             }
@@ -124,6 +93,48 @@ class GuessGameController: UIViewController {
         TimeLabel.text = "0:00"
         totalTime = 0
         times=0
+    }
+    func GameResult(a: Int,_b: Int)->Int{ //跟答案配對並回答Ａ‘Ｂ
+        var acount=a
+        var bcount=_b
+        for i in 0...3 {
+            for j in 0...3 {
+                if answer[i] == compareNum[j] {
+                    if i == j {
+                        acount += 1
+                    }
+                    else {
+                        bcount += 1
+                    }
+                    break
+                }
+            }
+        }
+        resultRecord.text! += "\(compareNum[0])\(compareNum[1])\(compareNum[2])\(compareNum[3])\t\t\(acount)A\(bcount)B\n"
+        resultRecord.scrollRangeToVisible(NSMakeRange(resultRecord.text.count-1, 0))
+        return acount
+    }
+    func GameReccordSave(){
+        let userDefaults = UserDefaults.standard
+        var bestTime = userDefaults.integer(forKey: "BestTime")
+        var bestCounter=userDefaults.integer(forKey: "BestCounter")
+        if bestTime==0||totalTime<bestTime{
+            bestTime=totalTime
+        }
+        
+        if times<bestCounter||bestCounter==0{
+            bestCounter=times
+        }
+        
+        userDefaults.set(totalTime,forKey: "Totaltime")
+        userDefaults.set(times,forKey: "Counter")
+        userDefaults.set(bestTime,forKey:"BestTime")
+        userDefaults.set(bestCounter,forKey:"BestCounter")
+        userDefaults.synchronize()
+        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "RecordBoardView") as! RecordBoardView
+        self.present(controller, animated: false, completion: nil)
+        /* addRecord(numOfGuess: times, time: totalTime)*/
     }
     
     @objc func updateTime(){

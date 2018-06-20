@@ -10,7 +10,7 @@ import MediaPlayer
 
 class musicPlayerController: UIViewController {
     
-    var music=MPMusicPlayerController.applicationMusicPlayer
+    var music = MusicPlayer()
     var songCnt:Int?
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var singerName: UILabel!
@@ -35,78 +35,90 @@ class musicPlayerController: UIViewController {
     }
     
     @IBAction func progressChangeAct(_ sender: UISlider) {
-        music.currentPlaybackTime = Double(sender.value)
+        music.player.currentPlaybackTime = Double(sender.value)
         currentSecond = Double(sender.value)
     }
     
     @IBAction func random(_ sender: UIButton) {
-        if sender.title(for: .normal) == "順序"{
-            music.shuffleMode = .off
-            sender.setTitle("隨機", for: .normal)
+//        if sender.title(for: .normal) == "順序"{
+//            music.shuffleMode = .off
+//            sender.setTitle("隨機", for: .normal)
+//        }
+//        else{
+//            music.shuffleMode = .songs
+//            sender.setTitle("順序", for: .normal)
+//        }
+        if music.player.shuffleMode == .songs{
+            music.player.shuffleMode = .off
         }
         else{
-            music.shuffleMode = .songs
-            sender.setTitle("順序", for: .normal)
+            music.player.shuffleMode = .songs
         }
     }
     
     @IBAction func repeatAct(_ sender: UIButton) {
         if sender.title(for: .normal) == "循環播放"{
-            music.repeatMode = .all
+            music.player.repeatMode = .all
             sender.setTitle("單曲循環", for: .normal)
         }
         else if sender.title(for: .normal) == "單曲循環"{
-            music.repeatMode = .one
+            music.player.repeatMode = .one
             sender.setTitle("不循環", for: .normal)
         }
         else{
-            music.repeatMode = .none
+            music.player.repeatMode = .none
             sender.setTitle("循環播放", for: .normal)
         }
     }
     
     @IBAction func playBtnAction(_ sender: AnyObject) {
-        if sender.title(for: .normal)=="播放"{
-            music.play()
-            sender.setTitle("暫停",for: .normal)
+        if music.isPlaying == false{
+            music.playMusic()
             progressTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(musicPlayerController.updateTime), userInfo: nil, repeats: true)
+            refreshPlayBtn()
         }
         else{
-            music.pause()
-            sender.setTitle("播放", for: .normal)
+            music.pauseMusic()
             progressTimer?.invalidate()
+            refreshPlayBtn()
         }
     }
-    
     @IBAction func next(_ sender: Any) {
-        music.skipToNextItem()
-        currentSecond=0.0
+        music.nextMusic()
         refreshInfo()
     }
     @IBAction func previous(_ sender: Any) {
-        music.skipToPreviousItem()
-        currentSecond=0.0
+        music.previousMusic()
         refreshInfo()
     }
     @objc func updateTime(){
-        currentSecond += 1
-        musicProgress.setValue(Float(currentSecond), animated: true)
+        music.currentSecond += 1
+        musicProgress.setValue(music.currentSecond, animated: true)
     }
-    
+    @objc func refreshPlayBtn(){
+        if music.isPlaying == false{
+            playBtn.setImage(#imageLiteral(resourceName: "stopMusic"), for: .normal)
+            progressTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(musicPlayerController.updateTime), userInfo: nil, repeats: true)
+        }
+        else{
+            playBtn.setImage(#imageLiteral(resourceName: "playmusic"), for: .normal)
+        }
+    }
     @objc func refreshInfo(){
         if songCnt != 0{
             //slider 最大值
-            musicProgress.maximumValue = Float((music.nowPlayingItem?.playbackDuration)!)
-            let songName = music.nowPlayingItem?.title
-            let artist = music.nowPlayingItem?.artist
+            musicProgress.maximumValue = Float((music.player.nowPlayingItem?.playbackDuration)!)
+            let songName = music.player.nowPlayingItem?.title
+            let artist = music.player.nowPlayingItem?.artist
             
             //        畫面上的資訊
             self.songName.text = songName
             self.singerName.text = artist
-            self.image.image=music.nowPlayingItem?.artwork?.image(at: CGSize.init(width: 150, height: 150))
-            if playBtn.title(for: .normal)=="暫停"{
-                progressTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(musicPlayerController.updateTime), userInfo: nil, repeats: true)
-            }
+            self.image.image=music.player.nowPlayingItem?.artwork?.image(at: CGSize.init(width: 150, height: 150))
+//            if playBtn.title(for: .normal)=="暫停"{
+//                progressTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(musicPlayerController.updateTime), userInfo: nil, repeats: true)
+//            }
+            refreshPlayBtn()
         }
         else{musicProgress.maximumValue = 0.0}
         musicProgress.setValue(Float(currentSecond), animated: true)

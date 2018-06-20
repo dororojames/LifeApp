@@ -29,35 +29,51 @@
 		8C2F4E0120CAC378007A752A /* Tags+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4DF920CAC378007A752A /* Tags+CoreDataProperties.swift */; };
 		8C2F4E0220CAC378007A752A /* Opentime+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4DFA20CAC378007A752A /* Opentime+CoreDataProperties.swift */; };
 		8C2F4E2C20CC10BC007A752A /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F4E2B20CC10BC007A752A /* RestaurantViewController.swift */; };
-		8CA5CB8D20CD5BED0009E74D /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB8920CD5BED0009E74D /* MusicViewController.swift */; };
-		8CA5CB8E20CD5BED0009E74D /* Music.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CB8A20CD5BED0009E74D /* Music.storyboard */; };
-		8CA5CB9020CD5BED0009E74D /* musicPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB8C20CD5BED0009E74D /* musicPlayerController.swift */; };
+		8C400C2820DA62D5009702BF /* HealthHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C0E20DA62D3009702BF /* HealthHome.swift */; };
+		8C400C2920DA62D5009702BF /* HealthRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C0F20DA62D3009702BF /* HealthRecordTableViewCell.swift */; };
+		8C400C2A20DA62D5009702BF /* HealthRecordTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1020DA62D4009702BF /* HealthRecordTableCell.swift */; };
+		8C400C2B20DA62D5009702BF /* Medicine2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C1120DA62D4009702BF /* Medicine2.txt */; };
+		8C400C2C20DA62D5009702BF /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1220DA62D4009702BF /* TestResult.swift */; };
+		8C400C2D20DA62D5009702BF /* HealthAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1320DA62D4009702BF /* HealthAnalysis.swift */; };
+		8C400C2E20DA62D5009702BF /* HealthTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1420DA62D4009702BF /* HealthTest.swift */; };
+		8C400C2F20DA62D5009702BF /* HealthAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1520DA62D4009702BF /* HealthAnalysisTableViewCell.swift */; };
+		8C400C3020DA62D5009702BF /* Medicine3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C1620DA62D4009702BF /* Medicine3.txt */; };
+		8C400C3120DA62D5009702BF /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1720DA62D4009702BF /* Medicine.swift */; };
+		8C400C3220DA62D5009702BF /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1820DA62D4009702BF /* Record.swift */; };
+		8C400C3320DA62D5009702BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1920DA62D4009702BF /* ViewController.swift */; };
+		8C400C3420DA62D5009702BF /* Medicine1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C1A20DA62D4009702BF /* Medicine1.txt */; };
+		8C400C3520DA62D5009702BF /* Question2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C1B20DA62D4009702BF /* Question2.txt */; };
+		8C400C3620DA62D5009702BF /* userinfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C1C20DA62D5009702BF /* userinfo.txt */; };
+		8C400C3720DA62D5009702BF /* Health.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C1D20DA62D5009702BF /* Health.storyboard */; };
+		8C400C3820DA62D5009702BF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1E20DA62D5009702BF /* Settings.swift */; };
+		8C400C3920DA62D5009702BF /* HealthChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C1F20DA62D5009702BF /* HealthChoose.swift */; };
+		8C400C3A20DA62D5009702BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C2020DA62D5009702BF /* User.swift */; };
+		8C400C3B20DA62D5009702BF /* HealthRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C2120DA62D5009702BF /* HealthRecord.swift */; };
+		8C400C3C20DA62D5009702BF /* TestResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C2220DA62D5009702BF /* TestResultTableCell.swift */; };
+		8C400C3D20DA62D5009702BF /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C2320DA62D5009702BF /* user.png */; };
+		8C400C3E20DA62D5009702BF /* Question1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C2420DA62D5009702BF /* Question1.txt */; };
+		8C400C3F20DA62D5009702BF /* Record.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C2520DA62D5009702BF /* Record.txt */; };
+		8C400C4020DA62D5009702BF /* Question3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C2620DA62D5009702BF /* Question3.txt */; };
+		8C400C4120DA62D5009702BF /* HealthSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C2720DA62D5009702BF /* HealthSettingsTableViewCell.swift */; };
+		8C400C4720DA6336009702BF /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C4320DA6335009702BF /* MusicViewController.swift */; };
+		8C400C4820DA6336009702BF /* Music.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C400C4420DA6335009702BF /* Music.storyboard */; };
+		8C400C4920DA6336009702BF /* MusicPlayerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C4520DA6335009702BF /* MusicPlayerClass.swift */; };
+		8C400C4A20DA6336009702BF /* musicPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C400C4620DA6335009702BF /* musicPlayerController.swift */; };
+		8C93FEA220D93FED00E9102B /* TepoGameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93FE9520D93FEB00E9102B /* TepoGameMenu.swift */; };
+		8C93FEA320D93FED00E9102B /* GuessRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93FE9620D93FEB00E9102B /* GuessRecord.swift */; };
+		8C93FEA420D93FED00E9102B /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C93FE9720D93FEC00E9102B /* Game.storyboard */; };
+		8C93FEA520D93FED00E9102B /* MusicChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93FE9820D93FEC00E9102B /* MusicChoice.swift */; };
+		8C93FEA620D93FED00E9102B /* MusicGameOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93FE9920D93FEC00E9102B /* MusicGameOperation.swift */; };
+		8C93FEA720D93FED00E9102B /* 001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C93FE9A20D93FEC00E9102B /* 001.mp3 */; };
+		8C93FEA820D93FED00E9102B /* 002.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C93FE9B20D93FEC00E9102B /* 002.mp3 */; };
+		8C93FEA920D93FED00E9102B /* MusicChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93FE9C20D93FEC00E9102B /* MusicChoiceController.swift */; };
+		8C93FEAA20D93FED00E9102B /* MusicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93FE9D20D93FEC00E9102B /* MusicGame.swift */; };
+		8C93FEAB20D93FED00E9102B /* 000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C93FE9E20D93FEC00E9102B /* 000.mp3 */; };
+		8C93FEAC20D93FED00E9102B /* GameMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93FE9F20D93FED00E9102B /* GameMenuController.swift */; };
+		8C93FEAD20D93FED00E9102B /* GuessGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93FEA020D93FED00E9102B /* GuessGameController.swift */; };
+		8C93FEAE20D93FED00E9102B /* TempoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93FEA120D93FED00E9102B /* TempoRecord.swift */; };
 		8CA5CB9320CD5FB30009E74D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9220CD5FB30009E74D /* Assets.xcassets */; };
 		8CA5CB9520CD695C0009E74D /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CB9420CD695C0009E74D /* RestaurantDetailViewController.swift */; };
-		8CA5CBFC20CD976F0009E74D /* HealthSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBE220CD976C0009E74D /* HealthSettingsTableViewCell.swift */; };
-		8CA5CBFD20CD976F0009E74D /* HealthHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBE320CD976C0009E74D /* HealthHome.swift */; };
-		8CA5CBFE20CD976F0009E74D /* HealthRecordTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBE420CD976C0009E74D /* HealthRecordTableCell.swift */; };
-		8CA5CBFF20CD976F0009E74D /* HealthRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBE520CD976C0009E74D /* HealthRecordTableViewCell.swift */; };
-		8CA5CC0120CD976F0009E74D /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBE720CD976D0009E74D /* TestResult.swift */; };
-		8CA5CC0220CD976F0009E74D /* HealthAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBE820CD976D0009E74D /* HealthAnalysis.swift */; };
-		8CA5CC0320CD976F0009E74D /* HealthTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBE920CD976D0009E74D /* HealthTest.swift */; };
-		8CA5CC0420CD976F0009E74D /* HealthAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBEA20CD976D0009E74D /* HealthAnalysisTableViewCell.swift */; };
-		8CA5CC0520CD976F0009E74D /* HealthTest2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBEB20CD976D0009E74D /* HealthTest2.swift */; };
-		8CA5CC0620CD976F0009E74D /* HealthTest3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBEC20CD976D0009E74D /* HealthTest3.swift */; };
-		8CA5CC0720CD976F0009E74D /* Medicine3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CBED20CD976D0009E74D /* Medicine3.txt */; };
-		8CA5CC0820CD976F0009E74D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBEE20CD976D0009E74D /* ViewController.swift */; };
-		8CA5CC0920CD976F0009E74D /* Medicine1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CBEF20CD976E0009E74D /* Medicine1.txt */; };
-		8CA5CC0A20CD976F0009E74D /* Question2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF020CD976E0009E74D /* Question2.txt */; };
-		8CA5CC0C20CD976F0009E74D /* Health.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF220CD976E0009E74D /* Health.storyboard */; };
-		8CA5CC0D20CD976F0009E74D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF320CD976E0009E74D /* Settings.swift */; };
-		8CA5CC0E20CD976F0009E74D /* HealthChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF420CD976E0009E74D /* HealthChoose.swift */; };
-		8CA5CC0F20CD976F0009E74D /* HealthRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF520CD976E0009E74D /* HealthRecord.swift */; };
-		8CA5CC1020CD976F0009E74D /* TestResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF620CD976F0009E74D /* TestResultTableCell.swift */; };
-		8CA5CC1120CD976F0009E74D /* Medicine2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF720CD976F0009E74D /* Medicine2.txt */; };
-		8CA5CC1220CD976F0009E74D /* Question1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF820CD976F0009E74D /* Question1.txt */; };
-		8CA5CC1320CD976F0009E74D /* Record.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF920CD976F0009E74D /* Record.txt */; };
-		8CA5CC1420CD976F0009E74D /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CBFA20CD976F0009E74D /* user.png */; };
-		8CA5CC1520CD976F0009E74D /* Question3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CBFB20CD976F0009E74D /* Question3.txt */; };
 		8CA5CC2020CD9D0B0009E74D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC1720CD9D0A0009E74D /* History.swift */; };
 		8CA5CC2120CD9D0B0009E74D /* JokeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC1820CD9D0A0009E74D /* JokeType.swift */; };
 		8CA5CC2220CD9D0B0009E74D /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC1920CD9D0A0009E74D /* QA.swift */; };
@@ -67,20 +83,6 @@
 		8CA5CC2620CD9D0B0009E74D /* myFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC1D20CD9D0B0009E74D /* myFavorite.swift */; };
 		8CA5CC2720CD9D0B0009E74D /* Edit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC1E20CD9D0B0009E74D /* Edit.swift */; };
 		8CA5CC2820CD9D0B0009E74D /* JokeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC1F20CD9D0B0009E74D /* JokeTest.swift */; };
-		8CA5CC5220CD9EA20009E74D /* TepoGameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4520CD9EA00009E74D /* TepoGameMenu.swift */; };
-		8CA5CC5320CD9EA20009E74D /* GuessRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4620CD9EA00009E74D /* GuessRecord.swift */; };
-		8CA5CC5420CD9EA20009E74D /* MusicChoiceViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4720CD9EA00009E74D /* MusicChoiceViewCell.swift */; };
-		8CA5CC5520CD9EA20009E74D /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4820CD9EA00009E74D /* Game.storyboard */; };
-		8CA5CC5620CD9EA20009E74D /* MusicChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4920CD9EA00009E74D /* MusicChoice.swift */; };
-		8CA5CC5720CD9EA20009E74D /* 001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4A20CD9EA10009E74D /* 001.mp3 */; };
-		8CA5CC5820CD9EA20009E74D /* 002.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4B20CD9EA10009E74D /* 002.mp3 */; };
-		8CA5CC5920CD9EA20009E74D /* MusicChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4C20CD9EA10009E74D /* MusicChoiceController.swift */; };
-		8CA5CC5A20CD9EA20009E74D /* MusicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4D20CD9EA10009E74D /* MusicGame.swift */; };
-		8CA5CC5B20CD9EA20009E74D /* 000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4E20CD9EA10009E74D /* 000.mp3 */; };
-		8CA5CC5C20CD9EA20009E74D /* GameMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC4F20CD9EA10009E74D /* GameMenuController.swift */; };
-		8CA5CC5D20CD9EA20009E74D /* GuessGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC5020CD9EA10009E74D /* GuessGameController.swift */; };
-		8CA5CC5E20CD9EA20009E74D /* TempoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC5120CD9EA20009E74D /* TempoRecord.swift */; };
-		8CA5CC6320CDA3270009E74D /* userinfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5CC6220CDA3270009E74D /* userinfo.txt */; };
 		8CAC508D20C6CE0100DE17E5 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAC508C20C6CE0100DE17E5 /* Map.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -109,35 +111,51 @@
 		8C2F4DF920CAC378007A752A /* Tags+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tags+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8C2F4DFA20CAC378007A752A /* Opentime+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Opentime+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8C2F4E2B20CC10BC007A752A /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
-		8CA5CB8920CD5BED0009E74D /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
-		8CA5CB8A20CD5BED0009E74D /* Music.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Music.storyboard; sourceTree = "<group>"; };
-		8CA5CB8C20CD5BED0009E74D /* musicPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musicPlayerController.swift; sourceTree = "<group>"; };
+		8C400C0E20DA62D3009702BF /* HealthHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthHome.swift; sourceTree = "<group>"; };
+		8C400C0F20DA62D3009702BF /* HealthRecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRecordTableViewCell.swift; sourceTree = "<group>"; };
+		8C400C1020DA62D4009702BF /* HealthRecordTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRecordTableCell.swift; sourceTree = "<group>"; };
+		8C400C1120DA62D4009702BF /* Medicine2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Medicine2.txt; sourceTree = "<group>"; };
+		8C400C1220DA62D4009702BF /* TestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
+		8C400C1320DA62D4009702BF /* HealthAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAnalysis.swift; sourceTree = "<group>"; };
+		8C400C1420DA62D4009702BF /* HealthTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTest.swift; sourceTree = "<group>"; };
+		8C400C1520DA62D4009702BF /* HealthAnalysisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAnalysisTableViewCell.swift; sourceTree = "<group>"; };
+		8C400C1620DA62D4009702BF /* Medicine3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Medicine3.txt; sourceTree = "<group>"; };
+		8C400C1720DA62D4009702BF /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		8C400C1820DA62D4009702BF /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		8C400C1920DA62D4009702BF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C400C1A20DA62D4009702BF /* Medicine1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Medicine1.txt; sourceTree = "<group>"; };
+		8C400C1B20DA62D4009702BF /* Question2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Question2.txt; sourceTree = "<group>"; };
+		8C400C1C20DA62D5009702BF /* userinfo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = userinfo.txt; sourceTree = "<group>"; };
+		8C400C1D20DA62D5009702BF /* Health.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Health.storyboard; sourceTree = "<group>"; };
+		8C400C1E20DA62D5009702BF /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8C400C1F20DA62D5009702BF /* HealthChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthChoose.swift; sourceTree = "<group>"; };
+		8C400C2020DA62D5009702BF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8C400C2120DA62D5009702BF /* HealthRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRecord.swift; sourceTree = "<group>"; };
+		8C400C2220DA62D5009702BF /* TestResultTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultTableCell.swift; sourceTree = "<group>"; };
+		8C400C2320DA62D5009702BF /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		8C400C2420DA62D5009702BF /* Question1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Question1.txt; sourceTree = "<group>"; };
+		8C400C2520DA62D5009702BF /* Record.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Record.txt; sourceTree = "<group>"; };
+		8C400C2620DA62D5009702BF /* Question3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Question3.txt; sourceTree = "<group>"; };
+		8C400C2720DA62D5009702BF /* HealthSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		8C400C4320DA6335009702BF /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		8C400C4420DA6335009702BF /* Music.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Music.storyboard; sourceTree = "<group>"; };
+		8C400C4520DA6335009702BF /* MusicPlayerClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerClass.swift; sourceTree = "<group>"; };
+		8C400C4620DA6335009702BF /* musicPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musicPlayerController.swift; sourceTree = "<group>"; };
+		8C93FE9520D93FEB00E9102B /* TepoGameMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TepoGameMenu.swift; sourceTree = "<group>"; };
+		8C93FE9620D93FEB00E9102B /* GuessRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessRecord.swift; sourceTree = "<group>"; };
+		8C93FE9720D93FEC00E9102B /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		8C93FE9820D93FEC00E9102B /* MusicChoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoice.swift; sourceTree = "<group>"; };
+		8C93FE9920D93FEC00E9102B /* MusicGameOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicGameOperation.swift; sourceTree = "<group>"; };
+		8C93FE9A20D93FEC00E9102B /* 001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 001.mp3; sourceTree = "<group>"; };
+		8C93FE9B20D93FEC00E9102B /* 002.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 002.mp3; sourceTree = "<group>"; };
+		8C93FE9C20D93FEC00E9102B /* MusicChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoiceController.swift; sourceTree = "<group>"; };
+		8C93FE9D20D93FEC00E9102B /* MusicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicGame.swift; sourceTree = "<group>"; };
+		8C93FE9E20D93FEC00E9102B /* 000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 000.mp3; sourceTree = "<group>"; };
+		8C93FE9F20D93FED00E9102B /* GameMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuController.swift; sourceTree = "<group>"; };
+		8C93FEA020D93FED00E9102B /* GuessGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessGameController.swift; sourceTree = "<group>"; };
+		8C93FEA120D93FED00E9102B /* TempoRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempoRecord.swift; sourceTree = "<group>"; };
 		8CA5CB9220CD5FB30009E74D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CA5CB9420CD695C0009E74D /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
-		8CA5CBE220CD976C0009E74D /* HealthSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthSettingsTableViewCell.swift; sourceTree = "<group>"; };
-		8CA5CBE320CD976C0009E74D /* HealthHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthHome.swift; sourceTree = "<group>"; };
-		8CA5CBE420CD976C0009E74D /* HealthRecordTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRecordTableCell.swift; sourceTree = "<group>"; };
-		8CA5CBE520CD976C0009E74D /* HealthRecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRecordTableViewCell.swift; sourceTree = "<group>"; };
-		8CA5CBE720CD976D0009E74D /* TestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
-		8CA5CBE820CD976D0009E74D /* HealthAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAnalysis.swift; sourceTree = "<group>"; };
-		8CA5CBE920CD976D0009E74D /* HealthTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTest.swift; sourceTree = "<group>"; };
-		8CA5CBEA20CD976D0009E74D /* HealthAnalysisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAnalysisTableViewCell.swift; sourceTree = "<group>"; };
-		8CA5CBEB20CD976D0009E74D /* HealthTest2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTest2.swift; sourceTree = "<group>"; };
-		8CA5CBEC20CD976D0009E74D /* HealthTest3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTest3.swift; sourceTree = "<group>"; };
-		8CA5CBED20CD976D0009E74D /* Medicine3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Medicine3.txt; sourceTree = "<group>"; };
-		8CA5CBEE20CD976D0009E74D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8CA5CBEF20CD976E0009E74D /* Medicine1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Medicine1.txt; sourceTree = "<group>"; };
-		8CA5CBF020CD976E0009E74D /* Question2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Question2.txt; sourceTree = "<group>"; };
-		8CA5CBF220CD976E0009E74D /* Health.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Health.storyboard; sourceTree = "<group>"; };
-		8CA5CBF320CD976E0009E74D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		8CA5CBF420CD976E0009E74D /* HealthChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthChoose.swift; sourceTree = "<group>"; };
-		8CA5CBF520CD976E0009E74D /* HealthRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRecord.swift; sourceTree = "<group>"; };
-		8CA5CBF620CD976F0009E74D /* TestResultTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultTableCell.swift; sourceTree = "<group>"; };
-		8CA5CBF720CD976F0009E74D /* Medicine2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Medicine2.txt; sourceTree = "<group>"; };
-		8CA5CBF820CD976F0009E74D /* Question1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Question1.txt; sourceTree = "<group>"; };
-		8CA5CBF920CD976F0009E74D /* Record.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Record.txt; sourceTree = "<group>"; };
-		8CA5CBFA20CD976F0009E74D /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
-		8CA5CBFB20CD976F0009E74D /* Question3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Question3.txt; sourceTree = "<group>"; };
 		8CA5CC1720CD9D0A0009E74D /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		8CA5CC1820CD9D0A0009E74D /* JokeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeType.swift; sourceTree = "<group>"; };
 		8CA5CC1920CD9D0A0009E74D /* QA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
@@ -147,20 +165,6 @@
 		8CA5CC1D20CD9D0B0009E74D /* myFavorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myFavorite.swift; sourceTree = "<group>"; };
 		8CA5CC1E20CD9D0B0009E74D /* Edit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edit.swift; sourceTree = "<group>"; };
 		8CA5CC1F20CD9D0B0009E74D /* JokeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeTest.swift; sourceTree = "<group>"; };
-		8CA5CC4520CD9EA00009E74D /* TepoGameMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TepoGameMenu.swift; sourceTree = "<group>"; };
-		8CA5CC4620CD9EA00009E74D /* GuessRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessRecord.swift; sourceTree = "<group>"; };
-		8CA5CC4720CD9EA00009E74D /* MusicChoiceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoiceViewCell.swift; sourceTree = "<group>"; };
-		8CA5CC4820CD9EA00009E74D /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
-		8CA5CC4920CD9EA00009E74D /* MusicChoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoice.swift; sourceTree = "<group>"; };
-		8CA5CC4A20CD9EA10009E74D /* 001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 001.mp3; sourceTree = "<group>"; };
-		8CA5CC4B20CD9EA10009E74D /* 002.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 002.mp3; sourceTree = "<group>"; };
-		8CA5CC4C20CD9EA10009E74D /* MusicChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChoiceController.swift; sourceTree = "<group>"; };
-		8CA5CC4D20CD9EA10009E74D /* MusicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicGame.swift; sourceTree = "<group>"; };
-		8CA5CC4E20CD9EA10009E74D /* 000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 000.mp3; sourceTree = "<group>"; };
-		8CA5CC4F20CD9EA10009E74D /* GameMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuController.swift; sourceTree = "<group>"; };
-		8CA5CC5020CD9EA10009E74D /* GuessGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessGameController.swift; sourceTree = "<group>"; };
-		8CA5CC5120CD9EA20009E74D /* TempoRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempoRecord.swift; sourceTree = "<group>"; };
-		8CA5CC6220CDA3270009E74D /* userinfo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = userinfo.txt; sourceTree = "<group>"; };
 		8CAC508C20C6CE0100DE17E5 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,10 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				3FAA8A9320BC0FD1006443FA /* AppDelegate.swift */,
-				8CA5CC5F20CD9EAB0009E74D /* Game */,
+				8C400C4B20DA6344009702BF /* Music */,
+				8C400C4220DA62EF009702BF /* Health */,
+				8C93FEAF20D9400B00E9102B /* Game */,
 				8CA5CC2920CD9D150009E74D /* Joke */,
-				8CA5CC1620CD97830009E74D /* Health */,
-				8CA5CB9120CD5BF50009E74D /* Music */,
 				8C03894820C402DF004D2D11 /* Map */,
 				3FAA8A9920BC0FD1006443FA /* Main.storyboard */,
 				3FAA8A9E20BC0FD2006443FA /* LaunchScreen.storyboard */,
@@ -237,46 +241,68 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		8CA5CB9120CD5BF50009E74D /* Music */ = {
+		8C400C4220DA62EF009702BF /* Health */ = {
 			isa = PBXGroup;
 			children = (
-				8CA5CB8A20CD5BED0009E74D /* Music.storyboard */,
-				8CA5CB8C20CD5BED0009E74D /* musicPlayerController.swift */,
-				8CA5CB8920CD5BED0009E74D /* MusicViewController.swift */,
+				8C400C1320DA62D4009702BF /* HealthAnalysis.swift */,
+				8C400C1D20DA62D5009702BF /* Health.storyboard */,
+				8C400C1520DA62D4009702BF /* HealthAnalysisTableViewCell.swift */,
+				8C400C1F20DA62D5009702BF /* HealthChoose.swift */,
+				8C400C0E20DA62D3009702BF /* HealthHome.swift */,
+				8C400C2120DA62D5009702BF /* HealthRecord.swift */,
+				8C400C1020DA62D4009702BF /* HealthRecordTableCell.swift */,
+				8C400C0F20DA62D3009702BF /* HealthRecordTableViewCell.swift */,
+				8C400C2720DA62D5009702BF /* HealthSettingsTableViewCell.swift */,
+				8C400C1420DA62D4009702BF /* HealthTest.swift */,
+				8C400C1720DA62D4009702BF /* Medicine.swift */,
+				8C400C1A20DA62D4009702BF /* Medicine1.txt */,
+				8C400C1120DA62D4009702BF /* Medicine2.txt */,
+				8C400C1620DA62D4009702BF /* Medicine3.txt */,
+				8C400C2420DA62D5009702BF /* Question1.txt */,
+				8C400C1B20DA62D4009702BF /* Question2.txt */,
+				8C400C2620DA62D5009702BF /* Question3.txt */,
+				8C400C1820DA62D4009702BF /* Record.swift */,
+				8C400C2520DA62D5009702BF /* Record.txt */,
+				8C400C1E20DA62D5009702BF /* Settings.swift */,
+				8C400C1220DA62D4009702BF /* TestResult.swift */,
+				8C400C2220DA62D5009702BF /* TestResultTableCell.swift */,
+				8C400C2320DA62D5009702BF /* user.png */,
+				8C400C2020DA62D5009702BF /* User.swift */,
+				8C400C1C20DA62D5009702BF /* userinfo.txt */,
+				8C400C1920DA62D4009702BF /* ViewController.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		8C400C4B20DA6344009702BF /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				8C400C4420DA6335009702BF /* Music.storyboard */,
+				8C400C4520DA6335009702BF /* MusicPlayerClass.swift */,
+				8C400C4620DA6335009702BF /* musicPlayerController.swift */,
+				8C400C4320DA6335009702BF /* MusicViewController.swift */,
 			);
 			path = Music;
 			sourceTree = "<group>";
 		};
-		8CA5CC1620CD97830009E74D /* Health */ = {
+		8C93FEAF20D9400B00E9102B /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				8CA5CC6220CDA3270009E74D /* userinfo.txt */,
-				8CA5CBF220CD976E0009E74D /* Health.storyboard */,
-				8CA5CBE820CD976D0009E74D /* HealthAnalysis.swift */,
-				8CA5CBEA20CD976D0009E74D /* HealthAnalysisTableViewCell.swift */,
-				8CA5CBF420CD976E0009E74D /* HealthChoose.swift */,
-				8CA5CBE320CD976C0009E74D /* HealthHome.swift */,
-				8CA5CBF520CD976E0009E74D /* HealthRecord.swift */,
-				8CA5CBE420CD976C0009E74D /* HealthRecordTableCell.swift */,
-				8CA5CBE520CD976C0009E74D /* HealthRecordTableViewCell.swift */,
-				8CA5CBE220CD976C0009E74D /* HealthSettingsTableViewCell.swift */,
-				8CA5CBE920CD976D0009E74D /* HealthTest.swift */,
-				8CA5CBEB20CD976D0009E74D /* HealthTest2.swift */,
-				8CA5CBEC20CD976D0009E74D /* HealthTest3.swift */,
-				8CA5CBEF20CD976E0009E74D /* Medicine1.txt */,
-				8CA5CBF720CD976F0009E74D /* Medicine2.txt */,
-				8CA5CBED20CD976D0009E74D /* Medicine3.txt */,
-				8CA5CBF820CD976F0009E74D /* Question1.txt */,
-				8CA5CBF020CD976E0009E74D /* Question2.txt */,
-				8CA5CBFB20CD976F0009E74D /* Question3.txt */,
-				8CA5CBF920CD976F0009E74D /* Record.txt */,
-				8CA5CBF320CD976E0009E74D /* Settings.swift */,
-				8CA5CBE720CD976D0009E74D /* TestResult.swift */,
-				8CA5CBF620CD976F0009E74D /* TestResultTableCell.swift */,
-				8CA5CBFA20CD976F0009E74D /* user.png */,
-				8CA5CBEE20CD976D0009E74D /* ViewController.swift */,
+				8C93FE9E20D93FEC00E9102B /* 000.mp3 */,
+				8C93FE9A20D93FEC00E9102B /* 001.mp3 */,
+				8C93FE9B20D93FEC00E9102B /* 002.mp3 */,
+				8C93FE9720D93FEC00E9102B /* Game.storyboard */,
+				8C93FE9F20D93FED00E9102B /* GameMenuController.swift */,
+				8C93FEA020D93FED00E9102B /* GuessGameController.swift */,
+				8C93FE9620D93FEB00E9102B /* GuessRecord.swift */,
+				8C93FE9820D93FEC00E9102B /* MusicChoice.swift */,
+				8C93FE9C20D93FEC00E9102B /* MusicChoiceController.swift */,
+				8C93FE9D20D93FEC00E9102B /* MusicGame.swift */,
+				8C93FE9920D93FEC00E9102B /* MusicGameOperation.swift */,
+				8C93FEA120D93FED00E9102B /* TempoRecord.swift */,
+				8C93FE9520D93FEB00E9102B /* TepoGameMenu.swift */,
 			);
-			path = Health;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		8CA5CC2920CD9D150009E74D /* Joke */ = {
@@ -293,26 +319,6 @@
 				8CA5CC1920CD9D0A0009E74D /* QA.swift */,
 			);
 			path = Joke;
-			sourceTree = "<group>";
-		};
-		8CA5CC5F20CD9EAB0009E74D /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				8CA5CC4E20CD9EA10009E74D /* 000.mp3 */,
-				8CA5CC4A20CD9EA10009E74D /* 001.mp3 */,
-				8CA5CC4B20CD9EA10009E74D /* 002.mp3 */,
-				8CA5CC4820CD9EA00009E74D /* Game.storyboard */,
-				8CA5CC4F20CD9EA10009E74D /* GameMenuController.swift */,
-				8CA5CC5020CD9EA10009E74D /* GuessGameController.swift */,
-				8CA5CC4620CD9EA00009E74D /* GuessRecord.swift */,
-				8CA5CC4920CD9EA00009E74D /* MusicChoice.swift */,
-				8CA5CC4C20CD9EA10009E74D /* MusicChoiceController.swift */,
-				8CA5CC4720CD9EA00009E74D /* MusicChoiceViewCell.swift */,
-				8CA5CC4D20CD9EA10009E74D /* MusicGame.swift */,
-				8CA5CC5120CD9EA20009E74D /* TempoRecord.swift */,
-				8CA5CC4520CD9EA00009E74D /* TepoGameMenu.swift */,
-			);
-			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,30 +379,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CA5CC5720CD9EA20009E74D /* 001.mp3 in Resources */,
-				8CA5CC0A20CD976F0009E74D /* Question2.txt in Resources */,
-				8CA5CC1420CD976F0009E74D /* user.png in Resources */,
-				8CA5CC6320CDA3270009E74D /* userinfo.txt in Resources */,
-				8CA5CC1120CD976F0009E74D /* Medicine2.txt in Resources */,
+				8C400C4820DA6336009702BF /* Music.storyboard in Resources */,
+				8C93FEA720D93FED00E9102B /* 001.mp3 in Resources */,
+				8C400C3420DA62D5009702BF /* Medicine1.txt in Resources */,
 				8CAC508D20C6CE0100DE17E5 /* Map.storyboard in Resources */,
-				8CA5CC1520CD976F0009E74D /* Question3.txt in Resources */,
-				8CA5CB8E20CD5BED0009E74D /* Music.storyboard in Resources */,
+				8C400C3F20DA62D5009702BF /* Record.txt in Resources */,
+				8C400C2B20DA62D5009702BF /* Medicine2.txt in Resources */,
+				8C400C4020DA62D5009702BF /* Question3.txt in Resources */,
 				8C2F4DF120CAC36B007A752A /* Tags.txt in Resources */,
-				8CA5CC0720CD976F0009E74D /* Medicine3.txt in Resources */,
-				8CA5CC5820CD9EA20009E74D /* 002.mp3 in Resources */,
-				8CA5CC5520CD9EA20009E74D /* Game.storyboard in Resources */,
-				8CA5CC1220CD976F0009E74D /* Question1.txt in Resources */,
+				8C400C3720DA62D5009702BF /* Health.storyboard in Resources */,
+				8C93FEA820D93FED00E9102B /* 002.mp3 in Resources */,
+				8C93FEA420D93FED00E9102B /* Game.storyboard in Resources */,
 				8CA5CB9320CD5FB30009E74D /* Assets.xcassets in Resources */,
-				8CA5CC0920CD976F0009E74D /* Medicine1.txt in Resources */,
+				8C400C3E20DA62D5009702BF /* Question1.txt in Resources */,
+				8C400C3520DA62D5009702BF /* Question2.txt in Resources */,
+				8C400C3D20DA62D5009702BF /* user.png in Resources */,
 				3FAA8AA020BC0FD2006443FA /* LaunchScreen.storyboard in Resources */,
 				8C2F4DEE20CAC36B007A752A /* Contacts.txt in Resources */,
-				8CA5CC1320CD976F0009E74D /* Record.txt in Resources */,
 				3FAA8A9B20BC0FD1006443FA /* Main.storyboard in Resources */,
+				8C400C3620DA62D5009702BF /* userinfo.txt in Resources */,
 				8C2F4DF220CAC36B007A752A /* Opentime.txt in Resources */,
+				8C400C3020DA62D5009702BF /* Medicine3.txt in Resources */,
 				8CA5CC2320CD9D0B0009E74D /* Joke.storyboard in Resources */,
-				8CA5CC5B20CD9EA20009E74D /* 000.mp3 in Resources */,
+				8C93FEAB20D93FED00E9102B /* 000.mp3 in Resources */,
 				8C2F4DED20CAC36B007A752A /* Restaurants.txt in Resources */,
-				8CA5CC0C20CD976F0009E74D /* Health.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,56 +413,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CA5CC5C20CD9EA20009E74D /* GameMenuController.swift in Sources */,
-				8CA5CB9020CD5BED0009E74D /* musicPlayerController.swift in Sources */,
 				8C2F4DEC20CAC36B007A752A /* Restaurant.swift in Sources */,
+				8C400C3220DA62D5009702BF /* Record.swift in Sources */,
 				8C2F4DF020CAC36B007A752A /* table.swift in Sources */,
+				8C400C3920DA62D5009702BF /* HealthChoose.swift in Sources */,
+				8C400C4A20DA6336009702BF /* musicPlayerController.swift in Sources */,
 				3FAA8A9420BC0FD1006443FA /* AppDelegate.swift in Sources */,
-				8CA5CB8D20CD5BED0009E74D /* MusicViewController.swift in Sources */,
+				8C93FEAA20D93FED00E9102B /* MusicGame.swift in Sources */,
 				8C2F4DFF20CAC378007A752A /* Tags+CoreDataClass.swift in Sources */,
-				8CA5CC5D20CD9EA20009E74D /* GuessGameController.swift in Sources */,
-				8CA5CC5920CD9EA20009E74D /* MusicChoiceController.swift in Sources */,
 				8CA5CB9520CD695C0009E74D /* RestaurantDetailViewController.swift in Sources */,
+				8C400C3820DA62D5009702BF /* Settings.swift in Sources */,
 				8CA5CC2620CD9D0B0009E74D /* myFavorite.swift in Sources */,
-				8CA5CC5220CD9EA20009E74D /* TepoGameMenu.swift in Sources */,
 				8C0C5DED20C17499004CBB13 /* restaurantAnnotation.swift in Sources */,
+				8C400C2C20DA62D5009702BF /* TestResult.swift in Sources */,
+				8C400C4120DA62D5009702BF /* HealthSettingsTableViewCell.swift in Sources */,
+				8C400C2D20DA62D5009702BF /* HealthAnalysis.swift in Sources */,
+				8C400C2F20DA62D5009702BF /* HealthAnalysisTableViewCell.swift in Sources */,
 				8CA5CC2520CD9D0B0009E74D /* JokeViewController.swift in Sources */,
-				8CA5CC0620CD976F0009E74D /* HealthTest3.swift in Sources */,
-				8CA5CC0120CD976F0009E74D /* TestResult.swift in Sources */,
+				8C93FEAC20D93FED00E9102B /* GameMenuController.swift in Sources */,
+				8C400C3120DA62D5009702BF /* Medicine.swift in Sources */,
 				8C0C5DF320C188E8004CBB13 /* selectView.swift in Sources */,
 				8CA5CC2020CD9D0B0009E74D /* History.swift in Sources */,
-				8CA5CC0320CD976F0009E74D /* HealthTest.swift in Sources */,
-				8CA5CBFC20CD976F0009E74D /* HealthSettingsTableViewCell.swift in Sources */,
-				8CA5CBFD20CD976F0009E74D /* HealthHome.swift in Sources */,
+				8C400C3C20DA62D5009702BF /* TestResultTableCell.swift in Sources */,
 				8C2F4DEF20CAC36B007A752A /* database.xcdatamodeld in Sources */,
+				8C93FEA520D93FED00E9102B /* MusicChoice.swift in Sources */,
+				8C400C2920DA62D5009702BF /* HealthRecordTableViewCell.swift in Sources */,
+				8C93FEAE20D93FED00E9102B /* TempoRecord.swift in Sources */,
 				8C2F4DFC20CAC378007A752A /* Contacts+CoreDataClass.swift in Sources */,
 				8CA5CC2820CD9D0B0009E74D /* JokeTest.swift in Sources */,
 				8C2F4E0120CAC378007A752A /* Tags+CoreDataProperties.swift in Sources */,
-				8CA5CC5420CD9EA20009E74D /* MusicChoiceViewCell.swift in Sources */,
-				8CA5CC0820CD976F0009E74D /* ViewController.swift in Sources */,
+				8C93FEA920D93FED00E9102B /* MusicChoiceController.swift in Sources */,
 				8C2F4DFE20CAC378007A752A /* Restaurants+CoreDataProperties.swift in Sources */,
 				8C2F4DFB20CAC378007A752A /* Restaurants+CoreDataClass.swift in Sources */,
 				8CA5CC2120CD9D0B0009E74D /* JokeType.swift in Sources */,
+				8C400C3320DA62D5009702BF /* ViewController.swift in Sources */,
 				8C2F4DFD20CAC378007A752A /* Opentime+CoreDataClass.swift in Sources */,
+				8C400C3B20DA62D5009702BF /* HealthRecord.swift in Sources */,
 				8CA5CC2720CD9D0B0009E74D /* Edit.swift in Sources */,
 				8CA5CC2220CD9D0B0009E74D /* QA.swift in Sources */,
-				8CA5CC1020CD976F0009E74D /* TestResultTableCell.swift in Sources */,
-				8CA5CC0420CD976F0009E74D /* HealthAnalysisTableViewCell.swift in Sources */,
+				8C400C4920DA6336009702BF /* MusicPlayerClass.swift in Sources */,
+				8C93FEA620D93FED00E9102B /* MusicGameOperation.swift in Sources */,
 				8CA5CC2420CD9D0B0009E74D /* Joke.swift in Sources */,
-				8CA5CC0F20CD976F0009E74D /* HealthRecord.swift in Sources */,
+				8C93FEAD20D93FED00E9102B /* GuessGameController.swift in Sources */,
 				8C0C5DEB20C17469004CBB13 /* MapViewController.swift in Sources */,
-				8CA5CC5320CD9EA20009E74D /* GuessRecord.swift in Sources */,
-				8CA5CC5E20CD9EA20009E74D /* TempoRecord.swift in Sources */,
-				8CA5CBFE20CD976F0009E74D /* HealthRecordTableCell.swift in Sources */,
 				8C2F4E2C20CC10BC007A752A /* RestaurantViewController.swift in Sources */,
-				8CA5CC5A20CD9EA20009E74D /* MusicGame.swift in Sources */,
-				8CA5CC5620CD9EA20009E74D /* MusicChoice.swift in Sources */,
-				8CA5CC0E20CD976F0009E74D /* HealthChoose.swift in Sources */,
-				8CA5CC0520CD976F0009E74D /* HealthTest2.swift in Sources */,
-				8CA5CC0220CD976F0009E74D /* HealthAnalysis.swift in Sources */,
-				8CA5CBFF20CD976F0009E74D /* HealthRecordTableViewCell.swift in Sources */,
+				8C400C3A20DA62D5009702BF /* User.swift in Sources */,
+				8C93FEA220D93FED00E9102B /* TepoGameMenu.swift in Sources */,
 				8C2F4E0220CAC378007A752A /* Opentime+CoreDataProperties.swift in Sources */,
-				8CA5CC0D20CD976F0009E74D /* Settings.swift in Sources */,
+				8C400C4720DA6336009702BF /* MusicViewController.swift in Sources */,
+				8C400C2E20DA62D5009702BF /* HealthTest.swift in Sources */,
+				8C400C2820DA62D5009702BF /* HealthHome.swift in Sources */,
+				8C400C2A20DA62D5009702BF /* HealthRecordTableCell.swift in Sources */,
+				8C93FEA320D93FED00E9102B /* GuessRecord.swift in Sources */,
 				8C2F4E0020CAC378007A752A /* Contacts+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

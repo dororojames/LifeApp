@@ -133,13 +133,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap9-J7-hB1">
-                                <rect key="frame" x="192" y="529" width="31" height="30"/>
-                                <state key="normal" title="暫停"/>
-                                <connections>
-                                    <action selector="playBtnAction:" destination="aVe-D7-AbF" eventType="touchDown" id="H5T-3A-9h0"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="演唱者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRs-kr-yBH">
                                 <rect key="frame" x="181" y="347" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -164,20 +157,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKG-c7-3py">
-                                <rect key="frame" x="327" y="529" width="46" height="30"/>
-                                <state key="normal" title="下一曲"/>
-                                <connections>
-                                    <action selector="next:" destination="aVe-D7-AbF" eventType="touchDown" id="8zf-nv-jXo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8f-Nb-rCW">
-                                <rect key="frame" x="42" y="529" width="46" height="30"/>
-                                <state key="normal" title="上一曲"/>
-                                <connections>
-                                    <action selector="previous:" destination="aVe-D7-AbF" eventType="touchDown" id="cki-bH-ala"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUd-LW-CsB">
                                 <rect key="frame" x="311" y="618" width="62" height="30"/>
                                 <state key="normal" title="循環播放"/>
@@ -200,47 +179,79 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT8-8u-tqw">
-                                <rect key="frame" x="189.66666666666666" y="283" width="35" height="21"/>
+                                <rect key="frame" x="190" y="283" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="une-Hm-Zaq">
+                                <rect key="frame" x="333" y="524" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="brK-bD-dfq"/>
+                                    <constraint firstAttribute="height" constant="40" id="uPj-Ix-ZI5"/>
+                                </constraints>
+                                <state key="normal" image="nextMusic"/>
+                                <connections>
+                                    <action selector="next:" destination="aVe-D7-AbF" eventType="touchDown" id="KOh-0P-d98"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw0-IL-Rwa">
+                                <rect key="frame" x="42" y="524" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="d6E-wx-f4Q"/>
+                                    <constraint firstAttribute="height" constant="40" id="z7Y-sz-4pG"/>
+                                </constraints>
+                                <state key="normal" image="upMusic"/>
+                                <connections>
+                                    <action selector="previous:" destination="aVe-D7-AbF" eventType="touchDown" id="59m-Iy-UjC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzI-Ih-gze">
+                                <rect key="frame" x="185" y="522" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="HDd-ns-31d"/>
+                                    <constraint firstAttribute="width" constant="45" id="saC-CX-IQ4"/>
+                                </constraints>
+                                <state key="normal" image="stopMusic"/>
+                                <connections>
+                                    <action selector="playBtnAction:" destination="aVe-D7-AbF" eventType="touchUpInside" id="Xj3-Lt-pPO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZT8-8u-tqw" firstAttribute="top" secondItem="kNH-DK-58m" secondAttribute="bottom" constant="33" id="2nh-Zz-cPH"/>
+                            <constraint firstItem="hxO-dp-rHH" firstAttribute="trailing" secondItem="une-Hm-Zaq" secondAttribute="trailing" id="3HP-dc-1Zb"/>
                             <constraint firstItem="kNH-DK-58m" firstAttribute="centerX" secondItem="ZT8-8u-tqw" secondAttribute="centerX" id="5dB-O9-7ZH"/>
+                            <constraint firstItem="hxO-dp-rHH" firstAttribute="leading" secondItem="jw0-IL-Rwa" secondAttribute="leading" id="62t-IY-GGj"/>
+                            <constraint firstItem="nzI-Ih-gze" firstAttribute="top" secondItem="hxO-dp-rHH" secondAttribute="bottom" constant="38" id="6bm-E8-2sw"/>
+                            <constraint firstItem="hxO-dp-rHH" firstAttribute="centerX" secondItem="nzI-Ih-gze" secondAttribute="centerX" id="BAV-iX-RlJ"/>
                             <constraint firstItem="Sun-jn-Uuz" firstAttribute="leading" secondItem="hxO-dp-rHH" secondAttribute="leading" id="FH1-hP-JDj"/>
-                            <constraint firstItem="ap9-J7-hB1" firstAttribute="centerX" secondItem="mdd-4A-9hL" secondAttribute="centerX" id="FfV-Gm-iei"/>
                             <constraint firstItem="ZT8-8u-tqw" firstAttribute="centerX" secondItem="mdd-4A-9hL" secondAttribute="centerX" id="JiS-O4-EeK"/>
                             <constraint firstItem="ZT8-8u-tqw" firstAttribute="top" secondItem="ie2-LX-qXM" secondAttribute="top" constant="283" id="POE-rh-FlS"/>
                             <constraint firstItem="hxO-dp-rHH" firstAttribute="centerX" secondItem="mdd-4A-9hL" secondAttribute="centerX" id="Rvd-ag-J4f"/>
                             <constraint firstItem="cSr-Hu-w26" firstAttribute="centerX" secondItem="ZT8-8u-tqw" secondAttribute="centerX" id="UQF-um-mR8"/>
+                            <constraint firstItem="jw0-IL-Rwa" firstAttribute="top" secondItem="une-Hm-Zaq" secondAttribute="top" id="VId-5V-2J0"/>
                             <constraint firstItem="ZT8-8u-tqw" firstAttribute="top" secondItem="cSr-Hu-w26" secondAttribute="bottom" constant="219" id="Vpn-8V-dq8"/>
                             <constraint firstItem="eRs-kr-yBH" firstAttribute="top" secondItem="ZT8-8u-tqw" secondAttribute="bottom" constant="43" id="YBU-Oo-2A2"/>
                             <constraint firstItem="JUd-LW-CsB" firstAttribute="trailing" secondItem="hxO-dp-rHH" secondAttribute="trailing" id="blj-hx-tzi"/>
                             <constraint firstItem="Sun-jn-Uuz" firstAttribute="baseline" secondItem="JUd-LW-CsB" secondAttribute="baseline" id="cL2-jz-RAn"/>
-                            <constraint firstItem="hxO-dp-rHH" firstAttribute="trailing" secondItem="QKG-c7-3py" secondAttribute="trailing" id="dnE-SR-mWq"/>
-                            <constraint firstItem="ap9-J7-hB1" firstAttribute="top" secondItem="hxO-dp-rHH" secondAttribute="bottom" constant="45" id="eaW-cg-62F"/>
-                            <constraint firstAttribute="trailing" secondItem="QKG-c7-3py" secondAttribute="trailing" constant="41" id="fXX-En-dQz"/>
-                            <constraint firstItem="QKG-c7-3py" firstAttribute="trailing" secondItem="hxO-dp-rHH" secondAttribute="trailing" id="i3W-74-oy1"/>
-                            <constraint firstItem="b8f-Nb-rCW" firstAttribute="baseline" secondItem="ap9-J7-hB1" secondAttribute="baseline" id="jUw-if-OyV"/>
-                            <constraint firstItem="ap9-J7-hB1" firstAttribute="baseline" secondItem="QKG-c7-3py" secondAttribute="baseline" id="jsw-M8-kPk"/>
+                            <constraint firstItem="jw0-IL-Rwa" firstAttribute="centerY" secondItem="nzI-Ih-gze" secondAttribute="centerY" id="f4t-ON-9Oq"/>
+                            <constraint firstItem="hxO-dp-rHH" firstAttribute="top" secondItem="eRs-kr-yBH" secondAttribute="bottom" constant="86" id="jxn-FV-g7x"/>
+                            <constraint firstItem="Sun-jn-Uuz" firstAttribute="top" secondItem="jw0-IL-Rwa" secondAttribute="bottom" constant="54" id="lZh-9D-zwl"/>
                             <constraint firstItem="eRs-kr-yBH" firstAttribute="centerX" secondItem="mdd-4A-9hL" secondAttribute="centerX" id="mu6-Iu-XZk"/>
                             <constraint firstItem="mdd-4A-9hL" firstAttribute="top" secondItem="kNH-DK-58m" secondAttribute="bottom" constant="-230" id="n9j-dl-8q0"/>
                             <constraint firstItem="cSr-Hu-w26" firstAttribute="leading" secondItem="mdd-4A-9hL" secondAttribute="leading" constant="1" id="oYZ-5O-cRf"/>
-                            <constraint firstAttribute="bottom" secondItem="ap9-J7-hB1" secondAttribute="bottom" constant="177" id="p0s-h3-she"/>
-                            <constraint firstItem="b8f-Nb-rCW" firstAttribute="leading" secondItem="hxO-dp-rHH" secondAttribute="leading" id="pjQ-Le-ZOg"/>
-                            <constraint firstItem="Sun-jn-Uuz" firstAttribute="top" secondItem="b8f-Nb-rCW" secondAttribute="bottom" constant="59" id="tkJ-OR-Ba6"/>
+                            <constraint firstItem="hxO-dp-rHH" firstAttribute="leading" secondItem="mdd-4A-9hL" secondAttribute="leading" constant="42" id="vNd-bQ-EYB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mdd-4A-9hL"/>
                     </view>
                     <connections>
                         <outlet property="image" destination="kNH-DK-58m" id="rw4-bb-TJh"/>
                         <outlet property="musicProgress" destination="hxO-dp-rHH" id="X1D-OP-1KZ"/>
-                        <outlet property="nextBtn" destination="QKG-c7-3py" id="X7o-vS-vE5"/>
-                        <outlet property="playBtn" destination="ap9-J7-hB1" id="Fvt-Fe-KyO"/>
-                        <outlet property="previousBtn" destination="b8f-Nb-rCW" id="A46-ed-7Nk"/>
+                        <outlet property="nextBtn" destination="une-Hm-Zaq" id="H6m-d3-3wb"/>
+                        <outlet property="playBtn" destination="nzI-Ih-gze" id="Bao-Fz-k9S"/>
+                        <outlet property="previousBtn" destination="jw0-IL-Rwa" id="aCh-DF-x01"/>
                         <outlet property="randomBtn" destination="Sun-jn-Uuz" id="vPy-5a-SrX"/>
                         <outlet property="repeatBtn" destination="JUd-LW-CsB" id="FbR-Yi-15y"/>
                         <outlet property="singerName" destination="eRs-kr-yBH" id="xec-bJ-6ZJ"/>
@@ -250,10 +261,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euJ-rn-2Sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5F7-7u-Id1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1101" y="-192"/>
+            <point key="canvasLocation" x="1100" y="-192.39130434782609"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Music" width="20" height="20"/>
+        <image name="Music" width="13" height="13"/>
+        <image name="nextMusic" width="100" height="100"/>
+        <image name="stopMusic" width="100" height="100"/>
+        <image name="upMusic" width="100" height="100"/>
     </resources>
 </document>

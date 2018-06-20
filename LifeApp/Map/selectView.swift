@@ -74,7 +74,6 @@ class selectView: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         picktag = restaurantlist.alltags[0]
-        print((locationManager.location?.coordinate)!)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
