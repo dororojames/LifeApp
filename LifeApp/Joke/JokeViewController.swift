@@ -14,8 +14,13 @@ class JokeViewController: UIViewController {
     }
     @IBAction func unwindSegueBack_Favorite(for segue: UIStoryboardSegue) {
     }
-    @IBAction func unwindSegueBack_History(for segue: UIStoryboardSegue) {
-    }
+  
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

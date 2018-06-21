@@ -9,108 +9,56 @@
 import UIKit
 
 class HealthTest: UIViewController {
-
-    var score = 0
-    var used : [Bool] = []
-    var count = 1
-    var medicine = [String]()
-    let maxNum = 3
-    var index = 0
-    
     @IBOutlet weak var questionDescription: UILabel!
+    
+    var count = 1
+    var test = TestList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        usedinitialize(num: maxNum)
-        index = generteRandom()
-        loadquestion(id: index)
+        questionDescription.text = test.getTest(id: 0).getQuestion().getDescription()
     }
     @IBAction func yes(_ sender: Any) {
-        if(count < 3)
-        {
-            let path = NSHomeDirectory() + "/Documents/Medicine" + String(index) + ".txt"
-            do {
-                let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
-                medicine.append(content as String)
-            } catch {
-                print("Error:", error.localizedDescription)
-            }
-            index = generteRandom()
-            loadquestion(id: index)
+        if (judge(fine: false)==false) {
+            self.performSegue(withIdentifier: "TestToResult", sender: sender)
+        }
+    }
+
+    @IBAction func no(_ sender: Any) {
+        if (judge(fine: true)==false) {
+            self.performSegue(withIdentifier: "TestToResult", sender: sender)
+        }
+    }
+    
+    func judge(fine: Bool) -> Bool{
+        if (count<test.getNumtest()) {
+            test.diagnose(id: count-1, fine: fine)
+            questionDescription.text = test.getTest(id: count).getQuestion().getDescription()
             count+=1
+            return true
         }
         else
         {
-            let path = NSHomeDirectory() + "/Documents/Medicine" + String(index) + ".txt"
-            do {
-                let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
-                medicine.append(content as String)
-            } catch {
-                print("Error:", error.localizedDescription)
-            }
-            self.performSegue(withIdentifier: "TestToResult", sender: sender)
+            test.diagnose(id: count-1, fine: fine)
         }
+        return false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TestToResult"
         {
             let vc = segue.destination as! TestResult
-            print(vc.medicine)
-            if(medicine.count != 0)
+            if(test.getNumPrescription() != 0)
             {
-                for i in 0 ... medicine.count-1
+                for i in 0 ... test.getNumPrescription()-1
                 {
-                    vc.medicine.append(medicine[i])
+                    vc.medicine.append(test.getMedicine(id: i).getMedicine())
                 }
             }
-            vc.score = score
+            vc.score = test.getScore()
         }
     }
-    
-    @IBAction func no(_ sender: Any) {
-        if(count<3)
-        {
-            score += 30
-            index = generteRandom()
-            loadquestion(id: index)
-            count+=1
-        }
-        else
-        {
-            score += 30
-            self.performSegue(withIdentifier: "TestToResult", sender: sender)
-        }
-    }
-    
-    func usedinitialize(num: Int)  {
-        for _ in 1 ... num
-        {
-            used.append(false)
-        }
-    }
-    func generteRandom() -> Int {
-        var id : Int
-        id = Int(arc4random_uniform(UInt32(maxNum)))
-        while used[id]==true {
-            id = Int(arc4random_uniform(UInt32(maxNum)))
-        }
-        used[id] = true
-        id = id+1
-        return id
-    }
-    
-    func loadquestion(id : Int) {
-        let path = NSHomeDirectory() + "/Documents/Question" + String(id) + ".txt"
-        do {
-            let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
-            questionDescription.text = content as String
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-    }
-    
     
     @IBAction func alert(_ sender: Any) {
         let alert = UIAlertController(title: "放棄測驗", message: "是否放棄本次測驗？", preferredStyle: .alert)

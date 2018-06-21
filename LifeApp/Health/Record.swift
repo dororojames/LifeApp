@@ -10,8 +10,8 @@ import Foundation
 
 class Record{
     var date : String = ""
-    var score: Int
-    
+    var score = 0
+    var medicine = [Medicine]()
     init() {
         score = 0
     }

@@ -51,8 +51,11 @@ var JokeTitleString:[String]=[]
     
     func updateInfo(){
         //更新畫面上的資訊
+        print(jokeDetail?.Name)
         jokeTitle?.text = jokeDetail?.Name
+        print(jokeDetail?.Content)
         jokeText?.text = jokeDetail?.Content
+        print(String(jokeDetail.Score!))
         jokeScore?.text=String(jokeDetail.Score!)
     }
     
