@@ -99,7 +99,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3FAA8A9020BC0FD1006443FA /* LifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FAA8A9020BC0FD1006443FA /* LifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = LifeApp.app; path = "/Users/dororo/Downloads/LifeApp-master/build/Debug-iphoneos/LifeApp.app"; sourceTree = "<absolute>"; };
 		3FAA8A9320BC0FD1006443FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FAA8A9A20BC0FD1006443FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FAA8A9F20BC0FD2006443FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -213,7 +213,6 @@
 		3FAA8A9120BC0FD1006443FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3FAA8A9020BC0FD1006443FA /* LifeApp.app */,
 			);
 			name = Products;
 			path = ..;
@@ -253,8 +252,8 @@
 				8C2F4DE620CAC36A007A752A /* Contacts.txt */,
 				8C2F4DEB20CAC36B007A752A /* Opentime.txt */,
 				8C2F4DE720CAC36A007A752A /* database.xcdatamodeld */,
-				8C0C5DEC20C17499004CBB13 /* restaurantAnnotation.swift */,
 				8C2F4DE420CAC36A007A752A /* Restaurant.swift */,
+				8C0C5DEC20C17499004CBB13 /* restaurantAnnotation.swift */,
 				8C2F4DE920CAC36A007A752A /* table.swift */,
 				8CAC508C20C6CE0100DE17E5 /* Map.storyboard */,
 				8C0C5DEA20C17469004CBB13 /* MapViewController.swift */,

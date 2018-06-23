@@ -16,15 +16,13 @@ class MusicGameController: UIViewController {
     var Left=0
     var Mid=1
     var Right=2
-
-
+    
     /* var shape = [UILabel](repeating: UILabel(), count: 15)*/
     //var Shape=[shape](repeating: shape(), count: 24)
     
     var timer=Timer()
     func timerStart(){
         timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
-        
     }
     @IBOutlet weak var HitMean: UILabel!
     @IBOutlet weak var MissMean: UILabel!
@@ -51,9 +49,8 @@ class MusicGameController: UIViewController {
                     Records.Shape[index].lab.removeFromSuperview()
                 }
                 else{
-                     self.view.addSubview(Records.Shape[index].lab)
+                    self.view.addSubview(Records.Shape[index].lab)
                 }
-                
             }
         }
         
@@ -66,7 +63,6 @@ class MusicGameController: UIViewController {
                 self.present(controller, animated: false, completion: nil)
             }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,16 +70,16 @@ class MusicGameController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   /* func prepareAudioFile() {
-        let url = Bundle.main.url(forResource:itemString, withExtension: "mp3")
-        
-        do {
-            Records.audioPlayer = try AVAudioPlayer(contentsOf: url!)
-            Records.audioPlayer.prepareToPlay()
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-    }*/
+    /* func prepareAudioFile() {
+     let url = Bundle.main.url(forResource:itemString, withExtension: "mp3")
+     
+     do {
+     Records.audioPlayer = try AVAudioPlayer(contentsOf: url!)
+     Records.audioPlayer.prepareToPlay()
+     } catch {
+     print("Error:", error.localizedDescription)
+     }
+     }*/
     
     @IBAction func leftclick(_ sender: Any) {
         UIHitMissDetermination(DirBtn: Left)
@@ -99,7 +95,6 @@ class MusicGameController: UIViewController {
         timer.invalidate()
     }
     func UIHitMissDetermination(DirBtn:Int){
-        
         for i in 0...23{
             if i%3==DirBtn && Records.Shape[i].lab.center.y>596{
                 if Records.HitMissDetermination(DirBtn: DirBtn,i: i){
@@ -111,7 +106,4 @@ class MusicGameController: UIViewController {
             }
         }
     }
-    
-    
-    
 }

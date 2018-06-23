@@ -70,6 +70,7 @@ class MusicGame{
         UserDefault.set(BestHit,forKey:"BestHitNum")
         UserDefault.set(miss,forKey:"MissNum")
     }
+    
     func ShapeOperateInGame(index:Int)->Bool{
         self.Shape[index].lab.center.y+=12.5
         if(self.Shape[index].lab.center.y>=665)
@@ -78,25 +79,22 @@ class MusicGame{
             self.Shape[index].lab.removeFromSuperview()
             self.Shape[index].used=false
             miss=miss+1
-            
             return true
         }
         return false
     }
+    
     func HitMissDetermination(DirBtn:Int,i:Int)->Bool{
-                if self.Shape[i].lab.center.y>=610&&self.Shape[i].lab.center.y<650{
-                    hit=hit+1           
-                    self.Shape[i].lab.center.y=100
-                    self.Shape[i].lab.removeFromSuperview()
-                    self.Shape[i].used=false
-                    return true
-                }
-                else
-                {
-                    miss=miss+1
-                    self.Shape[i].lab.center.y=100
-                    self.Shape[i].lab.removeFromSuperview()
-                    return false
-                }
+        if self.Shape[i].lab.center.y>=610&&self.Shape[i].lab.center.y<650{
+            hit=hit+1
+            self.Shape[i].lab.center.y=100
+            self.Shape[i].lab.removeFromSuperview()
+            self.Shape[i].used=false
+            return true
+        }
+        miss=miss+1
+        self.Shape[i].lab.center.y=100
+        self.Shape[i].lab.removeFromSuperview()
+        return false
     }
 }

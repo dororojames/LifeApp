@@ -35,7 +35,6 @@ class RecordBoardView: UIViewController {
         bestTime.text=String(BestTime/60) + ":" + String(format: "%02d", BestTime%60)
         thisTime.text=String(TotalTime/60) + ":" + String(format: "%02d", TotalTime%60)
         thisCounter.text=String(gameCounter)
-        
     }
     
     @IBAction func clear(_ sender: Any) {

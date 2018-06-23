@@ -25,7 +25,6 @@ class Music: UIViewController,UITableViewDataSource,UITableViewDelegate{
         list.append("000")
         list.append("001")
         list.append("002")
-        
     }
     
     func numberOfSections(in tableView: UITableView)->Int{
@@ -44,7 +43,6 @@ class Music: UIViewController,UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView!.deselectRow(at: indexPath, animated: true)
         let itemString = list[indexPath.row]
-        
         self.performSegue(withIdentifier: "MusicGameView", sender: itemString)
     }
     

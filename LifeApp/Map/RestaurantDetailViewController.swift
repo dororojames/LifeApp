@@ -13,7 +13,6 @@ class RestaurantDetailCell: UITableViewCell {
     @IBOutlet weak var DetailContent: UILabel!
 }
 
-
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

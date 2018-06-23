@@ -24,7 +24,6 @@ class GuessGameController: UIViewController {
     @IBOutlet weak var TimeLabel: UILabel!
     func timerStart(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
-        
     }
     
     @IBOutlet weak var one: UILabel!
@@ -49,7 +48,6 @@ class GuessGameController: UIViewController {
                     for i in 0...3 {
                         compareNum[3-i]=num%10
                         num=num/10
-                        
                     }
                     var acount = 0
                     let bcount = 0
@@ -76,7 +74,6 @@ class GuessGameController: UIViewController {
         input.keyboardType = .numberPad
         initial()
         timerStart()
-       
         // Do any additional setup after loading the view, typically from a nib.
     }
     
