@@ -1,14 +1,14 @@
  //
-//  ViewController.swift
-//  music
-//
-//  Created by Student on 2018/6/5.
-//  Copyright © 2018年 Student. All rights reserved.
-//
-
-import UIKit
-import MediaPlayer
-class MusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MPMediaPickerControllerDelegate{
+ //  ViewController.swift
+ //  music
+ //
+ //  Created by Student on 2018/6/5.
+ //  Copyright © 2018年 Student. All rights reserved.
+ //
+ 
+ import UIKit
+ import MediaPlayer
+ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MPMediaPickerControllerDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -22,7 +22,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -70,7 +70,6 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         //離開選歌畫面
         self.dismiss(animated: true, completion: nil)
         musicData.reloadData()
-        music.playMusic()
         music.player.beginGeneratingPlaybackNotifications()
     }
     
@@ -88,6 +87,5 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         let controller = segue.destination as! musicPlayerController
         controller.music = music
     }
-    
-}
-
+ }
+ 

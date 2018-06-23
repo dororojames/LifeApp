@@ -121,7 +121,7 @@ class musicPlayerController: UIViewController {
         musicProgress.setValue(Float(music.player.currentPlaybackTime), animated: true)
     }
     @objc func refreshInfo(){
-        if music.songCnt != 0{
+        if music.player.isPreparedToPlay{
             //slider 最大值
             musicProgress.maximumValue = Float((music.player.nowPlayingItem?.playbackDuration)!)
             let songName = music.player.nowPlayingItem?.title
@@ -135,7 +135,6 @@ class musicPlayerController: UIViewController {
             refreshRandomBtn()
             refreshReapeatBtn()
             refreshMusicProgress()
-            
         }
         else{
             musicProgress.maximumValue = 0.0
