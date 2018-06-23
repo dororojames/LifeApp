@@ -11,19 +11,19 @@ import UIKit
 
 
 class myFavorite: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    var FovoriteList=[Joke(Order: 0,Name: "距離",jokeType: "黃色笑話",Score: 3,Content: "有天看見了我的死黨鬱悶的坐在咖啡廳，臉色黯淡\n於是我上前安慰他，探問發生了什麼事\n死黨: 我的情書被退回了...還被打了一巴掌\n我: 咦？你寫了什麼，我能看看嗎？\n內容: 如果太陽與地球的距離是149600000\n那我希望我與你的距離是-30公分"),Joke(Order: 1,Name: "黨中央",jokeType: "黃色笑話",Score: 1,Content: "有天毛主席出席記者會，眾人只見毛主席穿著一件兜擋布，於是好奇的探問\n記者: 毛主席，請問為什麼您只穿一件兜擋布呢？\n毛主席: 一切都是為了擋中央啊"),Joke(Order: 2,Name: "用途",jokeType: "黃色笑話",Score: 2,Content: "有個很喜歡開黃腔的男同學發現最近的天氣放晴，是個適合狩獵的季節，於是找了一個女同學打算搭訕她\n\n男同學: 你知道小黃瓜的用途是什麼嗎？\n\n女同學: 不知道\n\n男同學: 那妳知道香蕉的用途是什麼嗎?\n\n女同學: 不知道\n\n男同學: 那妳知道茄子的用途是什麼嗎？\n\n女同學: 不知道\n\n男同學: 那妳知道西瓜的用途是什麼嗎？\n\n女同學: 西...西瓜也可以嗎")]
+    var jokelist = JokeList()
+//    var FovoriteList=[Joke]()
     @IBOutlet weak var tableView: UITableView!
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return FovoriteList.count
+        return jokelist.FavoriteList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let JokeName = cell.contentView.viewWithTag(1) as! UILabel
-        JokeName.text=FovoriteList[indexPath.row].Name
+        JokeName.text=jokelist.FavoriteList[indexPath.row].getName()
         return cell
     }
     
@@ -38,11 +38,14 @@ class myFavorite: UIViewController, UITableViewDataSource, UITableViewDelegate {
         //创建“删除”事件按钮
         let delete = UIContextualAction(style: .destructive, title: "删除") {
             (action, view, completionHandler) in
+            self.jokelist.FavoriteList[indexPath.row].Like=0
             //将对应条目的数据删除
-            if self.FovoriteList.count>indexPath.row
+            
+            if self.jokelist.FavoriteList.count>indexPath.row
             {
-                self.FovoriteList.remove(at: indexPath.row)
+                self.jokelist.FavoriteList.remove(at: indexPath.row)
             }
+            print(indexPath.row,123456)
             completionHandler(true)
         }
         
@@ -56,20 +59,80 @@ class myFavorite: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        for i in 0...1
+//        {
+//            let path = NSHomeDirectory() + "/Documents/joke"+String(i)+".txt"
+//            if()
+//        }
+//
+//
+//        for i in 0...1
+//        {
+//            let path = NSHomeDirectory() + "/Documents/joke"+String(i)+".txt"
+//            do {
+//                var jokeTemp : Joke!
+//                let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
+//                var count = 0;
+//                jokeTemp = Joke(Order: 0, Name: "", jokeType: "", Score: 0, Content: "")
+//                jokeTemp.Order=i
+//                content.enumerateLines({ (line, stop) -> () in
+//                    print(line)
+//                    switch count
+//                    {
+//                    case self.NAME:
+//                        jokeTemp.Name=line
+//                    //                        print(jokeTemp.Name)
+//                    case self.JOKETYPE:
+//                        jokeTemp.jokeType=line
+//                    //                        print(jokeTemp.jokeType)
+//                    case self.SCORE:
+//                        jokeTemp.Score=Int(line)
+//                        print(type(of: jokeTemp.Score),jokeTemp.Score)
+//                    case self.CONTENT:
+//                        jokeTemp.Content=line
+//                    //                        print(jokeTemp.Content)
+//                    default:
+//                        print("Error")
+//                    }
+//                    count+=1
+//                })
+//                self.Jokelist.append(jokeTemp)
+//
+//            } catch {
+//                print("Error:", error.localizedDescription)
+//            }
+//        }
+        
+        
+        
+        
+        
     }
     
-    // UITableViewDelegate 方法，处理列表项的选中事件
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.tableView!.deselectRow(at: indexPath, animated: true)
-        let JokeTitleString = [self.FovoriteList[indexPath.row].Name,self.FovoriteList[indexPath.row].Content]
-        self.performSegue(withIdentifier: "ShowEdit", sender: JokeTitleString)
+    override func viewDidAppear(_ animated: Bool) {
+       tableView.reloadData()
     }
+    
+//    // UITableViewDelegate 方法，处理列表项的选中事件
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        
+//        
+//        self.tableView!.deselectRow(at: indexPath, animated: true)
+//        let JokeTitleString = [self.jokelist.FavoriteList[indexPath.row].getName(),self.jokelist.FavoriteList[indexPath.row].Content]
+//        self.performSegue(withIdentifier: "ShowEdit", sender: JokeTitleString)
+//    }
     
     //在这个方法中给新页面传递参数
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowEdit"{
-            let controller = segue.destination as! Edit
-            controller.JokeTitleString = sender as! [String]
+        if segue.identifier == "MyFavoriteShowJokeText"{
+            let controller = segue.destination as! JokeTest
+            controller.jokelist = jokelist
+//            controller.type = 4
+//            controller.ListArray[4] = jokelist.FavoriteList
+            controller.comefrom = segue.identifier
+            controller.index=(tableView.indexPathForSelectedRow?.row)!
         }
     }
     override func didReceiveMemoryWarning() {

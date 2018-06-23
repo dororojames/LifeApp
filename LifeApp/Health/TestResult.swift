@@ -27,7 +27,7 @@ class TestResult: UIViewController,UITableViewDataSource,UITableViewDelegate{
 
         list.append("診斷結果")
         list.append("建議藥材")
-        savetextfile(filename: date)
+    
         do {
             let path = NSHomeDirectory() + "/Documents/" + date + ".txt"
             var outString = ""
@@ -52,11 +52,6 @@ class TestResult: UIViewController,UITableViewDataSource,UITableViewDelegate{
         }
         
         // Do any additional setup after loading the view.
-    }
-    func savetextfile(filename : String)
-    {
-        let path = NSHomeDirectory() + "/Documents/information.txt"
-        try? FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

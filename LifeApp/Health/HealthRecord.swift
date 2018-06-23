@@ -10,20 +10,10 @@ import UIKit
 
 class HealthRecord: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
-    var list = [String]()
+    var recordlist = RecordList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        do {
-            let path = NSHomeDirectory() + "/Documents/Record.txt"
-            let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
-            content.enumerateLines({ (line, stop) -> () in
-                    self.list.append(line)
-            })
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
         // Do any additional setup after loading the view.
     }
     
@@ -31,7 +21,10 @@ class HealthRecord: UIViewController,UITableViewDataSource,UITableViewDelegate {
         if segue.identifier == "RecordToAnalysis"
         {
             let vc = segue.destination as! HealthAnalysis
-            vc.date = list[(tableView.indexPathForSelectedRow?.row)!]
+            if let indexPath = sender as? IndexPath
+            {
+                vc.record = recordlist.getRecord(id: indexPath.row)
+            }
         }
     }
     
@@ -39,14 +32,16 @@ class HealthRecord: UIViewController,UITableViewDataSource,UITableViewDelegate {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return recordlist.getNumRecord()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "RecordToAnalysis", sender: self)
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        //Pass the indexPath as sender
+        self.performSegue(withIdentifier: "RecordToAnalysis", sender: indexPath)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle,forRowAt indexPath: IndexPath){
+        //delete rows
         var outString : String = ""
         do {
             let path = NSHomeDirectory() + "/Documents/Record.txt"
@@ -65,12 +60,13 @@ class HealthRecord: UIViewController,UITableViewDataSource,UITableViewDelegate {
             print("Error:", error.localizedDescription)
         }
         
-        list.remove(at: indexPath.row)
+        recordlist.deleteRecord(id: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath)
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = recordlist.getRecord(id: indexPath.row).getDate()
+        
         cell.accessoryType = .detailDisclosureButton
         return cell
     }

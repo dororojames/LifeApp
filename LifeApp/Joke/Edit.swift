@@ -10,7 +10,9 @@ import UIKit
 
 class Edit: UIViewController {
     var JokeTitleString:[String]=[]
-    
+    var ListArray = [[Joke]]()
+    var index = 0
+    var type = 0
     @IBOutlet weak var jokeTitle: UITextField!
     @IBOutlet weak var jokeContent: UITextView!
     
@@ -41,6 +43,19 @@ class Edit: UIViewController {
     }
     @IBAction func finished(_ sender: Any) {
         
+        let notificationName = Notification.Name("GetUpdateNoti")
+        
+        //取畫面上的值
+        editJoke.setName(name: jokeTitle.text!)
+        editJoke.setContent(content: jokeContent.text)
+        
+        //發送通知
+        NotificationCenter.default.post(name: notificationName, object: nil, userInfo: ["PASS":editJoke])
+        
+        
+        
+        
+        
 //        func WriteFile(_ textField: UITextField) {
 //            let indexOf = list.index(of:textField.placeholder!)
 //            if(textField.placeholder! == list[indexOf!]){
@@ -54,20 +69,22 @@ class Edit: UIViewController {
 //
 //            // Write to the file named Test
             do {
-                let path = NSHomeDirectory() + "/Documents/joke"+String(editJoke.Order!)+".txt"
+                let path = NSHomeDirectory() + "/Documents/joke"+String(editJoke.getOrder())+".txt"
                 var writeIn = ""
-                for i in 0 ... 3
+                for i in 0 ... 4
                 {
                     switch i
                     {
                     case 0:
-                        writeIn += jokeTitle.text!
+                        writeIn += editJoke.getName()
                     case 1:
                         writeIn += editJoke.jokeType!
                     case 2:
                         writeIn += String(editJoke.Score!)
                     case 3:
-                        writeIn += jokeContent.text!
+                        writeIn += String(editJoke.Like!)
+                    case 4:
+                        writeIn += editJoke.getContent()
                     default:
                         print("Error")
                     }
@@ -78,17 +95,14 @@ class Edit: UIViewController {
                 print("Error:", error.localizedDescription)
             }
     
+//        ListArray[type][index].Name = jokeTitle.text!
+//        ListArray[type][index].jokeType = editJoke.jokeType!
+//        ListArray[type][index].Score = editJoke.Score!
+//        ListArray[type][index].Like = editJoke.Like!
+//        ListArray[type][index].Content = jokeContent.text!
         
         
         
-        let notificationName = Notification.Name("GetUpdateNoti")
-
-        //取畫面上的值
-        editJoke.Name = jokeTitle.text
-        editJoke.Content = jokeContent.text
-
-        //發送通知
-        NotificationCenter.default.post(name: notificationName, object: nil, userInfo: ["PASS":editJoke])
 
         //回到前一頁
         self.navigationController?.popViewController(animated: true)
@@ -111,8 +125,8 @@ class Edit: UIViewController {
             score3Button.backgroundColor = UIColor.red
         }
         
-        jokeTitle?.text = editJoke?.Name
-        jokeContent?.text = editJoke?.Content
+        jokeTitle?.text = editJoke?.getName()
+        jokeContent?.text = editJoke.getContent()
         // Do any additional setup after loading the view.
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

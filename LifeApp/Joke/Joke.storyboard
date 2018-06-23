@@ -36,7 +36,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="unwindSegueBack_QAFor:" destination="nvF-qf-TIN" eventType="touchUpInside" id="UvS-c6-hnf"/>
                                     <action selector="問答笑話:" destination="nvF-qf-TIN" eventType="touchUpInside" id="kEr-A9-Vgh"/>
                                     <segue destination="HfE-Dd-IXf" kind="show" identifier="ShowTypeList1" id="MSW-VD-tIU"/>
                                 </connections>
@@ -89,7 +88,6 @@
                                         <barButtonItem key="leftBarButtonItem" title="返回" id="6WF-co-cxY">
                                             <connections>
                                                 <action selector="back:" destination="nvF-qf-TIN" id="Hx2-of-YOq"/>
-                                                <segue destination="GXD-SR-Gsc" kind="unwind" unwindAction="unwindSegueBack_JokeTypeFor:" id="7kh-YY-ExC"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -143,7 +141,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9x7-pu-aHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="GXD-SR-Gsc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-3133.3333333333335" y="575.54347826086962"/>
         </scene>
@@ -162,7 +159,6 @@
                                         <barButtonItem key="leftBarButtonItem" title="返回" id="ZWN-T9-OsJ">
                                             <connections>
                                                 <action selector="back:" destination="HfE-Dd-IXf" id="8rd-an-387"/>
-                                                <segue destination="VSw-ro-teC" kind="unwind" unwindAction="unwindSegueBack_QAFor:" id="lih-t0-cmu"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -172,7 +168,7 @@
                                 <rect key="frame" x="0.0" y="124" width="414" height="612"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="PuN-2O-yx0" customClass="JokeTableViewCell" customModule="LifeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="PuN-2O-yx0" customClass="JokeTableViewCell" customModule="LifeApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PuN-2O-yx0" id="m8d-lf-NCp">
@@ -194,7 +190,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="JokeName" destination="7BQ-bQ-Ehc" id="mXV-se-Epg"/>
-                                            <segue destination="qur-dJ-EPj" kind="show" identifier="ShowJokeText" id="vyq-32-AjN"/>
+                                            <segue destination="qur-dJ-EPj" kind="show" identifier="QAShowJokeText" id="vyq-32-AjN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -232,7 +228,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1A-S3-U5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="VSw-ro-teC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2284" y="576"/>
         </scene>
@@ -309,10 +304,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yFZ-nY-flb">
                                 <rect key="frame" x="14" y="206" width="374" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="EAv-rh-GLl"/>
-                                    <constraint firstAttribute="height" constant="446" id="gFj-sc-bqK"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -325,6 +316,7 @@
                             <constraint firstItem="yFZ-nY-flb" firstAttribute="leading" secondItem="Ekr-Ol-QGd" secondAttribute="leading" constant="14" id="8QG-VO-YaI"/>
                             <constraint firstItem="yFZ-nY-flb" firstAttribute="top" secondItem="rau-Hz-hQQ" secondAttribute="bottom" constant="8" id="8rr-5b-oum"/>
                             <constraint firstItem="Ekr-Ol-QGd" firstAttribute="top" secondItem="rhb-J0-Fcv" secondAttribute="bottom" constant="-138" id="AoI-TC-DV2"/>
+                            <constraint firstItem="tnA-iI-ee3" firstAttribute="top" secondItem="yFZ-nY-flb" secondAttribute="bottom" constant="30" id="B8V-uB-qss"/>
                             <constraint firstItem="Ekr-Ol-QGd" firstAttribute="bottom" secondItem="p5U-5v-zdO" secondAttribute="bottom" constant="24" id="F1o-37-tG4"/>
                             <constraint firstItem="p5U-5v-zdO" firstAttribute="leading" secondItem="9al-ff-TTX" secondAttribute="trailing" constant="8" symbolic="YES" id="Naa-XS-BgE"/>
                             <constraint firstItem="rhb-J0-Fcv" firstAttribute="leading" secondItem="9e5-kM-rl4" secondAttribute="leading" id="Ner-dX-Goq"/>
@@ -336,11 +328,14 @@
                             <constraint firstItem="rau-Hz-hQQ" firstAttribute="top" secondItem="rhb-J0-Fcv" secondAttribute="bottom" constant="8" id="ZYa-Sy-JK8"/>
                             <constraint firstItem="9e5-kM-rl4" firstAttribute="top" secondItem="KlH-ph-VtM" secondAttribute="top" constant="88" id="Zzx-Gk-3tt"/>
                             <constraint firstItem="9e5-kM-rl4" firstAttribute="leading" secondItem="Ekr-Ol-QGd" secondAttribute="leading" constant="14" id="a13-pX-wSG"/>
+                            <constraint firstItem="9al-ff-TTX" firstAttribute="top" secondItem="yFZ-nY-flb" secondAttribute="bottom" constant="34" id="bp2-Bg-Cn9"/>
                             <constraint firstItem="tnA-iI-ee3" firstAttribute="leading" secondItem="IaK-tX-YRZ" secondAttribute="trailing" constant="37" id="dqx-qn-G9H"/>
+                            <constraint firstItem="p5U-5v-zdO" firstAttribute="top" secondItem="yFZ-nY-flb" secondAttribute="bottom" constant="30" id="gVm-rh-hTn"/>
                             <constraint firstItem="rau-Hz-hQQ" firstAttribute="top" secondItem="9e5-kM-rl4" secondAttribute="bottom" constant="46" id="hc8-HB-YY7"/>
                             <constraint firstItem="IaK-tX-YRZ" firstAttribute="leading" secondItem="p5U-5v-zdO" secondAttribute="trailing" constant="32" id="hfq-Nm-a1y"/>
                             <constraint firstItem="Ekr-Ol-QGd" firstAttribute="bottom" secondItem="9al-ff-TTX" secondAttribute="bottom" constant="29" id="iQO-l4-FQA"/>
                             <constraint firstItem="rhb-J0-Fcv" firstAttribute="leading" secondItem="Ekr-Ol-QGd" secondAttribute="leading" constant="14" id="mrc-xt-WHD"/>
+                            <constraint firstItem="IaK-tX-YRZ" firstAttribute="top" secondItem="yFZ-nY-flb" secondAttribute="bottom" constant="30" id="nFY-az-1Qp"/>
                             <constraint firstItem="Ekr-Ol-QGd" firstAttribute="trailing" secondItem="tnA-iI-ee3" secondAttribute="trailing" constant="20" id="nqn-s2-taE"/>
                             <constraint firstItem="yFZ-nY-flb" firstAttribute="top" secondItem="rhb-J0-Fcv" secondAttribute="bottom" constant="48" id="pPN-2d-c3L"/>
                             <constraint firstItem="yFZ-nY-flb" firstAttribute="leading" secondItem="9e5-kM-rl4" secondAttribute="leading" id="ryI-dA-KxM"/>
@@ -446,9 +441,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gi-qO-Hgw">
+                                        <rect key="frame" x="283" y="616" width="92" height="30"/>
+                                        <state key="normal" title="加入我的最愛"/>
+                                        <connections>
+                                            <action selector="addToMyFavorite:" destination="qur-dJ-EPj" eventType="touchUpInside" id="UiW-RV-WcE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="pKj-iu-fQX" secondAttribute="trailing" constant="21" id="1Qd-r6-NZK"/>
+                                    <constraint firstAttribute="trailing" secondItem="5gi-qO-Hgw" secondAttribute="trailing" constant="39" id="2ny-JF-ujX"/>
                                     <constraint firstItem="LYt-FU-4qe" firstAttribute="centerX" secondItem="yma-5D-sNn" secondAttribute="centerX" id="61s-Hk-hG7"/>
                                     <constraint firstItem="LYt-FU-4qe" firstAttribute="top" secondItem="yma-5D-sNn" secondAttribute="bottom" constant="11" id="CJw-fO-47d"/>
                                     <constraint firstItem="h5I-LG-BF0" firstAttribute="top" secondItem="yMb-Fg-wVP" secondAttribute="top" constant="8" id="IFv-fs-uCS"/>
@@ -456,6 +459,7 @@
                                     <constraint firstItem="yma-5D-sNn" firstAttribute="centerX" secondItem="yMb-Fg-wVP" secondAttribute="centerX" id="Mtn-SY-GgT"/>
                                     <constraint firstItem="LYt-FU-4qe" firstAttribute="leading" secondItem="yMb-Fg-wVP" secondAttribute="leading" constant="50" id="RMX-cB-8Zy"/>
                                     <constraint firstAttribute="trailing" secondItem="LYt-FU-4qe" secondAttribute="trailing" constant="50" id="U7w-Im-wGO"/>
+                                    <constraint firstAttribute="bottom" secondItem="5gi-qO-Hgw" secondAttribute="bottom" constant="26" id="b01-Cc-vbF"/>
                                     <constraint firstItem="pKj-iu-fQX" firstAttribute="top" secondItem="yMb-Fg-wVP" secondAttribute="top" constant="8" id="deo-De-hna"/>
                                     <constraint firstItem="yma-5D-sNn" firstAttribute="top" secondItem="yMb-Fg-wVP" secondAttribute="top" constant="24" id="lYZ-Tm-CdU"/>
                                     <constraint firstItem="yma-5D-sNn" firstAttribute="leading" secondItem="yMb-Fg-wVP" secondAttribute="leadingMargin" id="s9o-zx-x38"/>
@@ -476,6 +480,7 @@
                         <viewLayoutGuide key="safeArea" id="NAA-hq-WEJ"/>
                     </view>
                     <connections>
+                        <outlet property="addToMyFavorite" destination="5gi-qO-Hgw" id="qSm-2h-1Ee"/>
                         <outlet property="jokeScore" destination="pKj-iu-fQX" id="Vdc-Ya-YmR"/>
                         <outlet property="jokeText" destination="LYt-FU-4qe" id="WYf-M4-JoD"/>
                         <outlet property="jokeTitle" destination="yma-5D-sNn" id="exJ-Xk-fvh"/>
@@ -483,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Db-RT-bLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2284.057971014493" y="1385.8695652173915"/>
+            <point key="canvasLocation" x="-2284" y="1361"/>
         </scene>
         <!--My Favorite-->
         <scene sceneID="Vai-MP-vp2">
@@ -512,7 +517,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="T0n-8f-cxM" customClass="JokeTableViewCell" customModule="LifeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="T0n-8f-cxM" customClass="JokeTableViewCell" customModule="LifeApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T0n-8f-cxM" id="1yt-ia-XTF">
@@ -528,6 +533,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="qur-dJ-EPj" kind="show" identifier="MyFavoriteShowJokeText" id="Sxm-70-On6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -546,7 +554,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJa-iv-GYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="sIC-iC-Bwf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3910.144927536232" y="1385.8695652173915"/>
+            <point key="canvasLocation" x="-3952" y="1361"/>
         </scene>
         <!--Joke-->
         <scene sceneID="7Nu-ci-2mP">
@@ -575,8 +583,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="unwindSegueBack_JokeTypeFor:" destination="DYG-yY-lrT" eventType="touchUpInside" id="rEY-Ye-2hz"/>
-                                    <segue destination="nvF-qf-TIN" kind="show" id="iFp-sH-c0l"/>
+                                    <action selector="ToJokeType:" destination="DYG-yY-lrT" eventType="touchUpInside" id="7ay-27-jJJ"/>
+                                    <segue destination="nvF-qf-TIN" kind="show" identifier="ShowJokeType" id="iFp-sH-c0l"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ho-8D-BXm">
@@ -599,7 +607,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="unwindSegueBack_FavoriteFor:" destination="DYG-yY-lrT" eventType="touchUpInside" id="aIh-OR-NFW"/>
-                                    <segue destination="Vtg-Ck-1ez" kind="show" id="Kno-cU-Bo4"/>
+                                    <segue destination="Vtg-Ck-1ez" kind="show" identifier="ShowMyFavorite" id="Kno-cU-Bo4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -631,6 +639,7 @@
         <image name="Joke" width="13" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="vyq-32-AjN"/>
         <segue reference="vKL-Of-vRW"/>
     </inferredMetricsTieBreakers>
 </document>

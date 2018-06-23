@@ -16,7 +16,6 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var musicData: UITableView!
     var music = MusicPlayer()
     var selectSong: MPMediaItemCollection?
-    var songCnt = 0
     @IBAction func unwindToPlayer(for segue: UIStoryboardSegue) {
     }
     override func viewDidLoad() {
@@ -29,8 +28,8 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let cnt = selectSong?.count{songCnt = cnt}
-        return songCnt
+        if let cnt = selectSong?.count{music.songCnt = cnt}
+        return music.songCnt
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +70,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         //離開選歌畫面
         self.dismiss(animated: true, completion: nil)
         musicData.reloadData()
-        music.player.play()
+        music.playMusic()
         music.player.beginGeneratingPlaybackNotifications()
     }
     
@@ -81,15 +80,13 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         music.player.nowPlayingItem = (selectSong?.items[indexPath.row])! as MPMediaItem
+        music.playMusic()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! musicPlayerController
         controller.music = music
-        controller.songCnt=songCnt
-
     }
     
 }

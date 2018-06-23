@@ -10,16 +10,15 @@ import Foundation
 import MediaPlayer
 class MusicPlayer{
     var player:MPMusicPlayerController
-    var isPlaying:Bool=false
-    var isRandom:Bool=false
-    var isRepeat:Int=0
-    var currentSecond:Float=0.0
+    var isPlaying:Bool = false
+    var isRandom:Bool = false
+    var isRepeat:Int = 0
+    var songCnt:Int = 0
     init() {
-        self.player=MPMusicPlayerController.applicationMusicPlayer
-        self.isPlaying=false
-        self.isRandom=false
-        self.isRepeat=0
-        self.currentSecond=0.0
+        self.player = MPMusicPlayerController.applicationMusicPlayer
+        self.isPlaying = false
+        self.isRandom = false
+        self.isRepeat = 0
     }
     func playMusic(){
         player.play()
@@ -31,10 +30,8 @@ class MusicPlayer{
     }
     func nextMusic(){
         player.skipToNextItem()
-        currentSecond = 0.0
     }
     func previousMusic(){
         player.skipToPreviousItem()
-        currentSecond = 0.0
     }
 }

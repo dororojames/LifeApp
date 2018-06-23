@@ -10,8 +10,8 @@ import UIKit
 
 class HealthAnalysis: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
-     var list = [String]()
-     var date : String = ""
+    var list = [String]()
+    var record = Record(date: "", condition: "", medicine: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class HealthAnalysis: UIViewController,UITableViewDataSource,UITableViewDelegate
         cell.textLabel?.text = list[indexPath.row]
         
         do {
-            let path = NSHomeDirectory() + "/Documents/" + date + ".txt"
+            let path = NSHomeDirectory() + "/Documents/" + record.getDate() + ".txt"
             let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
             var count = 0;
             content.enumerateLines({ (line, stop) -> () in

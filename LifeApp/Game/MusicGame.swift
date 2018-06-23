@@ -9,22 +9,17 @@ import UIKit
 import Foundation
 import AVFoundation
 
-class shape{
+struct shape{
     var lab:UILabel = UILabel()
     var used:Bool = false
 }
 
 class MusicGame{
     var audioPlayer: AVAudioPlayer!
-    var hit: Int?
-    var miss: Int?
-    enum Direction {case Left,Mid,Right}
+    var hit=0
+    var miss=0
     var timer=Timer()
     var Shape=[shape](repeating: shape(), count: 24)
-    func initialize(){
-        self.hit=0
-        self.miss=0
-    }
     //準備音樂
     func prepareAudioFile(itemString:String) {
         let url = Bundle.main.url(forResource:itemString, withExtension: "mp3")
@@ -70,7 +65,7 @@ class MusicGame{
         let UserDefault=UserDefaults.standard
         var BestHit=UserDefault.integer(forKey: "BestHitNum")
         
-        if hit!>BestHit{BestHit=hit!}
+        if hit>BestHit{BestHit=hit}
         UserDefault.set(hit,forKey:"HitNum")
         UserDefault.set(BestHit,forKey:"BestHitNum")
         UserDefault.set(miss,forKey:"MissNum")
@@ -82,7 +77,7 @@ class MusicGame{
             self.Shape[index].lab.center.y=100
             self.Shape[index].lab.removeFromSuperview()
             self.Shape[index].used=false
-            miss=miss!+1
+            miss=miss+1
             
             return true
         }
@@ -90,7 +85,7 @@ class MusicGame{
     }
     func HitMissDetermination(DirBtn:Int,i:Int)->Bool{
                 if self.Shape[i].lab.center.y>=610&&self.Shape[i].lab.center.y<650{
-                    hit=hit!+1           
+                    hit=hit+1           
                     self.Shape[i].lab.center.y=100
                     self.Shape[i].lab.removeFromSuperview()
                     self.Shape[i].used=false
@@ -98,7 +93,7 @@ class MusicGame{
                 }
                 else
                 {
-                    miss=miss!+1
+                    miss=miss+1
                     self.Shape[i].lab.center.y=100
                     self.Shape[i].lab.removeFromSuperview()
                     return false
