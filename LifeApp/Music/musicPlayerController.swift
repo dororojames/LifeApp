@@ -74,7 +74,6 @@ class musicPlayerController: UIViewController {
             }
             else{
                 music.pauseMusic()
-                progressTimer?.invalidate()
             }
             refreshPlayBtn()
         }

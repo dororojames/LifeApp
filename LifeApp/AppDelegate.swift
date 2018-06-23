@@ -134,6 +134,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             loadtextfile(filename: name)
         }
     }
-    
+
 }
 
