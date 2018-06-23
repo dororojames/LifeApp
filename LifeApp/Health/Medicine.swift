@@ -18,7 +18,7 @@ class Medicine{
     func getID() -> Int {
         return id
     }
-    func getMedicine() -> String {
+    func getName() -> String {
         return name
     }
 }
@@ -35,17 +35,6 @@ class MedicineList{
             } catch {
                 print("Error:", error.localizedDescription)
             }
-        }
-    }
-    func saveMedicine(date: String){
-        do {
-            let path = NSHomeDirectory() + "/Documents/Record.txt"
-            let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
-            var outString = content as String
-            outString += date + "\n"
-            try outString.write(toFile: path, atomically: false, encoding: String.Encoding.utf8)
-        } catch {
-            print("Error:", error.localizedDescription)
         }
     }
     func getNumMedicine() -> Int {

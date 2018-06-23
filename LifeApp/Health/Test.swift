@@ -22,7 +22,7 @@ class Test{
         return question
     }
 }
-class TestList{
+class TestFacade{
     private static var num = 3
     private var test = [Test]()
     private var questionlist = QuestionList(num: 3)
@@ -55,6 +55,16 @@ class TestList{
         {
             let medicine = test[id].getMedicine()
             prescription.append(medicine!)
+        }
+    }
+    func diagnose(score: Int) -> String! {
+        if(score>=60)
+        {
+            return "健康良好"
+        }
+        else
+        {
+            return "健康不良"
         }
     }
     func getNumtest() -> Int {

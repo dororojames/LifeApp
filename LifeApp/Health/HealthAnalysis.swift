@@ -11,7 +11,7 @@ import UIKit
 class HealthAnalysis: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     var list = [String]()
-    var record = Record(date: "", condition: "", medicine: "")
+    var record = Record(date: "", condition: "", medicine: [""])
     
     override func viewDidLoad() {
         super.viewDidLoad()

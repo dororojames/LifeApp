@@ -93,12 +93,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func loadjoke() -> Void {
         loadtextfile(filename: "Adult0")
         loadtextfile(filename: "Adult1")
+        loadtextfile(filename: "Adult2")
         loadtextfile(filename: "QA0")
         loadtextfile(filename: "QA1")
+        loadtextfile(filename: "QA2")
         loadtextfile(filename: "Pun0")
         loadtextfile(filename: "Pun1")
+        loadtextfile(filename: "Pun2")
         loadtextfile(filename: "Metaphor0")
         loadtextfile(filename: "Metaphor1")
+        loadtextfile(filename: "Metaphor2")
     }
     
     func loadtextfile(filename : String)

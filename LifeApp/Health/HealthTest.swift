@@ -12,7 +12,7 @@ class HealthTest: UIViewController {
     @IBOutlet weak var questionDescription: UILabel!
     
     var count = 1
-    var test = TestList()
+    var test = TestFacade()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,15 +48,26 @@ class HealthTest: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TestToResult"
         {
+            var medicine = [String]()
+            
+            var date : String
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy_M_d H_m_s"
+            date = formatter.string(from: Date())
+            
             let vc = segue.destination as! TestResult
             if(test.getNumPrescription() != 0)
             {
                 for i in 0 ... test.getNumPrescription()-1
                 {
-                    vc.medicine.append(test.getMedicine(id: i).getMedicine())
+                    medicine.append(test.getMedicine(id: i).getName())
                 }
             }
-            vc.score = test.getScore()
+            else
+            {
+                medicine.append("蓮子")
+            }
+            vc.record = Record(date: date, condition: test.diagnose(score: test.getScore()) , medicine: medicine)
         }
     }
     

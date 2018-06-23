@@ -11,45 +11,20 @@ import UIKit
 class TestResult: UIViewController,UITableViewDataSource,UITableViewDelegate{
     var tableView:UITableView?
     
+    var recordlist = RecordList()
+    var record = Record(date: "", condition: "", medicine: [""])
+ 
     var list = [String]()
-    var score : Int = 0
-    var medicine = ["蓮子"]
-    var condition : String = ""
-    var date : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy_M_d H_m_s"
-        date = formatter.string(from: Date())
-        condition = diagnose()
+        record.saveRecord()
+        recordlist.insertRecord(record: record)
+        recordlist.saveRecordList()
 
         list.append("診斷結果")
         list.append("建議藥材")
-    
-        do {
-            let path = NSHomeDirectory() + "/Documents/" + date + ".txt"
-            var outString = ""
-            outString += condition + "\n"
-            for i in 0 ... medicine.count-1
-            {
-                outString += medicine[i] + " "
-            }
-            try outString.write(toFile: path, atomically: false, encoding: String.Encoding.utf8)
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-        
-        do {
-            let path = NSHomeDirectory() + "/Documents/Record.txt"
-            let content = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
-            var outString = content as String
-            outString += date + "\n"
-            try outString.write(toFile: path, atomically: false, encoding: String.Encoding.utf8)
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
         
         // Do any additional setup after loading the view.
     }
@@ -67,15 +42,18 @@ class TestResult: UIViewController,UITableViewDataSource,UITableViewDelegate{
         cell.textLabel?.text = list[indexPath.row]
         switch indexPath.row {
         case 0:
-            cell.content.text = condition
+            cell.content.text = record.getCondition()
         case 1:
             var outString : String = ""
             outString += "\n"
-            for i in 0 ... medicine.count-1
+            if(record.getMedicine().count>0)
             {
-                outString += medicine[i] + " "
+                for i in 0 ... record.getMedicine().count-1
+                {
+                    outString += record.getMedicine(id: i) + " "
+                }
+                cell.content.text = outString
             }
-            cell.content.text = outString
         default:
             print("error")
         }
@@ -85,18 +63,6 @@ class TestResult: UIViewController,UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section :Int) ->String?{
         return "健康資料"
     }
-    
-    func diagnose() -> String! {
-        if(score>=60)
-        {
-            return "健康良好"
-        }
-        else
-        {
-            return "健康不良"
-        }
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

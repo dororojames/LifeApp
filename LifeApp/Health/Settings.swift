@@ -10,7 +10,8 @@ import UIKit
 
 //表格數據實體類
 
-class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
+class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate{
+    
     //表格
     var tableView:UITableView?
 
@@ -21,6 +22,8 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    
+    
     func setCell(cell: HealthSettingsTableViewCell,indexPathrow :Int) {
         
         cell.textLav.text = user.getData(row: indexPathrow)
@@ -31,6 +34,11 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
         
         cell.textLabel?.text = user.getInformation(row: indexPathrow)
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -46,7 +54,7 @@ class Settings: UIViewController,UITableViewDataSource,UITableViewDelegate,UITex
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HealthSettingsTableViewCell
         cell.textLav?.delegate = self
-        
+    
         user.loadData(filename: "userinfo", indexPathrow: indexPath.row)
         
         setCell(cell: cell, indexPathrow: indexPath.row)

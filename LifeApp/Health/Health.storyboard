@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eM1-tb-2YT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eM1-tb-2YT">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -32,9 +32,9 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIm-jd-go3">
-                                <rect key="frame" x="118.66666666666669" y="303" width="177" height="150"/>
+                                <rect key="frame" x="119" y="170" width="177" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Zgk-qp-xql"/>
+                                    <constraint firstAttribute="height" constant="150" id="gyH-8l-6a3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <state key="normal" title="開始測驗"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJs-C4-taH">
-                                <rect key="frame" x="118.66666666666669" y="461" width="177" height="65"/>
+                                <rect key="frame" x="119" y="432" width="177" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <state key="normal" title="健康紀錄"/>
                                 <connections>
@@ -54,15 +54,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nIm-jd-go3" firstAttribute="centerX" secondItem="kNA-ry-nd9" secondAttribute="centerX" id="G7f-to-fkx"/>
-                            <constraint firstItem="JJs-C4-taH" firstAttribute="top" secondItem="nIm-jd-go3" secondAttribute="bottom" constant="8" symbolic="YES" id="SIz-pT-MlT"/>
-                            <constraint firstItem="nIm-jd-go3" firstAttribute="centerY" secondItem="qh7-yr-wxb" secondAttribute="centerY" id="STM-go-ali"/>
-                            <constraint firstItem="JJs-C4-taH" firstAttribute="centerX" secondItem="qh7-yr-wxb" secondAttribute="centerX" id="cng-qt-3ml"/>
-                            <constraint firstItem="kNA-ry-nd9" firstAttribute="leading" secondItem="eyC-rN-6bi" secondAttribute="leading" id="hZS-d5-AtM"/>
-                            <constraint firstItem="JJs-C4-taH" firstAttribute="width" secondItem="nIm-jd-go3" secondAttribute="width" id="hsQ-ba-l85"/>
-                            <constraint firstItem="nIm-jd-go3" firstAttribute="centerX" secondItem="qh7-yr-wxb" secondAttribute="centerX" id="kQM-1M-gql"/>
-                            <constraint firstItem="kNA-ry-nd9" firstAttribute="top" secondItem="qh7-yr-wxb" secondAttribute="top" id="qof-7l-eSV"/>
-                            <constraint firstItem="kNA-ry-nd9" firstAttribute="centerX" secondItem="qh7-yr-wxb" secondAttribute="centerX" id="tmp-lK-tcn"/>
+                            <constraint firstItem="nIm-jd-go3" firstAttribute="top" secondItem="eyC-rN-6bi" secondAttribute="top" constant="170" id="CHd-0h-Ers"/>
+                            <constraint firstItem="kNA-ry-nd9" firstAttribute="top" secondItem="qh7-yr-wxb" secondAttribute="top" id="FTi-IB-xvp"/>
+                            <constraint firstItem="JJs-C4-taH" firstAttribute="top" secondItem="nIm-jd-go3" secondAttribute="bottom" constant="112" id="LhZ-ga-xQ8"/>
+                            <constraint firstItem="kNA-ry-nd9" firstAttribute="leading" secondItem="eyC-rN-6bi" secondAttribute="leading" id="TUZ-TV-yOw"/>
+                            <constraint firstItem="JJs-C4-taH" firstAttribute="centerX" secondItem="qh7-yr-wxb" secondAttribute="centerX" id="URL-QD-272"/>
+                            <constraint firstItem="nIm-jd-go3" firstAttribute="centerX" secondItem="qh7-yr-wxb" secondAttribute="centerX" id="dGK-qb-6pB"/>
+                            <constraint firstItem="kNA-ry-nd9" firstAttribute="centerX" secondItem="qh7-yr-wxb" secondAttribute="centerX" id="ovz-8Y-Kyv"/>
+                            <constraint firstItem="JJs-C4-taH" firstAttribute="width" secondItem="nIm-jd-go3" secondAttribute="width" id="pn2-0V-lsg"/>
+                            <constraint firstItem="JJs-C4-taH" firstAttribute="centerX" secondItem="kNA-ry-nd9" secondAttribute="centerX" id="xc3-SB-RHJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qh7-yr-wxb"/>
                     </view>

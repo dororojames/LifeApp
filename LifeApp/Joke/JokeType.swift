@@ -9,13 +9,11 @@
 import UIKit
 
 class JokeType: UIViewController{
-
     var jokelist = JokeList()
     var ListArray = [[Joke]].init(repeating: [], count: 5)
     @IBAction func back(_ sender: Any) {
-self.presentingViewController!.dismiss(animated: true, completion: nil)  
+        self.presentingViewController!.dismiss(animated: true, completion: nil)  
     }
-    
     @IBAction func 問答笑話(_ sender: Any) {
     }
     @IBAction func 黃色笑話(_ sender: Any) {
@@ -55,7 +53,7 @@ self.presentingViewController!.dismiss(animated: true, completion: nil)
         ListArray[jokelist.Metaphor]=jokelist.MetaphorList
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
